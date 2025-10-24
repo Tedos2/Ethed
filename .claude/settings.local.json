@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp add:*)",
+      "Bash(claude mcp env firecrawl-mcp FIRECRAWL_API_KEY fc-a399c6319afe427db1622661f167dc6a)",
+      "Read(//c/Users/tedyn/**)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(rsync:*)",
+      "Bash(find:*)",
+      "Bash(npm install)",
+      "Bash(npx shadcn@latest init:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
