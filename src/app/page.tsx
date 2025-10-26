@@ -1,15 +1,13 @@
 import Hero from "@/components/sections/Hero";
-import ProblemSolution from "@/components/sections/ProblemSolution";
-import Services from "@/components/sections/Services";
-import CTA from "@/components/sections/CTA";
+import Slider from "@/components/sections/Slider";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <ProblemSolution />
-      <Services />
-      <CTA />
+      <section className="bg-[#0f0f0f] py-12 flex items-center justify-center">
+        <Slider />
+      </section>
     </main>
   );
 }

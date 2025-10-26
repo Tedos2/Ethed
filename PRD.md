@@ -267,29 +267,100 @@ npm run lint    # Run ESLint for code quality checks
 
 ---
 
-## 9. Next Steps
+## 9. Landing Page Structure (Conversion-Focused)
 
-1. **Design Phase:**
-   - Review reference websites for component inspiration
-   - Identify MCP integrations to leverage
-   - Create wireframes and mockups
+This landing page follows a proven psychological framework: **Emotion → Logic → Action**
 
-2. **Content Development:**
-   - Write compelling copy for each landing page section
-   - Develop question flow for lead qualification
-   - Create initial educational content pieces
+### 9.1 Section Breakdown
 
-3. **Technical Implementation:**
-   - Select tech stack and framework
-   - Build responsive landing page
-   - Implement question flow and booking integration
-   - Set up analytics and tracking
+**1) Pattern Interrupt + Emotional Trigger (Above the Fold)**
+- **Purpose:** Stop the scroll, create instant empathy
+- **Components:**
+  - Pattern interrupt headline (e.g., "Automation companies won't tell you this...")
+  - Main emotional headline addressing pain point
+  - Subheadline hinting at the promise
+- **Psychology:** Opens with pain/aspiration that creates felt tension
 
-4. **Launch & Iteration:**
-   - Deploy landing page
-   - Monitor conversion metrics
-   - Gather user feedback
-   - Iterate based on performance data
+**2) Logic Bridge (Mechanism + Proof)**
+- **Purpose:** Bridge emotion to reason with clear explanation
+- **Components:**
+  - Mini-headline: "Why this happens—and the simple fix"
+  - The fact (what blocks progress)
+  - The mechanism (how Ethed solves it)
+  - Proof point (metric or case study)
+- **Example:** "Most businesses fail from inconsistency—not lack of tools. We provide tailored AI agents with built-in KPI tracking. 82% see measurable ROI within the first month."
+
+**3) USP (Unique Selling Propositions)**
+- **Purpose:** Differentiate from competitors
+- **Components (3-5 bullets):**
+  - 100% tailored solutions (no templates)
+  - Built-in KPI tracking—progress you can see
+  - Fair, transparent pricing (no sky-high retainers)
+  - Fast implementation and support
+  - 30-day satisfaction guarantee
+
+**4) Practical Plan + CTA (Above the Fold)**
+- **Purpose:** Show simple path forward, reduce friction
+- **Components:**
+  - "Your 3-step path" headline
+  - Clear steps: 1) Fill form → 2) 10-min fit call → 3) Custom plan + results in X days
+  - Primary CTA button: "I'm in—reserve my spot"
+  - Micro-copy: "We'll call today for a quick fit check"
+
+**5) Lead Qualification Form**
+- **Purpose:** Gather context, qualify leads, provide value
+- **Questions:**
+  - Your #1 business goal for the next 30 days?
+  - What's holding you back from achieving it?
+  - Current team size / monthly revenue range?
+  - Time you can commit per week for implementation?
+  - Best time for a call (morning/afternoon/evening)?
+  - How will we know we've succeeded for you?
+
+**6) Risk Reversal**
+- **Purpose:** Lower purchase friction, build trust
+- **Component:**
+  - "Fair and simple: love it—or we'll make it right"
+  - 30-day guarantee explanation
+  - Why we offer it (social proof: "Almost nobody asks")
+
+**7) Positive Voice (Benefit + Self-Efficacy)**
+- **Purpose:** Affirm visitor's capability, lower fear
+- **Component:**
+  - Mini-headline: "Real results this month—not 'someday'"
+  - 2-3 lines focusing on desired outcome + timeframe + fear-reducer
+  - Example: "See your first automation running in 2 weeks—without disrupting your current workflow. We handle the technical complexity."
+
+### 9.2 Gender-Targeted Messaging Variants
+
+**Women (Emotion → Logic Sequence):**
+- Lead with empathy, add structure
+- Example: "Feeling overwhelmed by manual tasks eating your day? You're not alone. We add AI-powered support that feels like hiring your perfect assistant."
+
+**Men (Logic → Emotion Sequence):**
+- Lead with facts, close with vision
+- Example: "Tailored automation + weekly KPI check-ins + first results in 14 days. Outcome: control, efficiency, growth."
+
+### 9.3 Conversion Elements
+
+**Pattern Interrupt Options:**
+- "Automation companies won't tell you this—but you'll love the results."
+- "What if 2 hours of setup replaced 20 hours of weekly busywork?"
+- "No tech consultant will tell you this—because it breaks their pricing model."
+
+**Main Headline Formula:**
+[Service]: [Result] in [Timeframe]—without [Common Obstacle]
+
+**Ethed Example:**
+"AI Automation: Get your perfect employee in 2 weeks—without the hiring costs."
+
+**Above-the-Fold Must-Haves:**
+1. Pattern interrupt
+2. Emotional headline
+3. Logic bridge with proof
+4. Primary CTA button
+5. Short qualification form (7 questions max)
+6. Trust signals (guarantee, no-pressure language)
 
 ---
 

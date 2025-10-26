@@ -11,7 +11,17 @@
       "Bash(npx shadcn@latest init:*)",
       "Bash(npx shadcn@latest add:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:aiagentschool.co.il)",
+      "WebFetch(domain:otherwise.co.il)",
+      "mcp__firecrawl-mcp__firecrawl_scrape",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:reactbits.dev)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:codepen.io)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

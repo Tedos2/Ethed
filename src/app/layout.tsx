@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans_Hebrew } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const notoSansHebrew = Noto_Sans_Hebrew({
+  variable: "--font-noto-sans-hebrew",
+  subsets: ["hebrew", "latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Ethed - AI Automation Solutions for Small Business",
-  description: "The perfect employee without the cost of hiring. AI-powered automations, chatbots, and custom CRM solutions tailored for small businesses.",
+  title: "Ethed - פתרונות אוטומציה מבוססי AI לעסקים קטנים",
+  description: "העובד המושלם ללא עלויות גיוס. אוטומציות, צ'אטבוטים ומערכות CRM מותאמות אישית לעסקים קטנים.",
 };
 
 export default function RootLayout({
@@ -23,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="he" dir="rtl">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${notoSansHebrew.variable} antialiased font-sans`}
       >
         {children}
       </body>
