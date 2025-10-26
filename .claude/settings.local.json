@@ -24,7 +24,8 @@
       "Bash(cat:*)",
       "Bash(taskkill:*)",
       "Bash(netstat:*)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

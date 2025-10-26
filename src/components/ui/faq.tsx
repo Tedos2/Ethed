@@ -3,7 +3,7 @@
 import React from "react";
 
 const App = () => {
-    const [openIndex, setOpenIndex] = React.useState(null);
+    const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
     const faqs = [
         {
