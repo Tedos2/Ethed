@@ -72,7 +72,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-[#1a0f08] via-[#0a0505] to-[#0a0505] py-20 overflow-hidden">
+    <section id="contact" className="relative py-20 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
@@ -137,18 +137,19 @@ export default function Contact() {
 
               {/* Phone Field */}
               <motion.div variants={itemVariants} className="relative">
-                <label htmlFor="phone" className="block text-white font-medium mb-2">
+                <label htmlFor="phone" className="block text-white font-medium mb-2 text-right">
                   טלפון <span className="text-orange-500">*</span>
                 </label>
                 <div className="relative">
-                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
+                  <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
                   <input
                     {...register("phone")}
                     type="tel"
                     id="phone"
                     placeholder="הכנס את מספר הטלפון שלך"
+                    dir="rtl"
                     className={cn(
-                      "w-full bg-black/50 border rounded-lg px-12 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 transition-all",
+                      "w-full bg-black/50 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 transition-all",
                       errors.phone
                         ? "border-red-500 focus:ring-red-500/50"
                         : "border-orange-500/30 focus:ring-orange-500/50"
@@ -156,24 +157,25 @@ export default function Contact() {
                   />
                 </div>
                 {errors.phone && (
-                  <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>
+                  <p className="text-red-400 text-sm mt-1 text-right">{errors.phone.message}</p>
                 )}
               </motion.div>
 
               {/* Business Field */}
               <motion.div variants={itemVariants} className="relative">
-                <label htmlFor="businessField" className="block text-white font-medium mb-2">
+                <label htmlFor="businessField" className="block text-white font-medium mb-2 text-right">
                   תחום העסק <span className="text-orange-500">*</span>
                 </label>
                 <div className="relative">
-                  <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
+                  <Briefcase className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
                   <input
                     {...register("businessField")}
                     type="text"
                     id="businessField"
                     placeholder="הכנס את תחום העסק שלך"
+                    dir="rtl"
                     className={cn(
-                      "w-full bg-black/50 border rounded-lg px-12 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 transition-all",
+                      "w-full bg-black/50 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 transition-all",
                       errors.businessField
                         ? "border-red-500 focus:ring-red-500/50"
                         : "border-orange-500/30 focus:ring-orange-500/50"
@@ -181,7 +183,7 @@ export default function Contact() {
                   />
                 </div>
                 {errors.businessField && (
-                  <p className="text-red-400 text-sm mt-1">
+                  <p className="text-red-400 text-sm mt-1 text-right">
                     {errors.businessField.message}
                   </p>
                 )}
@@ -189,30 +191,31 @@ export default function Contact() {
 
               {/* Current System Field (Optional) */}
               <motion.div variants={itemVariants} className="relative">
-                <label htmlFor="currentSystem" className="block text-white font-medium mb-2">
+                <label htmlFor="currentSystem" className="block text-white font-medium mb-2 text-right">
                   עם איזו מערכת אתם עובדים היום?
                 </label>
                 <div className="relative">
-                  <Settings className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
+                  <Settings className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
                   <input
                     {...register("currentSystem")}
                     type="text"
                     id="currentSystem"
                     placeholder="בחר מערכת (לא חובה)"
-                    className="w-full bg-black/50 border border-orange-500/30 rounded-lg px-12 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all"
+                    dir="rtl"
+                    className="w-full bg-black/50 border border-orange-500/30 rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all"
                   />
                 </div>
               </motion.div>
 
               {/* Privacy Consent */}
-              <motion.div variants={itemVariants} className="flex items-start gap-3">
+              <motion.div variants={itemVariants} className="flex items-start gap-3 flex-row-reverse">
                 <input
                   {...register("privacyConsent")}
                   type="checkbox"
                   id="privacyConsent"
                   className="w-5 h-5 mt-1 accent-orange-500 cursor-pointer"
                 />
-                <label htmlFor="privacyConsent" className="text-gray-300 text-sm flex-1">
+                <label htmlFor="privacyConsent" className="text-gray-300 text-sm flex-1 text-right">
                   אני מסכים למסור את פרטיי בהתאם ל
                   <a
                     href="/privacy-policy"
@@ -224,7 +227,7 @@ export default function Contact() {
                 </label>
               </motion.div>
               {errors.privacyConsent && (
-                <p className="text-red-400 text-sm -mt-4">
+                <p className="text-red-400 text-sm -mt-4 text-right">
                   {errors.privacyConsent.message}
                 </p>
               )}

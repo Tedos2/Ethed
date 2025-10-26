@@ -66,7 +66,7 @@ export default function AutomationFlow() {
   };
 
   const getBlockClassName = (blockIndex: number) => {
-    const baseClass = "bg-white rounded-xl p-2.5 transition-all duration-500";
+    const baseClass = "bg-white rounded-lg sm:rounded-xl p-1 sm:p-2 transition-all duration-500";
 
     if (!isBlockVisible(blockIndex)) {
       return `${baseClass} opacity-0 scale-95 pointer-events-none`;
@@ -84,21 +84,21 @@ export default function AutomationFlow() {
   };
 
   const getLineClassName = (lineIndex: number) => {
-    const baseClass = "w-px h-3 mx-auto border-l-2 border-dashed border-[#FF7742] transition-all duration-500";
+    const baseClass = "w-px h-1.5 sm:h-2 mx-auto border-l-2 border-dashed border-[#FF7742] transition-all duration-500";
     return isLineVisible(lineIndex)
       ? `${baseClass} opacity-100 scale-y-100`
       : `${baseClass} opacity-0 scale-y-0`;
   };
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center py-4 px-4">
+    <div className="relative w-full h-full flex items-center justify-center p-1 sm:p-2">
       {/* Main Workflow Container */}
-      <div className="flex flex-col w-full max-w-xs space-y-2">
+      <div className="flex flex-col w-full max-w-[200px] sm:max-w-[240px] md:max-w-[260px] space-y-1">
         {/* Block 1: Lead Created + CRM */}
         <div className={getBlockClassName(0)}>
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden">
-              <div className="relative w-6 h-6">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-white flex items-center justify-center overflow-hidden">
+              <div className="relative w-3.5 h-3.5 sm:w-5 sm:h-5">
                 <Image
                   src="/images to use/monday.png"
                   alt="Monday.com"
@@ -107,7 +107,7 @@ export default function AutomationFlow() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-sm">נוצר ליד חדש ב-CRM</span>
+            <span className="text-gray-900 font-medium text-[10px] sm:text-xs">נוצר ליד חדש ב-CRM</span>
           </div>
         </div>
 
@@ -115,16 +115,16 @@ export default function AutomationFlow() {
         <div className={getLineClassName(0)} />
 
         {/* Platform Badges with Label */}
-        <div className={`flex items-center gap-3 justify-center transition-all duration-500 ${
+        <div className={`flex items-center gap-2 sm:gap-3 justify-center transition-all duration-500 ${
           isLineVisible(0) ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
         }`}>
           {/* "הגיע דרך" label */}
-          <span className="text-xs text-gray-400 font-medium">הגיע דרך:</span>
+          <span className="text-[10px] sm:text-xs text-gray-400 font-medium">הגיע דרך:</span>
 
           {/* Platform Badges */}
-          <div className="flex gap-2">
-            <div className="bg-white rounded-full p-1.5 shadow-md flex items-center justify-center">
-              <div className="relative w-5 h-5">
+          <div className="flex gap-1">
+            <div className="bg-white rounded-full p-0.5 sm:p-1 shadow-md flex items-center justify-center">
+              <div className="relative w-3 h-3 sm:w-4 sm:h-4">
                 <Image
                   src="/images to use/hd-blue-and-white-square-facebook-fb-logo-70175169479235560lh86s7jg.png"
                   alt="Facebook"
@@ -133,8 +133,8 @@ export default function AutomationFlow() {
                 />
               </div>
             </div>
-            <div className="bg-white rounded-full p-1.5 shadow-md flex items-center justify-center">
-              <div className="relative w-5 h-5">
+            <div className="bg-white rounded-full p-0.5 sm:p-1 shadow-md flex items-center justify-center">
+              <div className="relative w-3 h-3 sm:w-4 sm:h-4">
                 <Image
                   src="/images to use/insagram.jpeg"
                   alt="Instagram"
@@ -143,8 +143,8 @@ export default function AutomationFlow() {
                 />
               </div>
             </div>
-            <div className="bg-white rounded-full p-1.5 shadow-md flex items-center justify-center">
-              <div className="relative w-5 h-5">
+            <div className="bg-white rounded-full p-0.5 sm:p-1 shadow-md flex items-center justify-center">
+              <div className="relative w-3 h-3 sm:w-4 sm:h-4">
                 <Image
                   src="/images to use/pngtree-whatsapp-icon-png-image_3584845.jpg"
                   alt="WhatsApp"
@@ -161,9 +161,9 @@ export default function AutomationFlow() {
 
         {/* Block 2: Warming Message */}
         <div className={getBlockClassName(1)}>
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden">
-              <div className="relative w-6 h-6">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-white flex items-center justify-center overflow-hidden">
+              <div className="relative w-3.5 h-3.5 sm:w-5 sm:h-5">
                 <Image
                   src="/images to use/pngtree-whatsapp-icon-png-image_3584845.jpg"
                   alt="WhatsApp"
@@ -172,7 +172,7 @@ export default function AutomationFlow() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-sm">שלח הודעת חימום</span>
+            <span className="text-gray-900 font-medium text-[10px] sm:text-xs">שלח הודעת חימום</span>
           </div>
         </div>
 
@@ -181,9 +181,9 @@ export default function AutomationFlow() {
 
         {/* Block 3: Schedule Meeting */}
         <div className={getBlockClassName(2)}>
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden">
-              <div className="relative w-6 h-6">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-white flex items-center justify-center overflow-hidden">
+              <div className="relative w-3.5 h-3.5 sm:w-5 sm:h-5">
                 <Image
                   src="/images to use/Calendly-New-Logo.png"
                   alt="Calendly"
@@ -192,7 +192,7 @@ export default function AutomationFlow() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-sm">קבע פגישת היכרות</span>
+            <span className="text-gray-900 font-medium text-[10px] sm:text-xs">קבע פגישת היכרות</span>
           </div>
         </div>
 
@@ -201,9 +201,9 @@ export default function AutomationFlow() {
 
         {/* Block 4: Send Calendar Invite */}
         <div className={getBlockClassName(3)}>
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden">
-              <div className="relative w-6 h-6">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-white flex items-center justify-center overflow-hidden">
+              <div className="relative w-3.5 h-3.5 sm:w-5 sm:h-5">
                 <Image
                   src="/images to use/google claendar.png"
                   alt="Google Calendar"
@@ -212,7 +212,7 @@ export default function AutomationFlow() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-sm">שלח זימון ליומן</span>
+            <span className="text-gray-900 font-medium text-[10px] sm:text-xs">שלח זימון ליומן</span>
           </div>
         </div>
       </div>

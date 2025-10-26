@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import AutomationFlow from "./AutomationFlow";
 import MacBookFrame from "./MacBookFrame";
 import { Aurora } from "@/components/ui/aurora";
+import CompactOrbitingSkills from "@/components/ui/CompactOrbitingSkills";
 
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Gradient Fade Overlay - Creates structured fade from top */}
+      {/* Gradient Fade Overlay - Allows main page gradient to show through */}
       <div className="absolute inset-0 z-[5] bg-gradient-to-b from-[#0f0f0f] via-[#0f0f0f]/70 via-30% to-transparent pointer-events-none" />
 
       {/* Navigation - Floating with Glassmorphism */}
@@ -159,85 +160,80 @@ export default function Hero() {
       )}
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-screen flex items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-28 md:pt-32 pb-8 md:pb-12 min-h-[90vh] md:min-h-screen flex items-start md:items-center">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start w-full">
           {/* Right Side - Automation Flow Visualization */}
-          <div className="order-1 md:order-2 flex items-start justify-center py-4">
+          <div className="order-1 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 gap-2 md:gap-3">
             <MacBookFrame>
               <AutomationFlow />
             </MacBookFrame>
+
+            {/* Orbiting Skills Visualization */}
+            <div className="flex flex-col items-center gap-2">
+              <h3 className="text-lg md:text-xl font-bold text-white text-center">
+                מתחברים לכל הכלים האהובים
+              </h3>
+              <div className="w-[220px] h-[220px] md:w-[260px] md:h-[260px]">
+                <CompactOrbitingSkills />
+              </div>
+            </div>
           </div>
 
           {/* Left Side - Content (main content for RTL) */}
-          <div className="order-2 md:order-1 space-y-6 md:space-y-8 flex flex-col items-end w-full">
+          <div className="order-2 md:order-1 space-y-4 md:space-y-6 flex flex-col items-end w-full">
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-right w-full">
-              <span className="block">חוך פחות מ5 שעות - חדש</span>
-              <span className="block">לבנות סוכני מבוססי AI</span>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-right w-full">
               <span className="block">
-                שנמכרים לעסקים ב-
-                <span className="text-[#FF7742]">5,000 ₪</span>
+                עוד כמה זמן אתה מתכוון לשחק אותה{' '}
+                <span className="relative inline-block">
+                  <span className="relative z-10 text-[#FF7742]">
+                    'עסק רציני'
+                  </span>
+                  <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                </span>
+              </span>
+              <span className="block">
+                כשאין לך אפילו מענה{' '}
+                <span className="relative inline-block">
+                  <span className="relative z-10 text-[#FF7742]">
+                    קבוע
+                  </span>
+                  <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                </span>
+                {' '}שמחזיר ללקוח תשובה{' '}
+                <span className="relative inline-block">
+                  <span className="relative z-10 text-[#FF7742]">
+                    בזמן
+                  </span>
+                  <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                </span>
+                ?
               </span>
             </h1>
 
-            {/* Checkmarks List */}
-            <ul className="space-y-3 md:space-y-4 w-full">
-              <li className="flex items-start gap-3 flex-row-reverse justify-end">
-                <span className="text-base md:text-lg">
-                  מבלי לדעת קוד או להיות טכנולוגי
-                </span>
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#FF7742]/20 flex items-center justify-center mt-1">
-                  <Check className="w-4 h-4 text-[#FF7742]" strokeWidth={3} />
-                </div>
-              </li>
-              <li className="flex items-start gap-3 flex-row-reverse justify-end">
-                <span className="text-base md:text-lg">
-                  למי שרוצה לרכוש יכולת שהיתה רלוונטית בשנים הקרובות
-                </span>
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#FF7742]/20 flex items-center justify-center mt-1">
-                  <Check className="w-4 h-4 text-[#FF7742]" strokeWidth={3} />
-                </div>
-              </li>
-              <li className="flex items-start gap-3 flex-row-reverse justify-end">
-                <span className="text-base md:text-lg">
-                  למי שממחפש להרחיב את סל השירותים שהוא יכול להציע לעסקים
-                </span>
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#FF7742]/20 flex items-center justify-center mt-1">
-                  <Check className="w-4 h-4 text-[#FF7742]" strokeWidth={3} />
-                </div>
-              </li>
-              <li className="flex items-start gap-3 flex-row-reverse justify-end">
-                <span className="text-base md:text-lg">
-                  שוק רחב שמתעסקים המתקצעו בו ויש בו הזדמנות אדירה
-                </span>
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#FF7742]/20 flex items-center justify-center mt-1">
-                  <Check className="w-4 h-4 text-[#FF7742]" strokeWidth={3} />
-                </div>
-              </li>
-            </ul>
+            {/* CTA Button */}
+            <Button
+              size="lg"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+              className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-8 py-5 md:px-10 md:py-6 rounded-full text-base md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 self-start cursor-pointer"
+            >
+              לקביעת פגישה
+            </Button>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4 w-full sm:flex-row-reverse sm:justify-end">
-              {/* Secondary CTA */}
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white/30 hover:border-white/50 bg-transparent text-white px-6 py-4 md:px-8 md:py-6 rounded-full text-base md:text-lg font-medium transition-colors"
-              >
-                מה בקורס?
-              </Button>
+            {/* Platform Logos Section */}
+            <div className="flex flex-col gap-4 pt-2 w-full items-end">
+              {/* Section Header */}
+              <p className="text-base md:text-lg text-gray-300 text-right max-w-2xl leading-relaxed">
+                אנחנו מתמחים באפיון והתאמה של הכלים והאוטומציות המתאימות ביותר לייעול המחלקות והתהליכים בעסק.
+              </p>
 
-              {/* Primary CTA */}
-              <Button
-                size="lg"
-                className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-4 md:px-8 md:py-6 rounded-full text-base md:text-lg font-medium transition-colors shadow-lg"
-              >
-                לבקישת הקורס
-              </Button>
-            </div>
-
-            {/* Platform Logos */}
-            <div className="flex flex-col md:flex-row-reverse gap-4 pt-8 w-full justify-end items-end">
+              {/* Platform Logos */}
+              <div className="flex flex-col md:flex-row-reverse gap-4 w-full justify-end items-end">
               {/* Make.com Logo */}
               <div className="relative group">
                 <div className="relative bg-white/5 border-2 border-white/20 rounded-2xl px-6 py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
@@ -250,8 +246,6 @@ export default function Hero() {
                     />
                   </div>
                 </div>
-                {/* Decorative Star */}
-                <Sparkles className="absolute -top-2 -right-2 w-4 h-4 text-[#FF7742] opacity-70" />
               </div>
 
               {/* Zapier Logo */}
@@ -266,8 +260,6 @@ export default function Hero() {
                     />
                   </div>
                 </div>
-                {/* Decorative Star */}
-                <Sparkles className="absolute -bottom-2 -right-2 w-4 h-4 text-[#FF7742] opacity-70" />
               </div>
 
               {/* n8n Logo */}
@@ -282,8 +274,7 @@ export default function Hero() {
                     />
                   </div>
                 </div>
-                {/* Decorative Star */}
-                <Sparkles className="absolute -top-2 -left-2 w-4 h-4 text-[#FF7742] opacity-70" />
+              </div>
               </div>
             </div>
           </div>
