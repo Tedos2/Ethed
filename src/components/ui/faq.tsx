@@ -25,15 +25,8 @@ const App = () => {
     ];
     return (
         <>
-            <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-                * {
-                    font-family: 'Poppins', sans-serif;
-                }
-            `}</style>
-            <div className="bg-[#0f0f0f] py-20">
-                <div className="max-w-xl mx-auto flex flex-col items-center justify-center px-4 md:px-0">
+            <div className="py-20 relative">
+                <div className="max-w-xl mx-auto flex flex-col items-center justify-center px-4 md:px-0 relative z-50">
                     <p className="text-[#FF7742] text-sm font-medium">FAQ's</p>
                     <h1 className="text-3xl font-semibold text-center text-white">Looking for answer?</h1>
                     <p className="text-sm text-gray-400 mt-2 pb-8 text-center">

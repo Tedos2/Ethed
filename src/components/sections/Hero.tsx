@@ -12,7 +12,7 @@ export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <section className="relative min-h-screen bg-[#0f0f0f] text-white">
+    <section className="relative min-h-screen text-white">
       {/* Aurora Background */}
       <div className="absolute inset-0 z-0">
         <Aurora

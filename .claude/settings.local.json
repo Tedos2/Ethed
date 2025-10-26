@@ -23,7 +23,8 @@
       "WebFetch(domain:codepen.io)",
       "Bash(cat:*)",
       "Bash(taskkill:*)",
-      "Bash(netstat:*)"
+      "Bash(netstat:*)",
+      "Bash(npm uninstall:*)"
     ],
     "deny": [],
     "ask": []

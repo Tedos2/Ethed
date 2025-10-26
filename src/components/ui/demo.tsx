@@ -5,14 +5,7 @@ import React from "react";
 export default function Example() {
     return (
         <>
-            <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-                * {
-                    font-family: 'Poppins', sans-serif;
-                }
-            `}</style>
-            <section className="bg-[#0f0f0f] py-20 flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4">
+            <section className="py-20 flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4">
                 <div className="relative shadow-2xl shadow-[#FF7742]/20 rounded-2xl overflow-hidden shrink-0">
                     <img className="max-w-md w-full object-cover rounded-2xl"
                         src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=451&h=451&auto=format&fit=crop"

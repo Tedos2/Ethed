@@ -262,9 +262,14 @@ GlowingOrbitPath.displayName = 'GlowingOrbitPath';
 export default function OrbitingSkills() {
   const [time, setTime] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (isPaused) return;
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused || !mounted) return;
 
     let animationFrameId: number;
     let lastTime = performance.now();
@@ -279,7 +284,7 @@ export default function OrbitingSkills() {
 
     animationFrameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [isPaused]);
+  }, [isPaused, mounted]);
 
   const orbitConfigs: Array<{ radius: number; glowColor: GlowColor; delay: number }> = [
     { radius: 100, glowColor: 'cyan', delay: 0 },
@@ -287,7 +292,7 @@ export default function OrbitingSkills() {
   ];
 
   return (
-    <section className="relative bg-[#0f0f0f] py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -325,7 +330,7 @@ export default function OrbitingSkills() {
         </div>
 
         {/* Render glowing orbit paths */}
-        {orbitConfigs.map((config) => (
+        {mounted && orbitConfigs.map((config) => (
           <GlowingOrbitPath
             key={`path-${config.radius}`}
             radius={config.radius}
@@ -335,7 +340,7 @@ export default function OrbitingSkills() {
         ))}
 
         {/* Render orbiting skill icons */}
-        {skillsConfig.map((config) => {
+        {mounted && skillsConfig.map((config) => {
           const angle = time * config.speed + (config.phaseShift || 0);
           return (
             <OrbitingSkill
