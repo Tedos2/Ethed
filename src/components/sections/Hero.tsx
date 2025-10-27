@@ -160,8 +160,8 @@ export default function Hero() {
       )}
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-28 md:pt-32 pb-4 md:pb-12 min-h-0 md:min-h-screen flex items-start md:items-center">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-16 items-start w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-32 md:pt-32 pb-8 md:pb-12 min-h-[85vh] md:min-h-screen flex items-start md:items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start w-full">
           {/* Right Side - Automation Flow Visualization */}
           <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 gap-0 md:gap-3">
             <MacBookFrame>
