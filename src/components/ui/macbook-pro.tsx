@@ -66,7 +66,6 @@ export function MacbookPro({
           height="323.85"
         >
           <div
-            xmlns="http://www.w3.org/1999/xhtml"
             style={{
               width: '501.22px',
               height: '323.85px',
