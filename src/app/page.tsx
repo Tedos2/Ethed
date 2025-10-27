@@ -1,5 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import GlassCardsSection from "@/components/sections/GlassCardsSection";
+import CTABanner from "@/components/sections/CTABanner";
 import Demo from "@/components/ui/demo";
 import FAQ from "@/components/ui/faq";
 import Contact from "@/components/sections/Contact";
@@ -11,6 +12,7 @@ export default function Home() {
       <main className="bg-gradient-to-b from-[#0f0f0f] via-[#2a150a] via-40% via-[#1a0f08] via-70% to-[#0a0505]">
         <Hero />
         <GlassCardsSection />
+        <CTABanner />
         <Demo />
         <FAQ />
         <Contact />
