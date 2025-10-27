@@ -228,7 +228,7 @@ export default function Hero() {
             {/* Platform Logos Section */}
             <div className="flex flex-col gap-4 pt-2 w-full items-end">
               {/* Section Header */}
-              <p className="text-sm md:text-lg text-gray-300 text-right max-w-2xl leading-snug md:leading-relaxed">
+              <p className="text-sm md:text-lg text-white text-right max-w-2xl leading-snug md:leading-relaxed">
                 אנחנו מתמחים באפיון והתאמה של הכלים והאוטומציות המתאימות ביותר לייעול המחלקות והתהליכים בעסק.
               </p>
 

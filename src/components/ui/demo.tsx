@@ -27,15 +27,12 @@ export default function Example() {
                         <p className="text-sm font-medium text-slate-800">Join our developer community</p>
                     </div>
                 </div>
-                <div className="text-sm text-gray-300 max-w-lg">
-                    <h1 className="text-xl uppercase font-semibold text-white">What we do?</h1>
-                    <div className="w-24 h-[3px] rounded-full bg-gradient-to-r from-[#FF7742] to-[#FF9966]"></div>
-                    <p className="mt-8">PrebuiltUI helps you build faster by transforming your design vision into fully functional,
-                        production-ready UI components. </p>
-                    <p className="mt-4">Whether you're launching a SaaS app, landing page, or dashboard, our collection of Tailwind
-                        CSS components is crafted to boost your development speed and improve user experience.</p>
-                    <p className="mt-4">From UI design systems to automation-ready layouts, PrebuiltUI empowers you to build
-                        beautifully and scale effortlessly.</p>
+                <div className="text-sm text-gray-300 max-w-lg text-right" dir="rtl">
+                    <h1 className="text-xl uppercase font-semibold text-white inline-block">מה אנחנו עושים?</h1>
+                    <div className="w-48 h-[3px] rounded-full bg-gradient-to-r from-[#FF7742] to-[#FF9966] ml-auto"></div>
+                    <p className="mt-8">אנחנו עוזרים לעסקים קטנים להתייעל באמצעות פתרונות אוטומציה חכמים המבוססים על AI. במקום לשכור עובדים נוספים, אנחנו בונים לך את העובד המושלם - בלי עלויות גיוס ובלי כאבי ראש.</p>
+                    <p className="mt-4">בין אם אתה צריך צ'אטבוט שמטפל בפניות לקוחות, אוטומציות שחוסכות שעות עבודה, או מערכת CRM מותאמת - אנחנו מתאימים לך את הפתרון המדויק לצרכים של העסק שלך.</p>
+                    <p className="mt-4">התוצאה? עסק שעובד חכם יותר, לקוחות מרוצים יותר, ואתה פנוי להתמקד במה שחשוב באמת.</p>
                     <button className="flex items-center gap-2 mt-8 hover:-translate-y-0.5 transition bg-gradient-to-r from-[#FF7742] to-[#ff6632] py-3 px-8 rounded-full text-white shadow-lg">
                         <span>Read more</span>
                         <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">

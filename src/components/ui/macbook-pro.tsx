@@ -67,10 +67,13 @@ export function MacbookPro({
           clipPath="url(#roundedCorners)"
         >
           <div
-            className="w-full h-full bg-[#0f0f0f] overflow-hidden flex items-center justify-center"
+            className="w-full h-full bg-[#0f0f0f] overflow-clip flex items-center justify-center"
             style={{
               width: '100%',
               height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             {children}
