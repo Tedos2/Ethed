@@ -4,8 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Check, Sparkles, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import AutomationFlow from "./AutomationFlow";
-import MacBookFrame from "./MacBookFrame";
+import ResponsiveMacBook from "./ResponsiveMacBook";
 import { Aurora } from "@/components/ui/aurora";
 import CompactOrbitingSkills from "@/components/ui/CompactOrbitingSkills";
 
@@ -164,9 +163,7 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start w-full">
           {/* Right Side - Automation Flow Visualization */}
           <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 gap-0 md:gap-3">
-            <MacBookFrame>
-              <AutomationFlow />
-            </MacBookFrame>
+            <ResponsiveMacBook />
 
             {/* Orbiting Skills Visualization - Hidden on Mobile */}
             <div className="hidden md:flex flex-col items-center gap-2">

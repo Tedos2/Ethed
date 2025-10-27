@@ -209,12 +209,6 @@ export default function Contact() {
 
               {/* Privacy Consent */}
               <motion.div variants={itemVariants} className="flex items-start gap-3 flex-row-reverse">
-                <input
-                  {...register("privacyConsent")}
-                  type="checkbox"
-                  id="privacyConsent"
-                  className="w-5 h-5 mt-1 accent-orange-500 cursor-pointer"
-                />
                 <label htmlFor="privacyConsent" className="text-gray-300 text-sm flex-1 text-right">
                   אני מסכים למסור את פרטיי בהתאם ל
                   <a
@@ -225,6 +219,12 @@ export default function Contact() {
                   </a>
                   <span className="text-orange-500">*</span>
                 </label>
+                <input
+                  {...register("privacyConsent")}
+                  type="checkbox"
+                  id="privacyConsent"
+                  className="w-5 h-5 mt-1 accent-orange-500 cursor-pointer"
+                />
               </motion.div>
               {errors.privacyConsent && (
                 <p className="text-red-400 text-sm -mt-4 text-right">
