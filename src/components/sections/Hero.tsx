@@ -163,13 +163,13 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-28 md:pt-32 pb-8 md:pb-12 min-h-[90vh] md:min-h-screen flex items-start md:items-center">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start w-full">
           {/* Right Side - Automation Flow Visualization */}
-          <div className="order-1 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 gap-2 md:gap-3">
+          <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 gap-2 md:gap-3">
             <MacBookFrame>
               <AutomationFlow />
             </MacBookFrame>
 
-            {/* Orbiting Skills Visualization */}
-            <div className="flex flex-col items-center gap-2">
+            {/* Orbiting Skills Visualization - Hidden on Mobile */}
+            <div className="hidden md:flex flex-col items-center gap-2">
               <h3 className="text-lg md:text-xl font-bold text-white text-center">
                 מתחברים לכל הכלים האהובים
               </h3>
@@ -180,7 +180,7 @@ export default function Hero() {
           </div>
 
           {/* Left Side - Content (main content for RTL) */}
-          <div className="order-2 md:order-1 space-y-4 md:space-y-6 flex flex-col items-end w-full">
+          <div className="order-1 md:order-1 space-y-4 md:space-y-6 flex flex-col items-end w-full">
             {/* Main Headline */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-right w-full">
               <span className="block">
@@ -233,7 +233,7 @@ export default function Hero() {
               </p>
 
               {/* Platform Logos */}
-              <div className="flex flex-col md:flex-row-reverse gap-4 w-full justify-end items-end">
+              <div className="flex flex-row-reverse gap-3 md:gap-4 w-full justify-end items-end">
               {/* Make.com Logo */}
               <div className="relative group">
                 <div className="relative bg-white/5 border-2 border-white/20 rounded-2xl px-6 py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
