@@ -26,7 +26,8 @@
       "Bash(netstat:*)",
       "Bash(npm uninstall:*)",
       "Bash(npm run build:*)",
-      "mcp__firecrawl-mcp__firecrawl_extract"
+      "mcp__firecrawl-mcp__firecrawl_extract",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []

@@ -64,16 +64,19 @@ export function MacbookPro({
           y="21.32"
           width="501.22"
           height="323.85"
-          clipPath="url(#roundedCorners)"
         >
           <div
-            className="w-full h-full bg-[#0f0f0f] overflow-clip flex items-center justify-center"
+            xmlns="http://www.w3.org/1999/xhtml"
             style={{
-              width: '100%',
-              height: '100%',
+              width: '501.22px',
+              height: '323.85px',
+              backgroundColor: '#0f0f0f',
+              overflow: 'hidden',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              borderRadius: '5px',
+              boxSizing: 'border-box',
             }}
           >
             {children}

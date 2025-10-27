@@ -84,10 +84,10 @@ export default function AutomationFlow() {
   };
 
   const getLineClassName = (lineIndex: number) => {
-    const baseClass = "w-px h-1 sm:h-1.5 md:h-2 mx-auto border-l-2 border-dashed border-[#FF7742] transition-all duration-500";
+    const baseClass = "w-px mx-auto border-l-2 border-dashed border-[#FF7742] transition-[height,opacity] duration-500";
     return isLineVisible(lineIndex)
-      ? `${baseClass} opacity-100 scale-y-100`
-      : `${baseClass} opacity-0 scale-y-0`;
+      ? `${baseClass} h-1 sm:h-1.5 md:h-2 opacity-100`
+      : `${baseClass} h-0 opacity-0`;
   };
 
   return (
