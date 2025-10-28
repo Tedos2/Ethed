@@ -122,6 +122,7 @@ export default function Contact() {
                     id="name"
                     placeholder="הכנס את שמך"
                     dir="rtl"
+                    suppressHydrationWarning
                     className={cn(
                       "w-full bg-black/50 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 transition-all",
                       errors.name
@@ -148,6 +149,7 @@ export default function Contact() {
                     id="phone"
                     placeholder="הכנס את מספר הטלפון שלך"
                     dir="rtl"
+                    suppressHydrationWarning
                     className={cn(
                       "w-full bg-black/50 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 transition-all",
                       errors.phone
@@ -174,6 +176,7 @@ export default function Contact() {
                     id="businessField"
                     placeholder="הכנס את תחום העסק שלך"
                     dir="rtl"
+                    suppressHydrationWarning
                     className={cn(
                       "w-full bg-black/50 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 transition-all",
                       errors.businessField
@@ -202,6 +205,7 @@ export default function Contact() {
                     id="currentSystem"
                     placeholder="בחר מערכת (לא חובה)"
                     dir="rtl"
+                    suppressHydrationWarning
                     className="w-full bg-black/50 border border-orange-500/30 rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all"
                   />
                 </div>

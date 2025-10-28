@@ -12,8 +12,13 @@ export default function ResponsiveMacBook() {
 
   useEffect(() => {
     setIsMounted(true);
+
+    // Detect Safari browser
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      // Show mobile layout for mobile devices OR Safari browser
+      setIsMobile(window.innerWidth < 768 || isSafari);
     };
 
     checkMobile();

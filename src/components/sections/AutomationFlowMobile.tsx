@@ -65,7 +65,7 @@ export default function AutomationFlowMobile() {
   };
 
   const getBlockClassName = (blockIndex: number) => {
-    const baseClass = "bg-white rounded-lg p-1.5 transition-all duration-500 w-full";
+    const baseClass = "bg-white rounded-md p-1 transition-all duration-500";
 
     if (!isBlockVisible(blockIndex)) {
       return `${baseClass} opacity-0 scale-95 pointer-events-none`;
@@ -75,7 +75,7 @@ export default function AutomationFlowMobile() {
       return `${baseClass} opacity-100 scale-105 ring-2 ring-[#FF7742] shadow-xl`;
     }
 
-    return `${baseClass} opacity-70 shadow-md`;
+    return `${baseClass} opacity-60 shadow-md`;
   };
 
   const isLineVisible = (lineIndex: number) => {
@@ -95,9 +95,9 @@ export default function AutomationFlowMobile() {
       <div className="flex flex-col w-full max-w-[200px] space-y-0.5">
         {/* Block 1: Lead Created + CRM */}
         <div className={getBlockClassName(0)}>
-          <div className="flex items-center gap-1" dir="rtl">
-            <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
-              <div className="relative w-3 h-3">
+          <div className="flex items-center gap-1.5" dir="rtl">
+            <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
+              <div className="relative w-3.5 h-3.5">
                 <Image
                   src="/images to use/monday.png"
                   alt="Monday.com"
@@ -106,7 +106,7 @@ export default function AutomationFlowMobile() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[7px] leading-tight">נוצר ליד חדש</span>
+            <span className="text-gray-900 font-medium text-[9px] truncate">נוצר ליד חדש ב-CRM</span>
           </div>
         </div>
 
@@ -114,17 +114,17 @@ export default function AutomationFlowMobile() {
         <div className={getLineClassName(0)} />
 
         {/* Platform Badges with Label - "הגיע דרך:" */}
-        <div className={`flex items-center gap-1 justify-center transition-all duration-500 ${
+        <div className={`flex items-center gap-1.5 justify-center transition-all duration-500 ${
           isLineVisible(0) ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
         }`} dir="rtl">
           {/* "הגיע דרך" label */}
-          <span className="text-[6px] text-gray-400 font-medium flex-shrink-0">הגיע דרך:</span>
+          <span className="text-[9px] text-gray-400 font-medium flex-shrink-0">הגיע דרך:</span>
 
           {/* Platform Badge Icons */}
           <div className="flex gap-0.5">
             {/* Facebook */}
             <div className="bg-white rounded-full p-0.5 shadow-sm flex items-center justify-center">
-              <div className="relative w-2 h-2">
+              <div className="relative w-3 h-3">
                 <Image
                   src="/images to use/hd-blue-and-white-square-facebook-fb-logo-70175169479235560lh86s7jg.png"
                   alt="Facebook"
@@ -136,7 +136,7 @@ export default function AutomationFlowMobile() {
 
             {/* Instagram */}
             <div className="bg-white rounded-full p-0.5 shadow-sm flex items-center justify-center">
-              <div className="relative w-2 h-2">
+              <div className="relative w-3 h-3">
                 <Image
                   src="/images to use/insagram.jpeg"
                   alt="Instagram"
@@ -148,7 +148,7 @@ export default function AutomationFlowMobile() {
 
             {/* WhatsApp */}
             <div className="bg-white rounded-full p-0.5 shadow-sm flex items-center justify-center">
-              <div className="relative w-2 h-2">
+              <div className="relative w-3 h-3">
                 <Image
                   src="/images to use/pngtree-whatsapp-icon-png-image_3584845.jpg"
                   alt="WhatsApp"
@@ -165,9 +165,9 @@ export default function AutomationFlowMobile() {
 
         {/* Block 2: Warming Message */}
         <div className={getBlockClassName(1)}>
-          <div className="flex items-center gap-1" dir="rtl">
-            <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
-              <div className="relative w-3 h-3">
+          <div className="flex items-center gap-1.5" dir="rtl">
+            <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
+              <div className="relative w-3.5 h-3.5">
                 <Image
                   src="/images to use/pngtree-whatsapp-icon-png-image_3584845.jpg"
                   alt="WhatsApp"
@@ -176,7 +176,7 @@ export default function AutomationFlowMobile() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[7px] leading-tight">שלח הודעה</span>
+            <span className="text-gray-900 font-medium text-[9px] truncate">שלח הודעת חימום</span>
           </div>
         </div>
 
@@ -185,9 +185,9 @@ export default function AutomationFlowMobile() {
 
         {/* Block 3: Schedule Meeting */}
         <div className={getBlockClassName(2)}>
-          <div className="flex items-center gap-1" dir="rtl">
-            <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
-              <div className="relative w-3 h-3">
+          <div className="flex items-center gap-1.5" dir="rtl">
+            <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
+              <div className="relative w-3.5 h-3.5">
                 <Image
                   src="/images to use/Calendly-New-Logo.png"
                   alt="Calendly"
@@ -196,7 +196,7 @@ export default function AutomationFlowMobile() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[7px] leading-tight">קבע פגישה</span>
+            <span className="text-gray-900 font-medium text-[9px] truncate">קבע פגישת היכרות</span>
           </div>
         </div>
 
@@ -205,9 +205,9 @@ export default function AutomationFlowMobile() {
 
         {/* Block 4: Send Calendar Invite */}
         <div className={getBlockClassName(3)}>
-          <div className="flex items-center gap-1" dir="rtl">
-            <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
-              <div className="relative w-3 h-3">
+          <div className="flex items-center gap-1.5" dir="rtl">
+            <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
+              <div className="relative w-3.5 h-3.5">
                 <Image
                   src="/images to use/google claendar.png"
                   alt="Google Calendar"
@@ -216,7 +216,7 @@ export default function AutomationFlowMobile() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[7px] leading-tight">שלח זימון ליומן</span>
+            <span className="text-gray-900 font-medium text-[9px] truncate">שלח זימון ליומן</span>
           </div>
         </div>
       </div>

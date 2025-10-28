@@ -37,6 +37,7 @@ export default function CTABanner() {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="שם"
                   dir="rtl"
+                  suppressHydrationWarning
                   className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
                 />
                 <input
@@ -45,6 +46,7 @@ export default function CTABanner() {
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="טלפון"
                   dir="rtl"
+                  suppressHydrationWarning
                   className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
                 />
                 <input
@@ -53,10 +55,12 @@ export default function CTABanner() {
                   onChange={(e) => setBusinessField(e.target.value)}
                   placeholder="תחום העסק"
                   dir="rtl"
+                  suppressHydrationWarning
                   className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[120px] text-right"
                 />
                 <button
                   type="submit"
+                  suppressHydrationWarning
                   className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap hover:scale-105 transform"
                 >
                   <span>שליחה</span>

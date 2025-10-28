@@ -159,8 +159,8 @@ export default function Hero() {
       )}
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-32 md:pt-32 pb-8 md:pb-12 min-h-[85vh] md:min-h-screen flex items-start md:items-center">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-32 md:pt-32 pb-12 md:pb-12 min-h-screen flex items-start md:items-center">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start w-full">
           {/* Right Side - Automation Flow Visualization */}
           <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 gap-0 md:gap-3">
             <ResponsiveMacBook />
@@ -177,34 +177,69 @@ export default function Hero() {
           </div>
 
           {/* Left Side - Content (main content for RTL) */}
-          <div className="order-1 md:order-1 space-y-3 md:space-y-6 flex flex-col items-end w-full">
+          <div className="order-1 md:order-1 space-y-6 md:space-y-6 flex flex-col items-end w-full">
             {/* Main Headline */}
-            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-right w-full">
-              <span className="block">
-                עוד כמה זמן אתה מתכוון לשחק אותה{' '}
-                <span className="relative inline-block">
-                  <span className="relative z-10 text-[#FF7742]">
-                    'עסק רציני'
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold leading-snug md:leading-tight text-right w-full">
+              {/* Mobile version - 3 lines */}
+              <span className="md:hidden">
+                <span className="block mb-2">
+                  עוד כמה זמן אתה מתכוון לשחק אותה{' '}
+                  <span className="relative inline-block whitespace-nowrap">
+                    <span className="relative z-10 text-[#FF7742]">
+                      'עסק רציני'
+                    </span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
                   </span>
-                  <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                </span>
+                <span className="block">
+                  כשאין לך אפילו מענה{' '}
+                  <span className="relative inline-block whitespace-nowrap">
+                    <span className="relative z-10 text-[#FF7742]">
+                      קבוע
+                    </span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                  </span>
+                </span>
+                <span className="block">
+                  שמחזיר ללקוח תשובה{' '}
+                  <span className="relative inline-block whitespace-nowrap">
+                    <span className="relative z-10 text-[#FF7742]">
+                      בזמן
+                    </span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                  </span>
+                  ?
                 </span>
               </span>
-              <span className="block">
-                כשאין לך אפילו מענה{' '}
-                <span className="relative inline-block">
-                  <span className="relative z-10 text-[#FF7742]">
-                    קבוע
+
+              {/* Desktop version - 2 lines (original) */}
+              <span className="hidden md:inline">
+                <span className="block">
+                  עוד כמה זמן אתה מתכוון לשחק אותה{' '}
+                  <span className="relative inline-block">
+                    <span className="relative z-10 text-[#FF7742]">
+                      'עסק רציני'
+                    </span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
                   </span>
-                  <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
                 </span>
-                {' '}שמחזיר ללקוח תשובה{' '}
-                <span className="relative inline-block">
-                  <span className="relative z-10 text-[#FF7742]">
-                    בזמן
+                <span className="block">
+                  כשאין לך אפילו מענה{' '}
+                  <span className="relative inline-block">
+                    <span className="relative z-10 text-[#FF7742]">
+                      קבוע
+                    </span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
                   </span>
-                  <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                  {' '}שמחזיר ללקוח תשובה{' '}
+                  <span className="relative inline-block">
+                    <span className="relative z-10 text-[#FF7742]">
+                      בזמן
+                    </span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                  </span>
+                  ?
                 </span>
-                ?
               </span>
             </h1>
 
@@ -217,24 +252,24 @@ export default function Hero() {
                   block: 'start'
                 });
               }}
-              className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 md:px-10 md:py-6 rounded-full text-sm md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 self-start cursor-pointer"
+              className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-8 py-4 md:px-10 md:py-6 rounded-full text-base md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 self-start cursor-pointer"
             >
               לקביעת פגישה
             </Button>
 
             {/* Platform Logos Section */}
-            <div className="flex flex-col gap-4 pt-2 w-full items-end">
+            <div className="flex flex-col gap-4 pt-4 w-full items-end">
               {/* Section Header */}
-              <p className="text-sm md:text-lg text-white text-right max-w-2xl leading-snug md:leading-relaxed">
+              <p className="text-base md:text-lg text-white text-right max-w-2xl leading-relaxed">
                 אנחנו מתמחים באפיון והתאמה של הכלים והאוטומציות המתאימות ביותר לייעול המחלקות והתהליכים בעסק.
               </p>
 
               {/* Platform Logos */}
-              <div className="flex flex-row-reverse gap-3 md:gap-4 w-full justify-end items-end">
+              <div className="flex flex-row-reverse gap-4 md:gap-4 w-full justify-end items-end">
               {/* Make.com Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-16 h-7 md:w-24 md:h-10">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-20 h-9 md:w-24 md:h-10">
                     <Image
                       src="/images to use/Make-Logo-RGB@2x-1.webp"
                       alt="Make.com"
@@ -247,8 +282,8 @@ export default function Hero() {
 
               {/* Zapier Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-16 h-7 md:w-24 md:h-10">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-20 h-9 md:w-24 md:h-10">
                     <Image
                       src="/images to use/Zapier_Company_Logo_2022.png"
                       alt="Zapier"
@@ -261,8 +296,8 @@ export default function Hero() {
 
               {/* n8n Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-16 h-7 md:w-24 md:h-10">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-20 h-9 md:w-24 md:h-10">
                     <Image
                       src="/images to use/N8n-logo-new.svg.png"
                       alt="n8n"
