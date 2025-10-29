@@ -3,12 +3,22 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Calendar, Heart, Settings, UserCheck } from 'lucide-react';
 import { cardData } from '@/lib/utils';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Icon mapping
+const iconMap: { [key: string]: React.ElementType } = {
+    Calendar,
+    Heart,
+    Settings,
+    UserCheck
+};
+
 interface CardProps {
     id: number;
+    icon: string;
     title: string;
     description: string;
     index: number;
@@ -16,7 +26,7 @@ interface CardProps {
     color: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, index, totalCards, color }) => {
+const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards, color }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -183,8 +193,37 @@ const Card: React.FC<CardProps> = ({ title, description, index, totalCards, colo
 
                     {/* Content - Hebrew, right-aligned */}
                     <div style={{ position: 'relative', zIndex: 1 }}>
+                        {/* Icon with enhanced glow effect */}
+                        {icon && iconMap[icon] && (
+                            <div style={{
+                                display: 'flex',
+                                justifyContent: 'flex-end',
+                                marginBottom: '2rem'
+                            }}>
+                                <div style={{
+                                    position: 'relative',
+                                    display: 'inline-flex',
+                                    padding: '1.25rem',
+                                    borderRadius: '20px',
+                                    background: 'rgba(255, 119, 66, 0.2)',
+                                    backdropFilter: 'blur(10px)',
+                                    border: '2px solid rgba(255, 119, 66, 0.5)',
+                                    boxShadow: '0 8px 32px rgba(255, 119, 66, 0.4), 0 0 48px rgba(255, 119, 66, 0.3), inset 0 0 20px rgba(255, 119, 66, 0.1)'
+                                }}>
+                                    {React.createElement(iconMap[icon], {
+                                        size: 56,
+                                        strokeWidth: 2,
+                                        color: '#FFB088',
+                                        style: {
+                                            filter: 'drop-shadow(0 0 12px rgba(255, 119, 66, 0.9)) drop-shadow(0 0 24px rgba(255, 119, 66, 0.6))'
+                                        }
+                                    })}
+                                </div>
+                            </div>
+                        )}
+
                         <h2 style={{
-                            fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                            fontSize: 'clamp(2rem, 4vw, 3rem)',
                             fontWeight: '700',
                             color: '#ffffff',
                             marginBottom: '1.5rem',
@@ -194,9 +233,9 @@ const Card: React.FC<CardProps> = ({ title, description, index, totalCards, colo
                             {title}
                         </h2>
                         <p style={{
-                            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-                            color: 'rgba(255, 255, 255, 0.85)',
-                            lineHeight: '1.7',
+                            fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)',
+                            color: 'rgba(255, 255, 255, 0.9)',
+                            lineHeight: '1.8',
                             textAlign: 'right'
                         }}>
                             {description}
@@ -237,6 +276,7 @@ export const StackedCards: React.FC = () => {
                         <Card
                             key={card.id}
                             id={card.id}
+                            icon={card.icon}
                             title={card.title}
                             description={card.description}
                             index={index}

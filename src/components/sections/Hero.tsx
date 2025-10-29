@@ -42,7 +42,7 @@ export default function Hero() {
             </div>
 
             {/* Desktop Nav Links (center) */}
-            <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
+            <ul className="hidden md:flex items-center gap-6 text-base font-bold">
               <li>
                 <a href="#" className="hover:text-[#FF7742] transition-colors">
                   ראשי

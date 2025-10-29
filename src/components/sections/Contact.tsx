@@ -90,7 +90,7 @@ export default function Contact() {
           {/* Heading */}
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500"
+            className="text-4xl md:text-5xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500"
           >
             איך AI יכול לשפר את העסק שלך?
           </motion.h2>
@@ -98,7 +98,7 @@ export default function Contact() {
           {/* Subheading */}
           <motion.p
             variants={itemVariants}
-            className="text-xl text-center text-gray-300 mb-12"
+            className="text-xl text-center text-gray-300 mb-16"
           >
             נשמח לשמוע על העסק שלך ולהציע פתרונות מותאמים
           </motion.p>
