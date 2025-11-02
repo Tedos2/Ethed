@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { StaticBeamsBackground } from "./StaticBeamsBackground";
 
 export default function Example() {
     return (
@@ -20,12 +19,51 @@ export default function Example() {
                     <p className="mt-4 text-white">אנחנו עושים איפיון מעמיק, מבינים איפה הכאבים בעסק שלך, ומתאימים פתרון כמו כפפה ליד. האווירה? צעירה, נעימה ופתוחה לכל רעיון. אנחנו כאן כדי לפנות לך זמן ולהניע את העסק שלך לתוצאות מדידות.</p>
                 </div>
                 <div className="relative w-80 h-80 md:w-96 md:h-96 shrink-0 overflow-visible">
-                    {/* Static orange beams background - seamlessly blended */}
-                    <StaticBeamsBackground />
-
                     {/* Avatar circles container - staggered positioning */}
-                    <div className="relative w-full h-full z-10">
-                        {/* Eitan's avatar - Top left position (higher) */}
+                    <div className="relative w-full h-full">
+                        {/* Eitan's avatar shadow - BEHIND everything */}
+                        <div className="absolute top-8 left-4 w-40 h-40 md:w-48 md:h-48 pointer-events-none">
+                            {/* Primary orange shadow blob */}
+                            <div
+                                className="absolute w-[200%] h-[200%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-[60px]"
+                                style={{
+                                    background: 'radial-gradient(ellipse at center, rgba(255, 119, 66, 0.4) 0%, rgba(255, 119, 66, 0.25) 40%, rgba(255, 119, 66, 0.1) 60%, transparent 75%)',
+                                    borderRadius: '42% 58% 70% 30% / 45% 55% 60% 40%'
+                                }}
+                            />
+                            {/* Secondary offset orange shadow blob for complexity */}
+                            <div
+                                className="absolute w-[180%] h-[180%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-[80px]"
+                                style={{
+                                    background: 'radial-gradient(ellipse at center, rgba(255, 119, 66, 0.3) 0%, rgba(255, 119, 66, 0.15) 50%, transparent 75%)',
+                                    borderRadius: '60% 40% 50% 50% / 40% 60% 50% 50%',
+                                    transform: 'translate(-50%, -50%) translate(8px, 12px)'
+                                }}
+                            />
+                        </div>
+
+                        {/* Teddy's avatar shadow - BEHIND everything */}
+                        <div className="absolute bottom-8 right-4 w-40 h-40 md:w-48 md:h-48 pointer-events-none">
+                            {/* Primary orange shadow blob */}
+                            <div
+                                className="absolute w-[200%] h-[200%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-[60px]"
+                                style={{
+                                    background: 'radial-gradient(ellipse at center, rgba(255, 119, 66, 0.4) 0%, rgba(255, 119, 66, 0.25) 40%, rgba(255, 119, 66, 0.1) 60%, transparent 75%)',
+                                    borderRadius: '45% 55% 65% 35% / 50% 45% 55% 50%'
+                                }}
+                            />
+                            {/* Secondary offset orange shadow blob for complexity */}
+                            <div
+                                className="absolute w-[180%] h-[180%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-[80px]"
+                                style={{
+                                    background: 'radial-gradient(ellipse at center, rgba(255, 119, 66, 0.3) 0%, rgba(255, 119, 66, 0.15) 50%, transparent 75%)',
+                                    borderRadius: '55% 45% 60% 40% / 45% 55% 45% 55%',
+                                    transform: 'translate(-50%, -50%) translate(-8px, 10px)'
+                                }}
+                            />
+                        </div>
+
+                        {/* Eitan's avatar image - ON TOP */}
                         <div className="absolute top-8 left-4 z-10">
                             <img
                                 src="/images to use/Screenshot 2025-10-29 020844.png"
@@ -34,7 +72,7 @@ export default function Example() {
                             />
                         </div>
 
-                        {/* Teddy's avatar - Bottom right position (lower, overlapping) */}
+                        {/* Teddy's avatar image - ON TOP (overlapping Eitan) */}
                         <div className="absolute bottom-8 right-4 z-20">
                             <img
                                 src="/images to use/Screenshot 2025-10-29 020749.png"

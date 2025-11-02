@@ -115,65 +115,35 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                     position: 'relative',
                     width: '100%',
                     height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
                     padding: '3rem',
                     borderRadius: '24px',
                     background: `
-                        linear-gradient(145deg,
-                            rgba(255, 119, 66, 0.08),
-                            rgba(26, 15, 8, 0.4)
+                        linear-gradient(135deg,
+                            rgba(10, 20, 40, 0.95),
+                            rgba(5, 15, 30, 0.98)
                         )
                     `,
-                    backdropFilter: 'blur(25px) saturate(180%)',
                     border: '1px solid rgba(255, 119, 66, 0.3)',
                     boxShadow: `
-                        0 8px 32px rgba(0, 0, 0, 0.3),
-                        0 2px 8px rgba(0, 0, 0, 0.2),
-                        inset 0 1px 0 rgba(255, 119, 66, 0.2),
-                        inset 0 -1px 0 rgba(255, 119, 66, 0.1)
+                        0 8px 32px rgba(0, 0, 0, 0.4),
+                        0 2px 8px rgba(0, 0, 0, 0.3),
+                        inset 0 1px 0 rgba(255, 119, 66, 0.1),
+                        inset 0 -1px 0 rgba(255, 119, 66, 0.05)
                     `,
-                    overflow: 'hidden',
-                    textAlign: 'right'
+                    overflow: 'hidden'
                 }}>
-                    {/* Enhanced Glass reflection overlay */}
+                    {/* Center glow effect - enhances "emanating from center" feeling */}
                     <div style={{
                         position: 'absolute',
                         top: 0,
                         left: 0,
                         right: 0,
-                        height: '60%',
-                        background: 'linear-gradient(135deg, rgba(255, 119, 66, 0.15) 0%, rgba(255, 119, 66, 0.05) 50%, transparent 100%)',
-                        pointerEvents: 'none',
-                        borderRadius: '24px 24px 0 0'
-                    }} />
-
-                    {/* Glass shine effect */}
-                    <div style={{
-                        position: 'absolute',
-                        top: '10px',
-                        left: '10px',
-                        right: '10px',
-                        height: '2px',
-                        background: 'linear-gradient(90deg, transparent 0%, rgba(255, 119, 66, 0.6) 50%, transparent 100%)',
-                        borderRadius: '1px',
+                        bottom: 0,
+                        background: 'radial-gradient(ellipse 50% 60% at center, rgba(100, 140, 200, 0.08) 0%, transparent 60%)',
                         pointerEvents: 'none'
                     }} />
 
-                    {/* Side glass reflection */}
-                    <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        right: 0,
-                        width: '2px',
-                        height: '100%',
-                        background: 'linear-gradient(180deg, rgba(255, 119, 66, 0.3) 0%, transparent 50%)',
-                        borderRadius: '0 24px 24px 0',
-                        pointerEvents: 'none'
-                    }} />
-
-                    {/* Frosted glass texture */}
+                    {/* Large tech grid pattern - spotlight effect with aggressive center fade */}
                     <div style={{
                         position: 'absolute',
                         top: 0,
@@ -181,65 +151,102 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                         right: 0,
                         bottom: 0,
                         backgroundImage: `
-                            radial-gradient(circle at 20% 30%, rgba(255, 119, 66, 0.1) 1px, transparent 2px),
-                            radial-gradient(circle at 80% 70%, rgba(255, 119, 66, 0.08) 1px, transparent 2px),
-                            radial-gradient(circle at 40% 80%, rgba(255, 119, 66, 0.06) 1px, transparent 2px)
+                            linear-gradient(rgba(100, 140, 200, 0.25) 1.5px, transparent 1.5px),
+                            linear-gradient(90deg, rgba(100, 140, 200, 0.25) 1.5px, transparent 1.5px)
                         `,
-                        backgroundSize: '30px 30px, 25px 25px, 35px 35px',
+                        backgroundSize: '60px 60px',
+                        backgroundPosition: 'center center',
                         pointerEvents: 'none',
-                        borderRadius: '24px',
-                        opacity: 0.7
+                        maskImage: 'radial-gradient(ellipse 65% 85% at center, black 0%, black 15%, rgba(0,0,0,0.8) 25%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.2) 55%, transparent 70%)',
+                        WebkitMaskImage: 'radial-gradient(ellipse 65% 85% at center, black 0%, black 15%, rgba(0,0,0,0.8) 25%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.2) 55%, transparent 70%)'
                     }} />
 
-                    {/* Content - Hebrew, right-aligned */}
-                    <div style={{ position: 'relative', zIndex: 1 }}>
-                        {/* Icon with enhanced glow effect */}
-                        {icon && iconMap[icon] && (
-                            <div style={{
-                                display: 'flex',
-                                justifyContent: 'flex-end',
-                                marginBottom: '2rem'
-                            }}>
-                                <div style={{
-                                    position: 'relative',
-                                    display: 'inline-flex',
-                                    padding: '1.25rem',
-                                    borderRadius: '20px',
-                                    background: 'rgba(255, 119, 66, 0.2)',
-                                    backdropFilter: 'blur(10px)',
-                                    border: '2px solid rgba(255, 119, 66, 0.5)',
-                                    boxShadow: '0 8px 32px rgba(255, 119, 66, 0.4), 0 0 48px rgba(255, 119, 66, 0.3), inset 0 0 20px rgba(255, 119, 66, 0.1)'
-                                }}>
-                                    {React.createElement(iconMap[icon], {
-                                        size: 56,
-                                        strokeWidth: 2,
-                                        color: '#FFB088',
-                                        style: {
-                                            filter: 'drop-shadow(0 0 12px rgba(255, 119, 66, 0.9)) drop-shadow(0 0 24px rgba(255, 119, 66, 0.6))'
-                                        }
-                                    })}
-                                </div>
-                            </div>
-                        )}
+                    {/* Subtle depth overlay */}
+                    <div style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background: 'radial-gradient(ellipse at center, rgba(15, 30, 55, 0.4) 0%, transparent 60%)',
+                        pointerEvents: 'none'
+                    }} />
 
-                        <h2 style={{
-                            fontSize: 'clamp(2rem, 4vw, 3rem)',
-                            fontWeight: '700',
-                            color: '#ffffff',
-                            marginBottom: '1.5rem',
+                    {/* Two-column layout: Text content (right in RTL) + Visual placeholder (left in RTL) */}
+                    <div style={{
+                        position: 'relative',
+                        zIndex: 1,
+                        display: 'grid',
+                        gridTemplateColumns: '60% 40%',
+                        gap: '2.5rem',
+                        height: '100%',
+                        alignItems: 'center'
+                    }}
+                    className="card-content-layout"
+                    >
+                        {/* LEFT SIDE (appears right in RTL): Text Content (Hebrew, right-aligned) */}
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            height: '100%',
                             textAlign: 'right',
-                            lineHeight: '1.3'
+                            direction: 'rtl'
                         }}>
-                            {title}
-                        </h2>
-                        <p style={{
-                            fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)',
-                            color: 'rgba(255, 255, 255, 0.9)',
-                            lineHeight: '1.8',
-                            textAlign: 'right'
+                            <h2 style={{
+                                fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
+                                fontWeight: '700',
+                                color: '#ffffff',
+                                marginBottom: '1.25rem',
+                                textAlign: 'right',
+                                lineHeight: '1.3'
+                            }}>
+                                {title}
+                            </h2>
+                            <p style={{
+                                fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
+                                color: 'rgba(255, 255, 255, 0.9)',
+                                lineHeight: '1.8',
+                                textAlign: 'right'
+                            }}>
+                                {description}
+                            </p>
+                        </div>
+
+                        {/* RIGHT SIDE (appears left in RTL): Visual Placeholder Area */}
+                        <div style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: '16px',
+                            border: '2px dashed rgba(255, 119, 66, 0.3)',
+                            background: 'rgba(255, 119, 66, 0.05)',
+                            backdropFilter: 'blur(10px)',
+                            minHeight: '300px'
                         }}>
-                            {description}
-                        </p>
+                            {/* Placeholder text - will be replaced with custom images */}
+                            <div style={{
+                                textAlign: 'center',
+                                color: 'rgba(255, 255, 255, 0.4)',
+                                fontSize: '0.9rem',
+                                padding: '1rem'
+                            }}>
+                                {/* TODO: Replace with custom image
+                                    Recommended size: 350x350px
+                                    Format: PNG with transparency
+                                    Example: <img src="/path/to/image.png" alt={title} style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+                                */}
+                                <div style={{
+                                    fontSize: '3rem',
+                                    marginBottom: '0.5rem',
+                                    opacity: 0.3
+                                }}>🖼️</div>
+                                <div>Image Placeholder</div>
+                                <div style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}>350x350px recommended</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

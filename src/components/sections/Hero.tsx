@@ -67,6 +67,7 @@ export default function Hero() {
 
             {/* Desktop CTA Button */}
             <Button
+              suppressHydrationWarning
               className="hidden md:flex bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg"
             >
               לבקישה מהירה
@@ -142,6 +143,7 @@ export default function Hero() {
 
           {/* Mobile CTA Button */}
           <Button
+            suppressHydrationWarning
             className="mt-auto bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 rounded-full text-base font-medium transition-colors shadow-lg w-full"
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -246,6 +248,7 @@ export default function Hero() {
             {/* CTA Button */}
             <Button
               size="lg"
+              suppressHydrationWarning
               onClick={() => {
                 document.getElementById('contact')?.scrollIntoView({
                   behavior: 'smooth',

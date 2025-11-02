@@ -3,7 +3,7 @@ import React, { useEffect, useState, memo } from 'react';
 import Image from 'next/image';
 
 // --- Type Definitions ---
-type IconType = 'whatsapp' | 'facebook' | 'instagram' | 'manychat' | 'googlecalendar' | 'monday';
+type IconType = 'whatsapp' | 'facebook' | 'instagram' | 'manychat' | 'googlecalendar' | 'monday' | 'gmail' | 'instagram2';
 type GlowColor = 'cyan' | 'purple' | 'orange' | 'white';
 
 interface SkillIconProps {
@@ -35,28 +35,36 @@ interface GlowingOrbitPathProps {
 // --- Icon Components (Image Paths) ---
 const iconComponents: Record<IconType, { imagePath: string; color: string }> = {
   whatsapp: {
-    imagePath: '/images to use/whatsapp.svg',
+    imagePath: '/images to use/whatsapplogooo.png',
     color: '#25D366'  // WhatsApp green
   },
   facebook: {
-    imagePath: '/images to use/facbook logo.svg',
+    imagePath: '/images to use/2021_Facebook_icon.svg.png',
     color: '#1877F2'  // Facebook blue
   },
   instagram: {
-    imagePath: '/images to use/instagram.svg',
+    imagePath: '/images to use/11feaa2e60afe044c942216f1600ee9f.png',
     color: '#E4405F'  // Instagram pink/red
   },
   manychat: {
-    imagePath: '/images to use/manychat.svg',
-    color: '#FF6C47'  // ManyChat orange
+    imagePath: '/images to use/Shopify-Logo-PNG.png',
+    color: '#96BF48'  // Shopify green
   },
   googlecalendar: {
-    imagePath: '/images to use/googlecalendar.svg',
+    imagePath: '/images to use/free-google-calendar-logo-icon-svg-download-png-2476483.webp',
     color: '#4285F4'  // Google blue
   },
   monday: {
-    imagePath: '/images to use/mondaylogo.svg',
+    imagePath: '/images to use/monday-icon.svg',
     color: '#FF3D57'  // Monday.com red
+  },
+  gmail: {
+    imagePath: '/images to use/Gmail_icon_(2020).svg.png',
+    color: '#EA4335'  // Gmail red
+  },
+  instagram2: {
+    imagePath: '/images to use/Calendly-New-Logo.png',
+    color: '#006BFF'  // Calendly blue
   }
 };
 
@@ -65,13 +73,18 @@ const SkillIcon = memo(({ type }: SkillIconProps) => {
   const iconData = iconComponents[type];
   if (!iconData) return null;
 
+  // Make Shopify logo bigger inside its circle
+  const imageClass = type === 'manychat'
+    ? "w-[140%] h-[140%] object-contain"
+    : "w-full h-full object-contain";
+
   return (
     <Image
       src={iconData.imagePath}
       alt={type}
       width={40}
       height={40}
-      className="w-full h-full object-contain"
+      className={imageClass}
     />
   );
 });
@@ -79,14 +92,16 @@ SkillIcon.displayName = 'SkillIcon';
 
 // --- Configuration (Business Tools) ---
 const skillsConfig: SkillConfig[] = [
-  // Inner Orbit (Social/Communication)
+  // Inner Orbit (Social/Communication) - 4 logos evenly spaced
   { id: 'whatsapp', orbitRadius: 70, size: 36, speed: 1, iconType: 'whatsapp', phaseShift: 0, glowColor: 'cyan', label: 'WhatsApp' },
-  { id: 'facebook', orbitRadius: 70, size: 36, speed: 1, iconType: 'facebook', phaseShift: (2 * Math.PI) / 3, glowColor: 'cyan', label: 'Facebook' },
-  { id: 'instagram', orbitRadius: 70, size: 36, speed: 1, iconType: 'instagram', phaseShift: (4 * Math.PI) / 3, glowColor: 'cyan', label: 'Instagram' },
-  // Outer Orbit (Business/Automation)
-  { id: 'manychat', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'manychat', phaseShift: 0, glowColor: 'purple', label: 'ManyChat' },
-  { id: 'googlecalendar', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'googlecalendar', phaseShift: (2 * Math.PI) / 3, glowColor: 'purple', label: 'Google Calendar' },
-  { id: 'monday', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'monday', phaseShift: (4 * Math.PI) / 3, glowColor: 'purple', label: 'Monday.com' },
+  { id: 'facebook', orbitRadius: 70, size: 36, speed: 1, iconType: 'facebook', phaseShift: Math.PI / 2, glowColor: 'cyan', label: 'Facebook' },
+  { id: 'instagram', orbitRadius: 70, size: 36, speed: 1, iconType: 'instagram', phaseShift: Math.PI, glowColor: 'cyan', label: 'Instagram' },
+  { id: 'instagram2', orbitRadius: 70, size: 36, speed: 1, iconType: 'instagram2', phaseShift: (3 * Math.PI) / 2, glowColor: 'cyan', label: 'Instagram' },
+  // Outer Orbit (Business/Automation) - 4 logos evenly spaced
+  { id: 'manychat', orbitRadius: 130, size: 52, speed: -0.6, iconType: 'manychat', phaseShift: 0, glowColor: 'purple', label: 'Shopify' },
+  { id: 'googlecalendar', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'googlecalendar', phaseShift: Math.PI / 2, glowColor: 'purple', label: 'Google Calendar' },
+  { id: 'monday', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'monday', phaseShift: Math.PI, glowColor: 'purple', label: 'Monday.com' },
+  { id: 'gmail', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'gmail', phaseShift: (3 * Math.PI) / 2, glowColor: 'purple', label: 'Gmail' },
 ];
 
 // --- Orbiting Skill Component ---

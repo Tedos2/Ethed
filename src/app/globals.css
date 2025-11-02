@@ -204,3 +204,29 @@ html {
   animation: flow-indicator 1s ease-in-out infinite;
 }
 
+/* Responsive Glass Cards Layout */
+@media (max-width: 768px) {
+  .card-content-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    /* Reverse order: visual first, text second */
+    grid-auto-flow: dense !important;
+  }
+
+  /* Text content - appears second (below visual) */
+  .card-content-layout > div:first-child {
+    order: 2 !important;
+  }
+
+  /* Visual placeholder - appears first (top) */
+  .card-content-layout > div:last-child {
+    order: 1 !important;
+    min-height: 200px !important;
+    max-height: 250px !important;
+  }
+
+  .card-layout {
+    padding: 2rem !important;
+  }
+}
+

@@ -28,7 +28,7 @@ function createBeam(width: number, height: number, index: number, totalBeams: nu
         width: 60 + Math.random() * 40,
         length: height * 3, // Extended length for natural fade beyond boundaries
         angle: angle,
-        opacity: 0.08 + Math.random() * 0.07, // Reduced opacity for softer blend
+        opacity: 0.18 + Math.random() * 0.1, // Increased opacity for mobile visibility
         hue: 16 + Math.random() * 10, // Orange hue range (16-26°)
     };
 }
@@ -64,25 +64,25 @@ export function StaticBeamsBackground({
 
             const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
 
-            // Orange gradient stops
-            gradient.addColorStop(0, `hsla(${beam.hue}, 90%, 65%, 0)`);
+            // Orange gradient stops - Increased lightness for better visibility
+            gradient.addColorStop(0, `hsla(${beam.hue}, 90%, 70%, 0)`);
             gradient.addColorStop(
                 0.1,
-                `hsla(${beam.hue}, 90%, 65%, ${beam.opacity * 0.4})`
+                `hsla(${beam.hue}, 90%, 70%, ${beam.opacity * 0.4})`
             );
             gradient.addColorStop(
                 0.4,
-                `hsla(${beam.hue}, 90%, 65%, ${beam.opacity})`
+                `hsla(${beam.hue}, 90%, 70%, ${beam.opacity})`
             );
             gradient.addColorStop(
                 0.6,
-                `hsla(${beam.hue}, 90%, 65%, ${beam.opacity})`
+                `hsla(${beam.hue}, 90%, 70%, ${beam.opacity})`
             );
             gradient.addColorStop(
                 0.9,
-                `hsla(${beam.hue}, 90%, 65%, ${beam.opacity * 0.4})`
+                `hsla(${beam.hue}, 90%, 70%, ${beam.opacity * 0.4})`
             );
-            gradient.addColorStop(1, `hsla(${beam.hue}, 90%, 65%, 0)`);
+            gradient.addColorStop(1, `hsla(${beam.hue}, 90%, 70%, 0)`);
 
             ctx.fillStyle = gradient;
             ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length);
@@ -93,13 +93,13 @@ export function StaticBeamsBackground({
             if (!canvas || !ctx) return;
 
             const rect = canvas.getBoundingClientRect();
-            const totalBeams = 10; // Reduced for smaller area
+            const totalBeams = 12; // Increased for better mobile coverage
             const beams: Beam[] = Array.from({ length: totalBeams }, (_, i) =>
                 createBeam(rect.width, rect.height, i, totalBeams)
             );
 
             ctx.clearRect(0, 0, rect.width, rect.height);
-            ctx.filter = "blur(50px)"; // Increased blur for softer edges
+            ctx.filter = "blur(35px)"; // Reduced blur for better mobile visibility
 
             beams.forEach((beam) => {
                 drawBeam(ctx, beam);
@@ -125,9 +125,9 @@ export function StaticBeamsBackground({
                 ref={canvasRef}
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%]"
                 style={{
-                    filter: "blur(20px)",
-                    maskImage: "radial-gradient(ellipse at center, black 20%, black 40%, transparent 75%)",
-                    WebkitMaskImage: "radial-gradient(ellipse at center, black 20%, black 40%, transparent 75%)"
+                    filter: "blur(12px)",
+                    maskImage: "radial-gradient(ellipse at center, black 30%, black 50%, transparent 85%)",
+                    WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, black 50%, transparent 85%)"
                 }}
             />
         </div>
