@@ -29,6 +29,18 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards, color }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         const card = cardRef.current;
@@ -81,8 +93,9 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                 ref={cardRef}
                 style={{
                     position: 'relative',
-                    width: '70%',
-                    height: '450px',
+                    width: isMobile ? '92%' : '70%',
+                    height: isMobile ? 'auto' : '450px',
+                    minHeight: isMobile ? '400px' : 'auto',
                     borderRadius: '24px',
                     isolation: 'isolate',
                     top: `calc(-5vh + ${index * 25}px)`,
@@ -115,7 +128,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                     position: 'relative',
                     width: '100%',
                     height: '100%',
-                    padding: '3rem',
+                    padding: isMobile ? '1.25rem' : '3rem',
                     borderRadius: '24px',
                     background: `
                         linear-gradient(135deg,
@@ -194,20 +207,24 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                             direction: 'rtl'
                         }}>
                             <h2 style={{
-                                fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
+                                fontSize: isMobile ? 'clamp(1.5rem, 4vw, 1.75rem)' : 'clamp(1.75rem, 3.5vw, 2.5rem)',
                                 fontWeight: '700',
                                 color: '#ffffff',
                                 marginBottom: '1.25rem',
                                 textAlign: 'right',
-                                lineHeight: '1.3'
+                                lineHeight: isMobile ? '1.4' : '1.3',
+                                wordBreak: 'break-word',
+                                overflowWrap: 'break-word'
                             }}>
                                 {title}
                             </h2>
                             <p style={{
-                                fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
+                                fontSize: isMobile ? 'clamp(0.95rem, 3vw, 1.1rem)' : 'clamp(1.1rem, 2vw, 1.35rem)',
                                 color: 'rgba(255, 255, 255, 0.9)',
-                                lineHeight: '1.8',
-                                textAlign: 'right'
+                                lineHeight: isMobile ? '2.0' : '1.8',
+                                textAlign: 'right',
+                                wordBreak: 'break-word',
+                                overflowWrap: 'break-word'
                             }}>
                                 {description}
                             </p>
