@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function CTABanner() {
   const [name, setName] = useState("");
@@ -17,7 +18,13 @@ export default function CTABanner() {
 
   return (
     <section className="relative w-full py-4 md:py-6">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+      <motion.div
+        className="max-w-7xl mx-auto px-4 md:px-6"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="bg-gradient-to-r from-[#B54A2A] to-[#C14D2D] rounded-2xl p-4 md:p-6 shadow-xl shadow-orange-900/20">
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -71,7 +78,7 @@ export default function CTABanner() {
             </div>
           </form>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

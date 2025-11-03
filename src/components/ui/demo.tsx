@@ -1,11 +1,18 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Example() {
     return (
         <>
-            <section className="py-20 flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4">
+            <motion.section
+                className="py-20 flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-100px" }}
+            >
                 <div className="text-base text-white max-w-lg text-right" dir="rtl">
                     <h1 className="text-4xl uppercase font-semibold text-white inline-block">נעים מאוד,</h1>
                     <img
@@ -82,7 +89,7 @@ export default function Example() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </motion.section>
         </>
     );
 }

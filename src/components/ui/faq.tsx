@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 const App = () => {
     const [openIndex, setOpenIndex] = React.useState<number | null>(null);
@@ -26,7 +27,13 @@ const App = () => {
     return (
         <>
             <div className="py-20 relative">
-                <div className="max-w-xl mx-auto flex flex-col items-center justify-center px-4 md:px-0 relative z-50">
+                <motion.div
+                    className="max-w-xl mx-auto flex flex-col items-center justify-center px-4 md:px-0 relative z-50"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                >
                     <p className="text-[#FF7742] text-sm font-medium">שאלות נפוצות</p>
                     <h1 className="text-3xl font-semibold text-center text-white">מחפשים תשובה?</h1>
                     <p className="text-sm text-gray-400 mt-2 pb-8 text-center">
@@ -47,7 +54,7 @@ const App = () => {
                             </p>
                         </div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </>
     );
