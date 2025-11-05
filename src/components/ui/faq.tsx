@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 const App = () => {
     const [openIndex, setOpenIndex] = React.useState<number | null>(null);
@@ -26,7 +27,13 @@ const App = () => {
     return (
         <>
             <div className="py-20 relative">
-                <div className="max-w-xl mx-auto flex flex-col items-center justify-center px-4 md:px-0 relative z-50">
+                <motion.div
+                    className="max-w-xl mx-auto flex flex-col items-center justify-center px-4 md:px-0 relative z-50"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                >
                     <p className="text-[#FF7742] text-sm font-medium">שאלות נפוצות</p>
                     <h1 className="text-3xl font-semibold text-center text-white">מחפשים תשובה?</h1>
                     <p className="text-sm text-gray-400 mt-2 pb-8 text-center">
@@ -42,12 +49,12 @@ const App = () => {
                                     <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </div>
-                            <p className={`text-sm text-gray-400 transition-all duration-500 ease-in-out text-right whitespace-pre-line ${openIndex === index ? "opacity-100 max-h-[500px] translate-y-0 pt-4" : "opacity-0 max-h-0 -translate-y-2"}`} >
+                            <p className={`text-sm text-gray-400 transition-all duration-500 ease-in-out text-right whitespace-pre-line leading-none ${openIndex === index ? "opacity-100 max-h-[500px] translate-y-0 pt-4" : "opacity-0 max-h-0 -translate-y-2"}`} >
                                 {faq.answer}
                             </p>
                         </div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </>
     );

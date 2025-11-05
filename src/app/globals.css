@@ -228,5 +228,95 @@ html {
   .card-layout {
     padding: 2rem !important;
   }
+
+  /* Demo section - reduce logo and avatar sizes on mobile */
+  section img[src="/images to use/ETHEDLOGO.png"] {
+    width: 16rem !important; /* w-64 */
+    height: 5rem !important; /* h-20 */
+    margin-right: -2rem !important; /* -mr-8 */
+  }
+
+  /* Demo section - avatar container */
+  section > div.relative.w-80.h-80 {
+    width: 18rem !important; /* w-72 */
+    height: 18rem !important; /* h-72 */
+  }
+
+  /* Hero mobile menu - make responsive */
+  .fixed.w-80[class*="backdrop-blur"] {
+    width: 85vw !important;
+    max-width: 320px !important;
+  }
+
+  /* Hero logo - reduce negative margin on mobile */
+  nav .relative.w-32.h-10 {
+    margin-right: -0.5rem !important; /* -mr-2 */
+  }
+
+  /* MacBook components - responsive width */
+  .max-w-\[380px\] {
+    max-width: 95vw !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  /* MacBookFrame - increase width on mobile */
+  .max-w-\[85vw\] {
+    max-width: 90vw !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+/* Small mobile devices (320px - 480px) */
+@media (max-width: 480px) {
+  /* Demo section - even smaller on tiny screens */
+  section img[src="/images to use/ETHEDLOGO.png"] {
+    width: 14rem !important;
+    margin-right: -1.5rem !important;
+  }
+
+  section > div.relative.w-80.h-80 {
+    width: 16rem !important;
+    height: 16rem !important;
+  }
+
+  /* Hero mobile menu - smaller on tiny screens */
+  .fixed.w-80[class*="backdrop-blur"] {
+    width: 90vw !important;
+  }
+}
+
+/* Tablet breakpoint (640px - 768px) */
+@media (min-width: 640px) and (max-width: 768px) {
+  /* Restore slightly larger sizes for tablets */
+  section img[src="/images to use/ETHEDLOGO.png"] {
+    width: 20rem !important; /* w-80 */
+    height: 6rem !important; /* h-24 */
+    margin-right: -4rem !important; /* -mr-16 */
+  }
+
+  section > div.relative.w-80.h-80 {
+    width: 20rem !important; /* w-80 */
+    height: 20rem !important; /* h-80 */
+  }
+
+  .fixed.w-80[class*="backdrop-blur"] {
+    width: 20rem !important; /* w-80 */
+  }
+
+  nav .relative.w-32.h-10 {
+    margin-right: -2rem !important; /* -mr-8 */
+  }
+
+  .max-w-\[380px\] {
+    max-width: 380px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .max-w-\[85vw\] {
+    max-width: 85vw !important;
+  }
 }
 

@@ -1,6 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function ProblemSolution() {
   return (
-    <section className="py-20 bg-white">
+    <motion.section
+      className="py-20 bg-white"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12">
           Built for Business Owners Who Can't Afford to Hire
@@ -26,6 +36,6 @@ export default function ProblemSolution() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

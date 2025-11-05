@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Services() {
   const services = [
     {
@@ -15,7 +19,13 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <motion.section
+      className="py-20 bg-gray-50"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-4">What We Build</h2>
         <p className="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto">
@@ -30,6 +40,6 @@ export default function Services() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
