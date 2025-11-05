@@ -43,7 +43,7 @@ const iconComponents: Record<IconType, { imagePath: string; color: string }> = {
     color: '#1877F2'  // Facebook blue
   },
   instagram: {
-    imagePath: '/images to use/11feaa2e60afe044c942216f1600ee9f.png',
+    imagePath: '/images to use/instagram-gradient-icon.png',
     color: '#E4405F'  // Instagram pink/red
   },
   manychat: {
