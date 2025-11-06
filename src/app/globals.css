@@ -229,20 +229,19 @@ html {
 /* Responsive Glass Cards Layout */
 @media (max-width: 768px) {
   .card-content-layout {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 1.5rem !important;
-    /* Reverse order: visual first, text second */
-    grid-auto-flow: dense !important;
   }
 
-  /* Text content - appears second (below visual) */
+  /* Text content - appears first (top) */
   .card-content-layout > div:first-child {
-    order: 2 !important;
+    order: 1 !important;
   }
 
-  /* Visual placeholder - appears first (top) */
+  /* Visual placeholder - appears second (below text) */
   .card-content-layout > div:last-child {
-    order: 1 !important;
+    order: 2 !important;
     min-height: 200px !important;
     max-height: 250px !important;
   }

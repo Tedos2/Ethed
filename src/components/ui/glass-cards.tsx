@@ -210,7 +210,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                             height: '100%',
                             textAlign: 'right',
                             direction: 'rtl',
-                            order: isMobile ? 1 : undefined
+                            order: isMobile ? -1 : undefined
                         }}>
                             <h2 style={{
                                 fontSize: isMobile ? 'clamp(1.5rem, 4vw, 1.75rem)' : 'clamp(1.75rem, 3.5vw, 2.5rem)',
@@ -249,7 +249,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                             backdropFilter: imagePath ? 'none' : 'blur(10px)',
                             minHeight: '300px',
                             position: 'relative',
-                            order: isMobile ? 2 : undefined
+                            order: isMobile ? 1 : undefined
                         }}>
                             {imagePath ? (
                                 <div style={{
