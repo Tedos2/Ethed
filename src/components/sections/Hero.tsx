@@ -161,8 +161,8 @@ export default function Hero() {
       )}
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-32 md:pt-32 pb-12 md:pb-12 min-h-screen flex items-start md:items-center">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-6 pt-28 md:pt-32 pb-8 md:pb-12 min-h-screen flex items-start md:items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start w-full">
           {/* Right Side - Automation Flow Visualization */}
           <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 gap-0 md:gap-3">
             <ResponsiveMacBook />
@@ -179,9 +179,9 @@ export default function Hero() {
           </div>
 
           {/* Left Side - Content (main content for RTL) */}
-          <div className="order-1 md:order-1 space-y-6 md:space-y-6 flex flex-col items-end w-full">
+          <div className="order-1 md:order-1 space-y-4 md:space-y-6 flex flex-col items-end w-full">
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold leading-snug md:leading-tight text-right w-full" style={{ fontFamily: 'Rubik, sans-serif' }}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight md:leading-tight text-right w-full" style={{ fontFamily: 'Rubik, sans-serif' }}>
               {/* Mobile version - 3 lines */}
               <span className="md:hidden">
                 <span className="block mb-2">
@@ -253,16 +253,16 @@ export default function Hero() {
                   block: 'start'
                 });
               }}
-              className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-8 py-4 md:px-10 md:py-6 rounded-full text-base md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 self-start cursor-pointer"
+              className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 md:px-10 md:py-6 rounded-full text-sm md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 self-start cursor-pointer w-auto"
               style={{ fontFamily: 'Rubik, sans-serif' }}
             >
               לקביעת פגישה
             </Button>
 
             {/* Platform Logos Section */}
-            <div className="flex flex-col gap-4 pt-1 w-full items-end">
+            <div className="flex flex-col gap-3 md:gap-4 pt-1 w-full items-end">
               {/* Section Header */}
-              <p className="text-lg md:text-xl text-white text-right max-w-2xl leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }}>
+              <p className="text-base md:text-xl text-white text-right max-w-2xl leading-snug md:leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }}>
                 אנחנו מתמחים באפיון והתאמה של הכלים והאוטומציות המתאימות ביותר לייעול המחלקות והתהליכים בעסק.
               </p>
 

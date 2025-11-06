@@ -18,7 +18,7 @@ export default function EmotionalHook() {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section className="relative py-12 md:py-24 overflow-hidden">
       {/* Orange grid background pattern */}
       <div style={{
         position: 'absolute',
@@ -30,14 +30,19 @@ export default function EmotionalHook() {
           linear-gradient(rgba(255, 119, 66, 0.25) 1.5px, transparent 1.5px),
           linear-gradient(90deg, rgba(255, 119, 66, 0.25) 1.5px, transparent 1.5px)
         `,
-        backgroundSize: '60px 60px',
+        backgroundSize: isMobile ? '40px 40px' : '60px 60px',
         backgroundPosition: 'center center',
+        backgroundAttachment: isMobile ? 'scroll' : 'fixed',
         pointerEvents: 'none',
-        maskImage: 'radial-gradient(ellipse 65% 85% at center, black 0%, black 15%, rgba(0,0,0,0.8) 25%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.2) 55%, transparent 70%)',
-        WebkitMaskImage: 'radial-gradient(ellipse 65% 85% at center, black 0%, black 15%, rgba(0,0,0,0.8) 25%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.2) 55%, transparent 70%)'
+        maskImage: isMobile
+          ? 'radial-gradient(ellipse 80% 90% at center, black 0%, black 10%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.2) 50%, transparent 65%)'
+          : 'radial-gradient(ellipse 65% 85% at center, black 0%, black 15%, rgba(0,0,0,0.8) 25%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.2) 55%, transparent 70%)',
+        WebkitMaskImage: isMobile
+          ? 'radial-gradient(ellipse 80% 90% at center, black 0%, black 10%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.2) 50%, transparent 65%)'
+          : 'radial-gradient(ellipse 65% 85% at center, black 0%, black 15%, rgba(0,0,0,0.8) 25%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.2) 55%, transparent 70%)'
       }} />
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-6 md:px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Text content - RTL, centered */}
           <div
@@ -46,8 +51,8 @@ export default function EmotionalHook() {
               direction: 'rtl',
               display: 'flex',
               flexDirection: 'column',
-              gap: isMobile ? '1.5rem' : '2rem',
-              padding: isMobile ? '1rem' : '2rem',
+              gap: isMobile ? '1.25rem' : '2rem',
+              padding: isMobile ? '0.5rem' : '2rem',
             }}
           >
             {/* Headline with pop animation and neon border */}

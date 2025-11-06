@@ -72,14 +72,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-20 overflow-hidden">
+    <section id="contact" className="relative py-12 md:py-20 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-6 md:px-4 relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -90,7 +90,7 @@ export default function Contact() {
           {/* Heading */}
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500"
+            className="text-2xl md:text-5xl font-extrabold text-center mb-4 md:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500"
           >
             בואו נבדוק יחד איך אפשר לייעל את העסק שלכם.
           </motion.h2>
@@ -98,7 +98,7 @@ export default function Contact() {
           {/* Subheading */}
           <motion.p
             variants={itemVariants}
-            className="text-2xl text-center text-gray-300 mb-16"
+            className="text-lg md:text-2xl text-center text-gray-300 mb-8 md:mb-16"
           >
             תאמו איתנו שיחת אפיון ראשונית, ללא עלות
           </motion.p>
@@ -106,7 +106,7 @@ export default function Contact() {
           {/* Form Card */}
           <motion.div
             variants={itemVariants}
-            className="bg-black/40 backdrop-blur-md border border-orange-500/30 rounded-2xl p-8 md:p-12 shadow-2xl"
+            className="bg-black/40 backdrop-blur-md border border-orange-500/30 rounded-2xl p-6 md:p-12 shadow-2xl"
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Name Field */}
