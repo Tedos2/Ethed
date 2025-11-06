@@ -24,11 +24,11 @@ export default function Example() {
                     <p className="mt-4 text-white">הקמנו את ETHED כי ראינו עסקים נתקעים בעבודה 'שחורה' - ניהול, מעקבים, משימות חוזרות - במקום להתמקד במה שבאמת חשוב. אנחנו מאמינים שבעלי עסקים צריכים להתמקד בעסק, לא בעבודה השוטפת.</p>
                     <p className="mt-4 text-white">אנחנו עושים איפיון מעמיק, מבינים איפה הכאבים בעסק שלך, ומתאימים פתרון כמו כפפה ליד. האווירה? צעירה, נעימה ופתוחה לכל רעיון. אנחנו כאן כדי לפנות לך זמן ולהניע את העסק שלך לתוצאות מדידות.</p>
                 </div>
-                <div className="relative w-80 h-80 md:w-96 md:h-96 shrink-0 overflow-visible">
+                <div className="relative w-80 h-80 md:w-96 md:h-96 shrink-0 overflow-visible max-md:mx-auto">
                     {/* Avatar circles container - staggered positioning */}
                     <div className="relative w-full h-full">
                         {/* Eitan's avatar shadow - BEHIND everything */}
-                        <div className="absolute top-8 left-4 w-40 h-40 md:w-48 md:h-48 pointer-events-none">
+                        <div className="absolute top-1/2 -translate-y-1/2 left-4 md:top-8 md:left-4 md:translate-y-0 w-32 h-32 md:w-48 md:h-48 pointer-events-none">
                             {/* Primary orange shadow blob */}
                             <div
                                 className="absolute w-[200%] h-[200%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-[60px]"
@@ -49,7 +49,7 @@ export default function Example() {
                         </div>
 
                         {/* Teddy's avatar shadow - BEHIND everything */}
-                        <div className="absolute bottom-8 right-4 w-40 h-40 md:w-48 md:h-48 pointer-events-none">
+                        <div className="absolute top-1/2 -translate-y-1/2 right-4 md:bottom-8 md:right-4 md:top-auto md:translate-y-0 w-32 h-32 md:w-48 md:h-48 pointer-events-none">
                             {/* Primary orange shadow blob */}
                             <div
                                 className="absolute w-[200%] h-[200%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-[60px]"
@@ -70,20 +70,20 @@ export default function Example() {
                         </div>
 
                         {/* Eitan's avatar image - ON TOP */}
-                        <div className="absolute top-8 left-4 z-10">
+                        <div className="absolute top-1/2 -translate-y-1/2 left-4 md:top-8 md:left-4 md:translate-y-0 z-10">
                             <img
                                 src="/images to use/Screenshot 2025-10-29 020844.png"
                                 alt="Eitan"
-                                className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white"
+                                className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-white"
                             />
                         </div>
 
                         {/* Teddy's avatar image - ON TOP (overlapping Eitan) */}
-                        <div className="absolute bottom-8 right-4 z-20">
+                        <div className="absolute top-1/2 -translate-y-1/2 right-4 md:bottom-8 md:right-4 md:top-auto md:translate-y-0 z-20">
                             <img
                                 src="/images to use/Screenshot 2025-10-29 020749.png"
                                 alt="Teddy"
-                                className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white"
+                                className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-white"
                             />
                         </div>
                     </div>
