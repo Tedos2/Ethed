@@ -93,6 +93,8 @@ const SkillIcon = memo(({ type }: SkillIconProps) => {
       width={40}
       height={40}
       className={imageClass}
+      loading="lazy"
+      priority={false}
     />
   );
 });
@@ -128,18 +130,19 @@ const OrbitingSkill = memo(({ config, angle }: OrbitingSkillProps) => {
       style={{
         width: `${size}px`,
         height: `${size}px`,
-        transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%))`,
+        transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`,
+        willChange: 'transform',
         zIndex: isHovered ? 20 : 10,
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => window.matchMedia('(hover: hover) and (pointer: fine)').matches && setIsHovered(true)}
+      onMouseLeave={() => window.matchMedia('(hover: hover) and (pointer: fine)').matches && setIsHovered(false)}
     >
       <div
         className={`
           relative w-full h-full p-1.5 bg-gray-800/90 backdrop-blur-sm
           rounded-full flex items-center justify-center
-          transition-all duration-300 cursor-pointer
-          ${isHovered ? 'scale-125 shadow-2xl' : 'shadow-lg hover:shadow-xl'}
+          transition-all duration-300
+          ${isHovered ? 'scale-125 shadow-2xl cursor-pointer' : 'shadow-lg'}
         `}
         style={{
           boxShadow: isHovered
@@ -193,15 +196,17 @@ const GlowingOrbitPath = memo(({ radius, glowColor = 'cyan', animationDelay = 0 
         width: `${radius * 2}px`,
         height: `${radius * 2}px`,
         animationDelay: `${animationDelay}s`,
+        willChange: 'transform',
       }}
     >
       <div
-        className="absolute inset-0 rounded-full animate-pulse"
+        className="absolute inset-0 rounded-full"
         style={{
           background: `radial-gradient(circle, transparent 30%, ${colors.secondary} 70%, ${colors.primary} 100%)`,
           boxShadow: `0 0 40px ${colors.primary}, inset 0 0 40px ${colors.secondary}`,
           animation: 'pulse 4s ease-in-out infinite',
           animationDelay: `${animationDelay}s`,
+          willChange: 'opacity',
         }}
       />
       <div
@@ -242,8 +247,16 @@ export default function CompactOrbitingSkills() {
 
     let animationFrameId: number;
     let lastTime = performance.now();
+    const fps = isDesktop ? 60 : 30; // Throttle to 30fps on mobile
+    const frameInterval = 1000 / fps;
 
     const animate = (currentTime: number) => {
+      // Throttle animation updates for better mobile performance
+      if (currentTime - lastTime < frameInterval) {
+        animationFrameId = requestAnimationFrame(animate);
+        return;
+      }
+
       const deltaTime = (currentTime - lastTime) / 1000;
       lastTime = currentTime;
 
@@ -253,7 +266,7 @@ export default function CompactOrbitingSkills() {
 
     animationFrameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [isPaused, mounted]);
+  }, [isPaused, mounted, isDesktop]);
 
   // Scale up for desktop
   const scale = isDesktop ? 1.6 : 1;
@@ -266,13 +279,13 @@ export default function CompactOrbitingSkills() {
   return (
     <div
       className="relative w-full h-full flex items-center justify-center"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      onMouseEnter={() => window.matchMedia('(hover: hover) and (pointer: fine)').matches && setIsPaused(true)}
+      onMouseLeave={() => window.matchMedia('(hover: hover) and (pointer: fine)').matches && setIsPaused(false)}
     >
       {/* Central "Code" Icon */}
-      <div className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center z-10 relative shadow-2xl">
-        <div className="absolute inset-0 rounded-full bg-cyan-500/30 blur-lg animate-pulse"></div>
-        <div className="absolute inset-0 rounded-full bg-purple-500/20 blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center z-10 relative shadow-2xl" style={{ willChange: 'transform' }}>
+        <div className="absolute inset-0 rounded-full bg-cyan-500/30 blur-lg" style={{ willChange: 'opacity' }}></div>
+        <div className="absolute inset-0 rounded-full bg-purple-500/20 blur-xl" style={{ willChange: 'opacity' }}></div>
         <div className="relative z-10">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <defs>

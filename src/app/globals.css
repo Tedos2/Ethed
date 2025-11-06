@@ -207,23 +207,28 @@ html {
 
 .animate-flow {
   animation: flow 3s linear infinite;
+  will-change: transform;
 }
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-float-delayed {
   animation: float-delayed 3s ease-in-out infinite;
   animation-delay: 0.5s;
+  will-change: transform;
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 1.5s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .animate-flow-indicator {
   animation: flow-indicator 1s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Responsive Glass Cards Layout */

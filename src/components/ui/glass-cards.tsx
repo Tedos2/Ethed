@@ -39,9 +39,20 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
         };
 
         checkMobile();
-        window.addEventListener('resize', checkMobile);
 
-        return () => window.removeEventListener('resize', checkMobile);
+        // Debounce resize handler for better performance
+        let resizeTimer: NodeJS.Timeout;
+        const debouncedCheckMobile = () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(checkMobile, 150);
+        };
+
+        window.addEventListener('resize', debouncedCheckMobile);
+
+        return () => {
+            window.removeEventListener('resize', debouncedCheckMobile);
+            clearTimeout(resizeTimer);
+        };
     }, []);
 
     useEffect(() => {
@@ -54,7 +65,8 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
         // Set initial state
         gsap.set(card, {
             scale: 1,
-            transformOrigin: "center top"
+            transformOrigin: "center top",
+            willChange: "transform"
         });
 
         // Create scroll trigger for stacking effect
@@ -62,7 +74,8 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
             trigger: container,
             start: "top center",
             end: "bottom center",
-            scrub: 1,
+            scrub: 2,
+            invalidateOnRefresh: false,
             onUpdate: (self) => {
                 const progress = self.progress;
                 const scale = gsap.utils.interpolate(1, targetScale, progress);
