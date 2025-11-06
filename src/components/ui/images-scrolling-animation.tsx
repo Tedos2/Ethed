@@ -114,7 +114,7 @@ const Card: React.FC<CardProps> = ({
                       background: `linear-gradient(135deg, ${color}40, ${color}10)`,
                     }}
                   >
-                    {Icon && <Icon className="w-8 h-8 md:w-10 md:h-10" style={{ color }} />}
+                    {Icon && <Icon className="w-8 h-8 md:w-10 md:h-10" color={color} />}
                   </div>
                 </div>
 
@@ -170,7 +170,7 @@ const Card: React.FC<CardProps> = ({
                     {Icon && (
                       <Icon
                         className="w-32 h-32 md:w-40 md:h-40 opacity-20"
-                        style={{ color }}
+                        color={color}
                       />
                     )}
                   </div>

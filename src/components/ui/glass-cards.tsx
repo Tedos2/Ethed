@@ -86,16 +86,18 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                 alignItems: 'center',
                 justifyContent: 'center',
                 position: 'sticky',
-                top: 0
+                top: 0,
+                padding: isMobile ? '0 1rem' : '0'
             }}
         >
             <div
                 ref={cardRef}
                 style={{
                     position: 'relative',
-                    width: isMobile ? '92%' : '70%',
+                    width: isMobile ? 'calc(100vw - 2rem)' : '70%',
+                    maxWidth: '100%',
                     height: isMobile ? 'auto' : '450px',
-                    minHeight: isMobile ? '400px' : 'auto',
+                    minHeight: isMobile ? '350px' : 'auto',
                     borderRadius: '24px',
                     isolation: 'isolate',
                     top: `calc(-5vh + ${index * 25}px)`,
@@ -191,7 +193,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                         zIndex: 1,
                         display: 'grid',
                         gridTemplateColumns: '60% 40%',
-                        gap: '2.5rem',
+                        gap: isMobile ? '1rem' : '2.5rem',
                         height: '100%',
                         alignItems: 'center'
                     }}
