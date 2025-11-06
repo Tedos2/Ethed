@@ -6,7 +6,7 @@ export interface MacbookMobileProps {
 
 export function MacbookMobile({ children }: MacbookMobileProps) {
   return (
-    <div className="w-full max-w-[380px] mx-auto">
+    <div className="w-full max-w-[340px] mx-auto">
       {/* MacBook Frame */}
       <div className="bg-gradient-to-b from-gray-700 to-gray-800 p-3 rounded-xl shadow-2xl">
         {/* MacBook Screen */}

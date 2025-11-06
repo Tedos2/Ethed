@@ -256,11 +256,11 @@ export default function Hero() {
               </p>
 
               {/* Platform Logos */}
-              <div className="flex flex-row-reverse gap-4 md:gap-4 w-full justify-end items-end">
+              <div className="flex flex-row-reverse gap-3 md:gap-4 w-full justify-center md:justify-end items-end">
               {/* Make.com Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-20 h-9 md:w-24 md:h-10">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-16 h-8 md:w-24 md:h-10">
                     <Image
                       src="/images to use/Make-Logo-RGB@2x-1.webp"
                       alt="Make.com"
@@ -273,8 +273,8 @@ export default function Hero() {
 
               {/* Zapier Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-20 h-9 md:w-24 md:h-10">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-16 h-8 md:w-24 md:h-10">
                     <Image
                       src="/images to use/Zapier_Company_Logo_2022.png"
                       alt="Zapier"
@@ -287,8 +287,8 @@ export default function Hero() {
 
               {/* n8n Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-20 h-9 md:w-24 md:h-10">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-16 h-8 md:w-24 md:h-10">
                     <Image
                       src="/images to use/N8n-logo-new.svg.png"
                       alt="n8n"

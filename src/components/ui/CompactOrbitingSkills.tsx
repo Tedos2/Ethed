@@ -3,7 +3,7 @@ import React, { useEffect, useState, memo } from 'react';
 import Image from 'next/image';
 
 // --- Type Definitions ---
-type IconType = 'whatsapp' | 'facebook' | 'instagram' | 'manychat' | 'googlecalendar' | 'monday' | 'gmail' | 'instagram2';
+type IconType = 'whatsapp' | 'facebook' | 'instagram' | 'manychat' | 'googlecalendar' | 'monday' | 'gmail' | 'instagram2' | 'googlesheets' | 'googledrive';
 type GlowColor = 'cyan' | 'purple' | 'orange' | 'white';
 
 interface SkillIconProps {
@@ -65,6 +65,14 @@ const iconComponents: Record<IconType, { imagePath: string; color: string }> = {
   instagram2: {
     imagePath: '/images to use/messenger.png',
     color: '#006BFF'  // Messenger blue
+  },
+  googlesheets: {
+    imagePath: '/images to use/Google_Sheets_2020_Logo.svg.png',
+    color: '#0F9D58'  // Google Sheets green
+  },
+  googledrive: {
+    imagePath: '/images to use/Google_Drive_icon_(2020).svg.png',
+    color: '#4285F4'  // Google Drive blue
   }
 };
 
@@ -92,16 +100,18 @@ SkillIcon.displayName = 'SkillIcon';
 
 // --- Configuration (Business Tools) ---
 const skillsConfig: SkillConfig[] = [
-  // Inner Orbit (Social/Communication) - 4 logos evenly spaced
+  // Inner Orbit (Social/Communication) - 5 logos evenly spaced
   { id: 'whatsapp', orbitRadius: 70, size: 36, speed: 1, iconType: 'whatsapp', phaseShift: 0, glowColor: 'cyan', label: 'WhatsApp' },
-  { id: 'facebook', orbitRadius: 70, size: 36, speed: 1, iconType: 'facebook', phaseShift: Math.PI / 2, glowColor: 'cyan', label: 'Facebook' },
-  { id: 'instagram', orbitRadius: 70, size: 36, speed: 1, iconType: 'instagram', phaseShift: Math.PI, glowColor: 'cyan', label: 'Instagram' },
-  { id: 'instagram2', orbitRadius: 70, size: 36, speed: 1, iconType: 'instagram2', phaseShift: (3 * Math.PI) / 2, glowColor: 'cyan', label: 'Instagram' },
-  // Outer Orbit (Business/Automation) - 4 logos evenly spaced
+  { id: 'facebook', orbitRadius: 70, size: 36, speed: 1, iconType: 'facebook', phaseShift: (Math.PI * 2) / 5, glowColor: 'cyan', label: 'Facebook' },
+  { id: 'instagram', orbitRadius: 70, size: 36, speed: 1, iconType: 'instagram', phaseShift: (Math.PI * 4) / 5, glowColor: 'cyan', label: 'Instagram' },
+  { id: 'instagram2', orbitRadius: 70, size: 36, speed: 1, iconType: 'instagram2', phaseShift: (Math.PI * 6) / 5, glowColor: 'cyan', label: 'Messenger' },
+  { id: 'googlesheets', orbitRadius: 70, size: 36, speed: 1, iconType: 'googlesheets', phaseShift: (Math.PI * 8) / 5, glowColor: 'cyan', label: 'Google Sheets' },
+  // Outer Orbit (Business/Automation) - 5 logos evenly spaced
   { id: 'manychat', orbitRadius: 130, size: 44, speed: -0.6, iconType: 'manychat', phaseShift: 0, glowColor: 'purple', label: 'Shopify' },
-  { id: 'googlecalendar', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'googlecalendar', phaseShift: Math.PI / 2, glowColor: 'purple', label: 'Google Calendar' },
-  { id: 'monday', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'monday', phaseShift: Math.PI, glowColor: 'purple', label: 'Monday.com' },
-  { id: 'gmail', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'gmail', phaseShift: (3 * Math.PI) / 2, glowColor: 'purple', label: 'Gmail' },
+  { id: 'googlecalendar', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'googlecalendar', phaseShift: (Math.PI * 2) / 5, glowColor: 'purple', label: 'Google Calendar' },
+  { id: 'monday', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'monday', phaseShift: (Math.PI * 4) / 5, glowColor: 'purple', label: 'Monday.com' },
+  { id: 'gmail', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'gmail', phaseShift: (Math.PI * 6) / 5, glowColor: 'purple', label: 'Gmail' },
+  { id: 'googledrive', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'googledrive', phaseShift: (Math.PI * 8) / 5, glowColor: 'purple', label: 'Google Drive' },
 ];
 
 // --- Orbiting Skill Component ---
@@ -211,9 +221,20 @@ export default function CompactOrbitingSkills() {
   const [time, setTime] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+
+    // Check if desktop
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+
+    return () => window.removeEventListener('resize', checkDesktop);
   }, []);
 
   useEffect(() => {
@@ -234,9 +255,12 @@ export default function CompactOrbitingSkills() {
     return () => cancelAnimationFrame(animationFrameId);
   }, [isPaused, mounted]);
 
+  // Scale up for desktop
+  const scale = isDesktop ? 1.6 : 1;
+
   const orbitConfigs: Array<{ radius: number; glowColor: GlowColor; delay: number }> = [
-    { radius: 70, glowColor: 'white', delay: 0 },
-    { radius: 130, glowColor: 'orange', delay: 1 }
+    { radius: 70 * scale, glowColor: 'white', delay: 0 },
+    { radius: 130 * scale, glowColor: 'orange', delay: 1 }
   ];
 
   return (
@@ -246,11 +270,11 @@ export default function CompactOrbitingSkills() {
       onMouseLeave={() => setIsPaused(false)}
     >
       {/* Central "Code" Icon */}
-      <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center z-10 relative shadow-2xl">
+      <div className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center z-10 relative shadow-2xl">
         <div className="absolute inset-0 rounded-full bg-cyan-500/30 blur-lg animate-pulse"></div>
         <div className="absolute inset-0 rounded-full bg-purple-500/20 blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         <div className="relative z-10">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#06B6D4" />
@@ -276,10 +300,16 @@ export default function CompactOrbitingSkills() {
       {/* Orbiting Skills */}
       {mounted && skillsConfig.map((config) => {
         const angle = time * config.speed + (config.phaseShift || 0);
+        // Scale up size and radius for desktop
+        const scaledConfig = {
+          ...config,
+          orbitRadius: config.orbitRadius * scale,
+          size: config.size * scale
+        };
         return (
           <OrbitingSkill
             key={config.id}
-            config={config}
+            config={scaledConfig}
             angle={angle}
           />
         );

@@ -30,7 +30,9 @@
       "Bash(git checkout:*)",
       "Bash(findstr:*)",
       "Bash(lsof:*)",
-      "Bash(xargs kill -9)"
+      "Bash(xargs kill -9)",
+      "Bash(powershell -Command:*)",
+      "Bash(timeout /t 3)"
     ],
     "deny": [],
     "ask": []

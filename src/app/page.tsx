@@ -1,4 +1,4 @@
-import Hero from "@/components/sections/Hero";
+import Hero from "@/components/sections/hero";
 import EmotionalHook from "@/components/sections/EmotionalHook";
 import GlassCardsSection from "@/components/sections/GlassCardsSection";
 import Integrations from "@/components/sections/Integrations";
