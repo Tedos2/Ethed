@@ -92,15 +92,15 @@ export default function Contact() {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500"
           >
-            איך AI יכול לשפר את העסק שלך?
+            בואו נבדוק יחד איך אפשר לייעל את העסק שלכם.
           </motion.h2>
 
           {/* Subheading */}
           <motion.p
             variants={itemVariants}
-            className="text-xl text-center text-gray-300 mb-16"
+            className="text-2xl text-center text-gray-300 mb-16"
           >
-            נשמח לשמוע על העסק שלך ולהציע פתרונות מותאמים
+            תאמו איתנו שיחת אפיון ראשונית, ללא עלות
           </motion.p>
 
           {/* Form Card */}
@@ -213,7 +213,7 @@ export default function Contact() {
 
               {/* Privacy Consent */}
               <motion.div variants={itemVariants} className="flex items-start gap-3 flex-row-reverse">
-                <label htmlFor="privacyConsent" className="text-gray-300 text-sm flex-1 text-right">
+                <label htmlFor="privacyConsent" className="text-gray-300 text-base flex-1 text-right">
                   אני מסכים למסור את פרטיי בהתאם ל
                   <a
                     href="/privacy-policy"

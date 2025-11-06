@@ -45,7 +45,7 @@ export default function CTABanner() {
                   placeholder="שם"
                   dir="rtl"
                   suppressHydrationWarning
-                  className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
+                  className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
                 />
                 <input
                   type="tel"
@@ -54,7 +54,7 @@ export default function CTABanner() {
                   placeholder="טלפון"
                   dir="rtl"
                   suppressHydrationWarning
-                  className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
+                  className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
                 />
                 <input
                   type="text"
@@ -63,7 +63,7 @@ export default function CTABanner() {
                   placeholder="תחום העסק"
                   dir="rtl"
                   suppressHydrationWarning
-                  className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[120px] text-right"
+                  className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[120px] text-right"
                 />
                 <button
                   type="submit"

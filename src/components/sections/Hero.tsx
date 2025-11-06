@@ -181,7 +181,7 @@ export default function Hero() {
           {/* Left Side - Content (main content for RTL) */}
           <div className="order-1 md:order-1 space-y-6 md:space-y-6 flex flex-col items-end w-full">
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold leading-snug md:leading-tight text-right w-full">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold leading-snug md:leading-tight text-right w-full" style={{ fontFamily: 'Rubik, sans-serif' }}>
               {/* Mobile version - 3 lines */}
               <span className="md:hidden">
                 <span className="block mb-2">
@@ -206,11 +206,10 @@ export default function Hero() {
                   שמחזיר ללקוח תשובה{' '}
                   <span className="relative inline-block whitespace-nowrap">
                     <span className="relative z-10 text-[#FF7742]">
-                      בזמן
+                      בזמן?
                     </span>
                     <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
                   </span>
-                  ?
                 </span>
               </span>
 
@@ -236,11 +235,10 @@ export default function Hero() {
                   {' '}שמחזיר ללקוח תשובה{' '}
                   <span className="relative inline-block">
                     <span className="relative z-10 text-[#FF7742]">
-                      בזמן
+                      בזמן?
                     </span>
                     <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
                   </span>
-                  ?
                 </span>
               </span>
             </h1>
@@ -256,14 +254,15 @@ export default function Hero() {
                 });
               }}
               className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-8 py-4 md:px-10 md:py-6 rounded-full text-base md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 self-start cursor-pointer"
+              style={{ fontFamily: 'Rubik, sans-serif' }}
             >
               לקביעת פגישה
             </Button>
 
             {/* Platform Logos Section */}
-            <div className="flex flex-col gap-4 pt-4 w-full items-end">
+            <div className="flex flex-col gap-4 pt-1 w-full items-end">
               {/* Section Header */}
-              <p className="text-base md:text-lg text-white text-right max-w-2xl leading-relaxed">
+              <p className="text-lg md:text-xl text-white text-right max-w-2xl leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }}>
                 אנחנו מתמחים באפיון והתאמה של הכלים והאוטומציות המתאימות ביותר לייעול המחלקות והתהליכים בעסק.
               </p>
 

@@ -43,11 +43,11 @@ const iconComponents: Record<IconType, { imagePath: string; color: string }> = {
     color: '#1877F2'  // Facebook blue
   },
   instagram: {
-    imagePath: '/images to use/instagram-gradient-icon.png',
+    imagePath: '/images to use/instagram.png',
     color: '#E4405F'  // Instagram pink/red
   },
   manychat: {
-    imagePath: '/images to use/Shopify-Logo-PNG.png',
+    imagePath: '/images to use/shopify.png',
     color: '#96BF48'  // Shopify green
   },
   googlecalendar: {
@@ -63,8 +63,8 @@ const iconComponents: Record<IconType, { imagePath: string; color: string }> = {
     color: '#EA4335'  // Gmail red
   },
   instagram2: {
-    imagePath: '/images to use/Calendly-New-Logo.png',
-    color: '#006BFF'  // Calendly blue
+    imagePath: '/images to use/messenger.png',
+    color: '#006BFF'  // Messenger blue
   }
 };
 
@@ -75,7 +75,7 @@ const SkillIcon = memo(({ type }: SkillIconProps) => {
 
   // Make Shopify logo bigger inside its circle
   const imageClass = type === 'manychat'
-    ? "w-[140%] h-[140%] object-contain"
+    ? "w-[110%] h-[110%] object-contain"
     : "w-full h-full object-contain";
 
   return (
@@ -98,7 +98,7 @@ const skillsConfig: SkillConfig[] = [
   { id: 'instagram', orbitRadius: 70, size: 36, speed: 1, iconType: 'instagram', phaseShift: Math.PI, glowColor: 'cyan', label: 'Instagram' },
   { id: 'instagram2', orbitRadius: 70, size: 36, speed: 1, iconType: 'instagram2', phaseShift: (3 * Math.PI) / 2, glowColor: 'cyan', label: 'Instagram' },
   // Outer Orbit (Business/Automation) - 4 logos evenly spaced
-  { id: 'manychat', orbitRadius: 130, size: 52, speed: -0.6, iconType: 'manychat', phaseShift: 0, glowColor: 'purple', label: 'Shopify' },
+  { id: 'manychat', orbitRadius: 130, size: 44, speed: -0.6, iconType: 'manychat', phaseShift: 0, glowColor: 'purple', label: 'Shopify' },
   { id: 'googlecalendar', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'googlecalendar', phaseShift: Math.PI / 2, glowColor: 'purple', label: 'Google Calendar' },
   { id: 'monday', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'monday', phaseShift: Math.PI, glowColor: 'purple', label: 'Monday.com' },
   { id: 'gmail', orbitRadius: 130, size: 40, speed: -0.6, iconType: 'gmail', phaseShift: (3 * Math.PI) / 2, glowColor: 'purple', label: 'Gmail' },

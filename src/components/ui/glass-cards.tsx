@@ -219,7 +219,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                                 {title}
                             </h2>
                             <p style={{
-                                fontSize: isMobile ? 'clamp(0.95rem, 3vw, 1.1rem)' : 'clamp(1.1rem, 2vw, 1.35rem)',
+                                fontSize: isMobile ? 'clamp(1.1rem, 3vw, 1.3rem)' : 'clamp(1.3rem, 2vw, 1.6rem)',
                                 color: 'rgba(255, 255, 255, 0.9)',
                                 lineHeight: isMobile ? '2.0' : '1.8',
                                 textAlign: 'right',

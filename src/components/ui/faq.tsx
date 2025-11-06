@@ -34,22 +34,21 @@ const App = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <p className="text-[#FF7742] text-sm font-medium">שאלות נפוצות</p>
-                    <h1 className="text-3xl font-semibold text-center text-white">מחפשים תשובה?</h1>
-                    <p className="text-sm text-gray-400 mt-2 pb-8 text-center">
+                    <h1 className="text-3xl font-semibold text-center text-orange-500">מחפשים תשובה?</h1>
+                    <p className="text-lg md:text-xl text-white mt-2 pb-8 text-center">
                         כל מה שצריך לדעת לפני שמתחילים - ואם יש לך שאלה נוספת, נשמח לענות בשיחת ייעוץ ללא עלות
                     </p>
                     {faqs.map((faq, index) => (
                         <div className="border-b border-white/20 py-4 cursor-pointer w-full" key={index} onClick={() => setOpenIndex(openIndex === index ? null : index)} dir="rtl">
                             <div className="flex items-center justify-between">
-                                <h3 className="text-base font-medium text-white text-right flex-1">
+                                <h3 className="text-xl md:text-2xl font-semibold text-white text-right flex-1">
                                     {faq.question}
                                 </h3>
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${openIndex === index ? "rotate-180" : ""} transition-all duration-500 ease-in-out flex-shrink-0 ml-3`}>
                                     <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </div>
-                            <p className={`text-sm text-gray-400 transition-all duration-500 ease-in-out text-right whitespace-pre-line leading-none ${openIndex === index ? "opacity-100 max-h-[500px] translate-y-0 pt-4" : "opacity-0 max-h-0 -translate-y-2"}`} >
+                            <p className={`text-lg text-white transition-all duration-500 ease-in-out text-right whitespace-pre-line leading-snug ${openIndex === index ? "opacity-100 max-h-[500px] translate-y-0 pt-4" : "opacity-0 max-h-0 -translate-y-2"}`} >
                                 {faq.answer}
                             </p>
                         </div>

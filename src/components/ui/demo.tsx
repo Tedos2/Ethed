@@ -13,7 +13,7 @@ export default function Example() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-100px" }}
             >
-                <div className="text-base text-white max-w-lg text-right" dir="rtl">
+                <div className="text-xl text-white max-w-lg text-right" dir="rtl">
                     <h1 className="text-4xl uppercase font-semibold text-white inline-block">נעים מאוד,</h1>
                     <img
                         src="/images to use/ETHEDLOGO.png"

@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import EmotionalHook from "@/components/sections/EmotionalHook";
 import GlassCardsSection from "@/components/sections/GlassCardsSection";
 import CTABanner from "@/components/sections/CTABanner";
 import Demo from "@/components/ui/demo";
@@ -17,6 +18,7 @@ export default function Home() {
         {/* All sections render on top of beams */}
         <div className="relative z-10">
           <Hero />
+          <EmotionalHook />
           <GlassCardsSection />
           <CTABanner />
           <Demo />

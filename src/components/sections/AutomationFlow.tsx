@@ -107,7 +107,7 @@ export default function AutomationFlow() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[6px] sm:text-[9px] md:text-xs truncate">נוצר ליד חדש ב-CRM</span>
+            <span className="text-gray-900 font-medium text-[6px] sm:text-[9px] md:text-xs truncate" style={{ fontFamily: 'Rubik, sans-serif' }}>נוצר ליד חדש ב-CRM</span>
           </div>
         </div>
 
@@ -119,7 +119,7 @@ export default function AutomationFlow() {
           isLineVisible(0) ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
         }`}>
           {/* "הגיע דרך" label */}
-          <span className="text-[6px] sm:text-[9px] md:text-xs text-gray-400 font-medium flex-shrink-0">הגיע דרך:</span>
+          <span className="text-[6px] sm:text-[9px] md:text-xs text-gray-400 font-medium flex-shrink-0" style={{ fontFamily: 'Rubik, sans-serif' }}>הגיע דרך:</span>
 
           {/* Platform Badges */}
           <div className="flex gap-0.5 sm:gap-1">
@@ -172,7 +172,7 @@ export default function AutomationFlow() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[6px] sm:text-[9px] md:text-xs truncate">שלח הודעת חימום</span>
+            <span className="text-gray-900 font-medium text-[6px] sm:text-[9px] md:text-xs truncate" style={{ fontFamily: 'Rubik, sans-serif' }}>שלח הודעת חימום</span>
           </div>
         </div>
 
@@ -192,7 +192,7 @@ export default function AutomationFlow() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[6px] sm:text-[9px] md:text-xs truncate">קבע פגישת היכרות</span>
+            <span className="text-gray-900 font-medium text-[6px] sm:text-[9px] md:text-xs truncate" style={{ fontFamily: 'Rubik, sans-serif' }}>קבע פגישת היכרות</span>
           </div>
         </div>
 
@@ -212,7 +212,7 @@ export default function AutomationFlow() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[6px] sm:text-[9px] md:text-xs truncate">שלח זימון ליומן</span>
+            <span className="text-gray-900 font-medium text-[6px] sm:text-[9px] md:text-xs truncate" style={{ fontFamily: 'Rubik, sans-serif' }}>שלח זימון ליומן</span>
           </div>
         </div>
       </div>

@@ -14,25 +14,25 @@ export default function Footer() {
             <nav className="space-y-3">
               <a
                 href="#chatbot"
-                className="block text-gray-300 hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
               >
                 צ'אטבוט AI מתקדם
               </a>
               <a
                 href="#automation"
-                className="block text-gray-300 hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
               >
                 אוטומציות עסקיות
               </a>
               <a
                 href="#crm"
-                className="block text-gray-300 hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
               >
                 מערכת CRM מותאמת
               </a>
               <a
                 href="#analytics"
-                className="block text-gray-300 hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
               >
                 מעקב ביצועים
               </a>
@@ -47,31 +47,31 @@ export default function Footer() {
             <nav className="space-y-3">
               <a
                 href="#home"
-                className="block text-gray-300 hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
               >
                 דף הבית
               </a>
               <a
                 href="#services"
-                className="block text-gray-300 hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
               >
                 השירותים שלנו
               </a>
               <a
                 href="#demo"
-                className="block text-gray-300 hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
               >
                 הדגמה
               </a>
               <a
                 href="#faq"
-                className="block text-gray-300 hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
               >
                 שאלות נפוצות
               </a>
               <a
                 href="#contact"
-                className="block text-gray-300 hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
               >
                 צור קשר
               </a>
@@ -83,7 +83,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-white mb-6 border-b border-orange-500/30 pb-2">
               עקבו אחרינו
             </h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 text-lg mb-6">
               הצטרפו אלינו ברשתות החברתיות ועדכנו בחידושים ופתרונות חדשניים
             </p>
             <div className="flex gap-4">
@@ -127,8 +127,8 @@ export default function Footer() {
         <div className="border-t border-orange-500/20 my-8"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p className="text-gray-400 text-center md:text-right">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-400 text-base text-center md:text-right">
             © {new Date().getFullYear()} כל הזכויות שמורות ל-Ethed. אין להשתמש, להעתיק או לשכפל תכנים המוצגים באתר זה.
           </p>
           <p className="text-orange-500 font-medium">

@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_Hebrew } from "next/font/google";
 import "./globals.css";
-
-const notoSansHebrew = Noto_Sans_Hebrew({
-  variable: "--font-noto-sans-hebrew",
-  subsets: ["hebrew", "latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Ethed - פתרונות אוטומציה מבוססי AI לעסקים קטנים",
@@ -27,8 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@300..900&display=swap" rel="stylesheet" />
+      </head>
       <body
-        className={`${notoSansHebrew.variable} antialiased font-sans`}
+        className="antialiased font-sans"
         suppressHydrationWarning
       >
         {children}

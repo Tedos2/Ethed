@@ -28,7 +28,9 @@
       "Bash(npm run build:*)",
       "mcp__firecrawl-mcp__firecrawl_extract",
       "Bash(git checkout:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill -9)"
     ],
     "deny": [],
     "ask": []
