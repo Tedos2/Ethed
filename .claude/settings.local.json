@@ -33,7 +33,8 @@
       "Bash(xargs kill -9)",
       "Bash(powershell -Command:*)",
       "Bash(timeout /t 3)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(dir \"public\\images to use\"\" /b)"
     ],
     "deny": [],
     "ask": []

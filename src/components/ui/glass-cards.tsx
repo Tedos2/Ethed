@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Calendar, Heart, Settings, UserCheck } from 'lucide-react';
@@ -24,9 +25,10 @@ interface CardProps {
     index: number;
     totalCards: number;
     color: string;
+    imagePath?: string;
 }
 
-const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards, color }) => {
+const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards, color, imagePath }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [isMobile, setIsMobile] = React.useState(false);
@@ -191,8 +193,9 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                     <div style={{
                         position: 'relative',
                         zIndex: 1,
-                        display: 'grid',
-                        gridTemplateColumns: '60% 40%',
+                        display: isMobile ? 'flex' : 'grid',
+                        flexDirection: isMobile ? 'column' : undefined,
+                        gridTemplateColumns: isMobile ? undefined : '60% 40%',
                         gap: isMobile ? '1rem' : '2.5rem',
                         height: '100%',
                         alignItems: 'center'
@@ -206,7 +209,8 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                             justifyContent: 'center',
                             height: '100%',
                             textAlign: 'right',
-                            direction: 'rtl'
+                            direction: 'rtl',
+                            order: isMobile ? 1 : undefined
                         }}>
                             <h2 style={{
                                 fontSize: isMobile ? 'clamp(1.5rem, 4vw, 1.75rem)' : 'clamp(1.75rem, 3.5vw, 2.5rem)',
@@ -232,7 +236,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                             </p>
                         </div>
 
-                        {/* RIGHT SIDE (appears left in RTL): Visual Placeholder Area */}
+                        {/* RIGHT SIDE (appears left in RTL): Visual Area */}
                         <div style={{
                             width: '100%',
                             height: '100%',
@@ -240,31 +244,61 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                             alignItems: 'center',
                             justifyContent: 'center',
                             borderRadius: '16px',
-                            border: '2px dashed rgba(255, 119, 66, 0.3)',
-                            background: 'rgba(255, 119, 66, 0.05)',
-                            backdropFilter: 'blur(10px)',
-                            minHeight: '300px'
+                            border: imagePath ? 'none' : '2px dashed rgba(255, 119, 66, 0.3)',
+                            background: imagePath ? 'transparent' : 'rgba(255, 119, 66, 0.05)',
+                            backdropFilter: imagePath ? 'none' : 'blur(10px)',
+                            minHeight: '300px',
+                            position: 'relative',
+                            order: isMobile ? 2 : undefined
                         }}>
-                            {/* Placeholder text - will be replaced with custom images */}
-                            <div style={{
-                                textAlign: 'center',
-                                color: 'rgba(255, 255, 255, 0.4)',
-                                fontSize: '0.9rem',
-                                padding: '1rem'
-                            }}>
-                                {/* TODO: Replace with custom image
-                                    Recommended size: 350x350px
-                                    Format: PNG with transparency
-                                    Example: <img src="/path/to/image.png" alt={title} style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
-                                */}
+                            {imagePath ? (
                                 <div style={{
-                                    fontSize: '3rem',
-                                    marginBottom: '0.5rem',
-                                    opacity: 0.3
-                                }}>🖼️</div>
-                                <div>Image Placeholder</div>
-                                <div style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}>350x350px recommended</div>
-                            </div>
+                                    position: 'relative',
+                                    width: '100%',
+                                    height: '100%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    padding: isMobile ? '0.5rem' : '1rem'
+                                }}>
+                                    <div style={{
+                                        position: 'relative',
+                                        width: isMobile ? '60%' : '70%',
+                                        maxWidth: isMobile ? '180px' : (index >= 2 ? '320px' : '250px')
+                                    }}>
+                                        <Image
+                                            src={imagePath}
+                                            alt={title}
+                                            width={350}
+                                            height={350}
+                                            style={{
+                                                width: '100%',
+                                                height: 'auto',
+                                                objectFit: 'contain',
+                                                filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3))',
+                                                maskImage: index === 1 ? 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 15%, rgba(0,0,0,0.5) 25%, black 40%, black 100%)' : 'none',
+                                                WebkitMaskImage: index === 1 ? 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 15%, rgba(0,0,0,0.5) 25%, black 40%, black 100%)' : 'none'
+                                            }}
+                                            priority={index === 0}
+                                        />
+                                    </div>
+                                </div>
+                            ) : (
+                                <div style={{
+                                    textAlign: 'center',
+                                    color: 'rgba(255, 255, 255, 0.4)',
+                                    fontSize: '0.9rem',
+                                    padding: '1rem'
+                                }}>
+                                    <div style={{
+                                        fontSize: '3rem',
+                                        marginBottom: '0.5rem',
+                                        opacity: 0.3
+                                    }}>🖼️</div>
+                                    <div>Image Placeholder</div>
+                                    <div style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}>350x350px recommended</div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -312,6 +346,7 @@ export const StackedCards: React.FC = () => {
                             index={index}
                             totalCards={cardData.length}
                             color={card.color}
+                            imagePath={card.imagePath}
                         />
                     );
                 })}

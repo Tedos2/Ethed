@@ -14,12 +14,9 @@ export default function GlassCardsSection() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-          מה אנחנו עושים?
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+          אז מה אנחנו עושים?
         </h2>
-        <p className="text-gray-300 text-xl max-w-2xl mx-auto mb-2">
-          ארבעה תחומי ליבה שבהם אנחנו מספקים פתרונות מותאמים אישית לעסקים
-        </p>
       </motion.div>
 
       {/* Stacked Cards */}
