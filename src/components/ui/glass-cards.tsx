@@ -56,7 +56,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
         });
 
         // Create scroll trigger for stacking effect
-        ScrollTrigger.create({
+        const scrollTrigger = ScrollTrigger.create({
             trigger: container,
             start: "top center",
             end: "bottom center",
@@ -73,9 +73,9 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
         });
 
         return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            scrollTrigger.kill();
         };
-    }, [index, totalCards]);
+    }, [index, totalCards, isMobile]);
 
     return (
         <div
@@ -283,7 +283,11 @@ export const StackedCards: React.FC = () => {
             {
                 opacity: 1,
                 duration: 1.2,
-                ease: "power2.out"
+                ease: "power2.out",
+                onComplete: () => {
+                    // Refresh ScrollTrigger after animation completes
+                    ScrollTrigger.refresh();
+                }
             }
         );
     }, []);

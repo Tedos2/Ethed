@@ -27,11 +27,11 @@ export default function Hero() {
       <div className="absolute inset-0 z-[5] bg-gradient-to-b from-[#0f0f0f] via-[#0f0f0f]/70 via-30% to-transparent pointer-events-none" />
 
       {/* Navigation - Floating with Glassmorphism */}
-      <nav className="fixed top-2 md:top-4 right-4 left-4 md:right-6 md:left-6 z-50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 md:px-6 py-2 md:py-3 shadow-lg">
+      <nav className="fixed top-2 md:top-4 right-2 left-2 md:right-6 md:left-6 z-50 transition-all duration-300">
+        <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 md:px-6 py-2 md:py-3 shadow-lg">
           <div className="flex items-center justify-between">
             {/* Logo (right side for RTL) */}
-            <div className="relative w-32 h-10 md:w-48 md:h-14 -mr-4 md:-mr-8">
+            <div className="relative w-28 h-9 md:w-48 md:h-14 -mr-2 md:-mr-8">
               <Image
                 src="/images to use/ETHEDLOGO.png"
                 alt="Ethed Logo"
@@ -87,7 +87,7 @@ export default function Hero() {
 
       {/* Mobile Menu Drawer - Slides from Right (RTL) */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 bg-[#0f0f0f]/95 backdrop-blur-xl border-l border-white/10 z-[60] transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-[85vw] max-w-[320px] bg-[#0f0f0f]/95 backdrop-blur-xl border-l border-white/10 z-[60] transform transition-transform duration-300 ease-in-out ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
