@@ -32,7 +32,8 @@
       "Bash(lsof:*)",
       "Bash(xargs kill -9)",
       "Bash(powershell -Command:*)",
-      "Bash(timeout /t 3)"
+      "Bash(timeout /t 3)",
+      "Bash(git mv:*)"
     ],
     "deny": [],
     "ask": []
