@@ -126,7 +126,7 @@ export default function AutomationFlow() {
             <div className="bg-white rounded-full p-0.5 shadow-md flex items-center justify-center">
               <div className="relative w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4">
                 <Image
-                  src="/images to use/hd-blue-and-white-square-facebook-fb-logo-70175169479235560lh86s7jg.png"
+                  src="/images to use/2021_Facebook_icon.svg.png"
                   alt="Facebook"
                   fill
                   className="object-contain"
@@ -136,7 +136,7 @@ export default function AutomationFlow() {
             <div className="bg-white rounded-full p-0.5 shadow-md flex items-center justify-center">
               <div className="relative w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4">
                 <Image
-                  src="/images to use/insagram.jpeg"
+                  src="/images to use/instagram.png"
                   alt="Instagram"
                   fill
                   className="object-contain"
@@ -146,7 +146,7 @@ export default function AutomationFlow() {
             <div className="bg-white rounded-full p-0.5 shadow-md flex items-center justify-center">
               <div className="relative w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4">
                 <Image
-                  src="/images to use/pngtree-whatsapp-icon-png-image_3584845.jpg"
+                  src="/images to use/whatsapplogooo.png"
                   alt="WhatsApp"
                   fill
                   className="object-contain"

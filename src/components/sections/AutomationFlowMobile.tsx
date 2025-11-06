@@ -126,7 +126,7 @@ export default function AutomationFlowMobile() {
             <div className="bg-white rounded-full p-0.5 shadow-sm flex items-center justify-center">
               <div className="relative w-3 h-3">
                 <Image
-                  src="/images to use/hd-blue-and-white-square-facebook-fb-logo-70175169479235560lh86s7jg.png"
+                  src="/images to use/2021_Facebook_icon.svg.png"
                   alt="Facebook"
                   fill
                   className="object-contain"
@@ -138,7 +138,7 @@ export default function AutomationFlowMobile() {
             <div className="bg-white rounded-full p-0.5 shadow-sm flex items-center justify-center">
               <div className="relative w-3 h-3">
                 <Image
-                  src="/images to use/insagram.jpeg"
+                  src="/images to use/instagram.png"
                   alt="Instagram"
                   fill
                   className="object-contain"
@@ -150,7 +150,7 @@ export default function AutomationFlowMobile() {
             <div className="bg-white rounded-full p-0.5 shadow-sm flex items-center justify-center">
               <div className="relative w-3 h-3">
                 <Image
-                  src="/images to use/pngtree-whatsapp-icon-png-image_3584845.jpg"
+                  src="/images to use/whatsapplogooo.png"
                   alt="WhatsApp"
                   fill
                   className="object-contain"
@@ -169,7 +169,7 @@ export default function AutomationFlowMobile() {
             <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
               <div className="relative w-3.5 h-3.5">
                 <Image
-                  src="/images to use/pngtree-whatsapp-icon-png-image_3584845.jpg"
+                  src="/images to use/whatsapplogooo.png"
                   alt="WhatsApp"
                   fill
                   className="object-contain"
