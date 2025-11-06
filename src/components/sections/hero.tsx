@@ -10,6 +10,26 @@ import { Aurora } from "@/components/ui/aurora";
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Smooth scroll handler with offset
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const offset = 100; // Offset from top in pixels
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Close mobile menu if open
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <section className="relative min-h-screen text-white">
       {/* Aurora Background */}
@@ -41,25 +61,32 @@ export default function Hero() {
             </div>
 
             {/* Desktop Nav Links (center) */}
-            <ul className="hidden md:flex items-center gap-6 text-base font-bold">
+            <ul className="hidden md:flex items-center gap-12 text-lg font-bold">
               <li>
-                <a href="#" className="hover:text-[#FF7742] transition-colors">
-                  ראשי
+                <a
+                  href="#about"
+                  onClick={(e) => handleSmoothScroll(e, 'about')}
+                  className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                >
+                  עלינו
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#FF7742] transition-colors">
-                  מרכז הקורס
+                <a
+                  href="#solutions"
+                  onClick={(e) => handleSmoothScroll(e, 'solutions')}
+                  className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                >
+                  פתרונות
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#FF7742] transition-colors">
-                  שיעורי הקורס
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#FF7742] transition-colors">
-                  ממליצים
+                <a
+                  href="#contact"
+                  onClick={(e) => handleSmoothScroll(e, 'contact')}
+                  className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                >
+                  צור קשר
                 </a>
               </li>
             </ul>
@@ -67,9 +94,21 @@ export default function Hero() {
             {/* Desktop CTA Button */}
             <Button
               suppressHydrationWarning
-              className="hidden md:flex bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg"
+              onClick={() => {
+                const contactElement = document.getElementById('contact');
+                if (contactElement) {
+                  const offset = 100;
+                  const elementPosition = contactElement.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.scrollY - offset;
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+              className="hidden md:flex bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg cursor-pointer"
             >
-              לבקישה מהירה
+              בואו לשמוע עוד :)
             </Button>
 
             {/* Mobile Burger Menu Button */}
@@ -104,38 +143,29 @@ export default function Hero() {
           <ul className="flex flex-col gap-6 text-right">
             <li>
               <a
-                href="#"
-                className="text-lg font-medium hover:text-[#FF7742] transition-colors block py-2"
-                onClick={() => setMobileMenuOpen(false)}
+                href="#about"
+                onClick={(e) => handleSmoothScroll(e, 'about')}
+                className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
               >
-                ראשי
+                עלינו
               </a>
             </li>
             <li>
               <a
-                href="#"
-                className="text-lg font-medium hover:text-[#FF7742] transition-colors block py-2"
-                onClick={() => setMobileMenuOpen(false)}
+                href="#solutions"
+                onClick={(e) => handleSmoothScroll(e, 'solutions')}
+                className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
               >
-                מרכז הקורס
+                פתרונות
               </a>
             </li>
             <li>
               <a
-                href="#"
-                className="text-lg font-medium hover:text-[#FF7742] transition-colors block py-2"
-                onClick={() => setMobileMenuOpen(false)}
+                href="#contact"
+                onClick={(e) => handleSmoothScroll(e, 'contact')}
+                className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
               >
-                שיעורי הקורס
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-lg font-medium hover:text-[#FF7742] transition-colors block py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                ממליצים
+                צור קשר
               </a>
             </li>
           </ul>
@@ -143,10 +173,22 @@ export default function Hero() {
           {/* Mobile CTA Button */}
           <Button
             suppressHydrationWarning
-            className="mt-auto bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 rounded-full text-base font-medium transition-colors shadow-lg w-full"
-            onClick={() => setMobileMenuOpen(false)}
+            className="mt-auto bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 rounded-full text-base font-medium transition-colors shadow-lg w-full cursor-pointer"
+            onClick={() => {
+              const contactElement = document.getElementById('contact');
+              if (contactElement) {
+                const offset = 100;
+                const elementPosition = contactElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - offset;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
+              setMobileMenuOpen(false);
+            }}
           >
-            לבקישה מהירה
+            בואו לשמוע עוד :)
           </Button>
         </div>
       </div>

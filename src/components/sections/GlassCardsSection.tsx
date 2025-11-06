@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function GlassCardsSection() {
   return (
-    <section className="relative w-full">
+    <section id="solutions" className="relative w-full">
       {/* Section Header */}
       <motion.div
         className="max-w-7xl mx-auto px-4 md:px-6 pt-4 md:pt-10 pb-0 text-center"

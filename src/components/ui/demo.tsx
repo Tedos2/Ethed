@@ -7,6 +7,7 @@ export default function Example() {
     return (
         <>
             <motion.section
+                id="about"
                 className="py-20 flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
