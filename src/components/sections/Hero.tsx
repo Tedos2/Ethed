@@ -6,7 +6,6 @@ import { Check, Sparkles, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ResponsiveMacBook from "./ResponsiveMacBook";
 import { Aurora } from "@/components/ui/aurora";
-import CompactOrbitingSkills from "@/components/ui/CompactOrbitingSkills";
 
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -164,18 +163,8 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-6 pt-28 md:pt-32 pb-8 md:pb-12 min-h-screen flex items-start md:items-center">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start w-full">
           {/* Right Side - Automation Flow Visualization */}
-          <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 gap-0 md:gap-3">
+          <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2">
             <ResponsiveMacBook />
-
-            {/* Orbiting Skills Visualization - Hidden on Mobile */}
-            <div className="hidden md:flex flex-col items-center gap-2">
-              <h3 className="text-lg md:text-xl font-bold text-white text-center">
-                מתחברים לכל הכלים האהובים
-              </h3>
-              <div className="w-[220px] h-[220px] md:w-[260px] md:h-[260px]">
-                <CompactOrbitingSkills />
-              </div>
-            </div>
           </div>
 
           {/* Left Side - Content (main content for RTL) */}

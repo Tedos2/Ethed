@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import EmotionalHook from "@/components/sections/EmotionalHook";
 import GlassCardsSection from "@/components/sections/GlassCardsSection";
+import Integrations from "@/components/sections/Integrations";
 import CTABanner from "@/components/sections/CTABanner";
 import Demo from "@/components/ui/demo";
 import FAQ from "@/components/ui/faq";
@@ -20,6 +21,7 @@ export default function Home() {
           <Hero />
           <EmotionalHook />
           <GlassCardsSection />
+          <Integrations />
           <CTABanner />
           <Demo />
           <FAQ />
