@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm run dev:*)",
       "Bash(npm install:*)",
-      "Bash(taskkill //F //PID 34148)"
+      "Bash(taskkill //F //PID 34148)",
+      "Bash(lsof:*)"
     ],
     "deny": [],
     "ask": []
