@@ -4,7 +4,14 @@
       "Bash(npm run dev:*)",
       "Bash(npm install:*)",
       "Bash(taskkill //F //PID 34148)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(timeout:*)",
+      "Bash(taskkill /F /PID 23752)",
+      "Bash(taskkill //F //PID 23752)",
+      "Bash(ping:*)",
+      "Bash(nul)",
+      "Bash(powershell -Command:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

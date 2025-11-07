@@ -71,6 +71,7 @@ export default function IntegrationsSection() {
                       src={integration.logo}
                       alt={integration.name}
                       fill
+                      sizes="48px"
                       className="object-contain"
                     />
                   </div>

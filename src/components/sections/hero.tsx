@@ -56,6 +56,7 @@ export default function Hero() {
                 src="/images to use/ETHEDLOGO.png"
                 alt="Ethed Logo"
                 fill
+                sizes="(max-width: 768px) 112px, 192px"
                 className="object-contain drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
                 priority
               />
@@ -115,7 +116,8 @@ export default function Hero() {
             {/* Mobile Burger Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 hover:bg-white/10 rounded-full transition-colors"
+              className="md:hidden p-3 hover:bg-white/10 rounded-full transition-colors"
+              style={{ minWidth: '44px', minHeight: '44px' }}
               aria-label="Toggle menu"
             >
               <Menu className="w-6 h-6" />
@@ -125,16 +127,15 @@ export default function Hero() {
       </nav>
 
       {/* Mobile Menu Drawer - Slides from Right (RTL) */}
-      <div
-        className={`fixed top-0 right-0 h-full w-[85vw] max-w-[320px] bg-[#0f0f0f]/95 backdrop-blur-xl border-l border-white/10 z-[60] transform transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+      {mobileMenuOpen && (
+        <div className="fixed top-0 right-0 h-full w-[85vw] max-w-[320px] bg-[#0f0f0f]/95 backdrop-blur-xl border-l border-white/10 z-[60] animate-in slide-in-from-right duration-300"
+        >
         <div className="flex flex-col h-full p-6">
           {/* Close Button */}
           <button
             onClick={() => setMobileMenuOpen(false)}
-            className="self-end p-2 hover:bg-white/10 rounded-full transition-colors mb-8"
+            className="self-end p-3 hover:bg-white/10 rounded-full transition-colors mb-8"
+            style={{ minWidth: '44px', minHeight: '44px' }}
             aria-label="Close menu"
           >
             <X className="w-6 h-6" />
@@ -174,7 +175,8 @@ export default function Hero() {
           {/* Mobile CTA Button */}
           <Button
             suppressHydrationWarning
-            className="mt-auto bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 rounded-full text-base font-medium transition-colors shadow-lg w-full cursor-pointer"
+            className="mt-auto bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-4 rounded-full text-base font-medium transition-colors shadow-lg w-full cursor-pointer"
+            style={{ minHeight: '48px' }}
             onClick={() => {
               const contactElement = document.getElementById('contact');
               if (contactElement) {
@@ -192,7 +194,8 @@ export default function Hero() {
             בואו לשמוע עוד :)
           </Button>
         </div>
-      </div>
+        </div>
+      )}
 
       {/* Mobile Menu Backdrop Overlay */}
       {mobileMenuOpen && (
@@ -210,7 +213,7 @@ export default function Hero() {
             <ResponsiveMacBook />
 
             {/* 3D Robot Scene - Desktop only */}
-            <div className="hidden md:block w-[85%] max-w-lg mx-auto relative -mt-20 md:-mt-24">
+            <div className="hidden md:flex w-[70%] max-w-md mx-auto relative -mt-16 md:-mt-20 justify-center items-center">
               <Spline3DScene />
             </div>
           </div>
@@ -313,6 +316,7 @@ export default function Hero() {
                       src="/images to use/Make-Logo-RGB@2x-1.webp"
                       alt="Make.com"
                       fill
+                      sizes="(max-width: 768px) 64px, 96px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -327,6 +331,7 @@ export default function Hero() {
                       src="/images to use/Zapier_Company_Logo_2022.png"
                       alt="Zapier"
                       fill
+                      sizes="(max-width: 768px) 64px, 96px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -341,6 +346,7 @@ export default function Hero() {
                       src="/images to use/N8n-logo-new.svg.png"
                       alt="n8n"
                       fill
+                      sizes="(max-width: 768px) 64px, 96px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
