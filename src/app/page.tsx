@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/hero";
+import Mobile3DScene from "@/components/sections/Mobile3DScene";
 import EmotionalHook from "@/components/sections/EmotionalHook";
 import GlassCardsSection from "@/components/sections/GlassCardsSection";
 import Integrations from "@/components/sections/Integrations";
@@ -8,6 +9,7 @@ import FAQ from "@/components/ui/faq";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 import { FullPageBeamsBackground } from "@/components/ui/FullPageBeamsBackground";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
         {/* All sections render on top of beams */}
         <div className="relative z-10">
           <Hero />
+          <Mobile3DScene />
           <EmotionalHook />
           <GlassCardsSection />
           <Integrations />
@@ -27,6 +30,9 @@ export default function Home() {
           <FAQ />
           <Contact />
         </div>
+
+        {/* Floating WhatsApp button */}
+        <FloatingWhatsApp />
       </main>
       <Footer />
     </>

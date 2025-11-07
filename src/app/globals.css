@@ -346,3 +346,13 @@ html {
   }
 }
 
+/* Hide Spline "Built with Spline" logo */
+#logo,
+[id="logo"],
+canvas + div > a[target="_blank"],
+canvas + div > a[href*="spline"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

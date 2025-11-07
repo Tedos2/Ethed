@@ -6,6 +6,7 @@ import { Check, Sparkles, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ResponsiveMacBook from "./ResponsiveMacBook";
 import { Aurora } from "@/components/ui/aurora";
+import Spline3DScene from "@/components/ui/Spline3DScene";
 
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -202,11 +203,16 @@ export default function Hero() {
       )}
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-6 pt-28 md:pt-32 pb-8 md:pb-12 min-h-screen flex items-start md:items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-6 pt-28 md:pt-32 pb-8 md:pb-2 min-h-screen flex items-start md:items-center">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start w-full">
           {/* Right Side - Automation Flow Visualization */}
-          <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2">
+          <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 space-y-8">
             <ResponsiveMacBook />
+
+            {/* 3D Robot Scene - Desktop only */}
+            <div className="hidden md:block w-[85%] max-w-lg mx-auto relative -mt-20 md:-mt-24">
+              <Spline3DScene />
+            </div>
           </div>
 
           {/* Left Side - Content (main content for RTL) */}
