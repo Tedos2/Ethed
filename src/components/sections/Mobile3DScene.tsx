@@ -9,10 +9,10 @@ export default function Mobile3DScene() {
       style={{
         overflow: 'visible',
         contain: 'none',
-        height: '650px',
+        height: '380px',
         position: 'relative',
-        marginTop: '60px',
-        marginBottom: '40px'
+        marginTop: '0px',
+        marginBottom: '0px'
       }}
     >
       <div
