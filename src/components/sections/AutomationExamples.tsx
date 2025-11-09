@@ -51,7 +51,7 @@ export default function AutomationExamples() {
     <section id="automations" className="py-12 md:py-24 px-4 md:px-6 relative">
       <div className="max-w-7xl mx-auto">
         {/* 4-card grid: 2x2 mobile/tablet, 4 columns desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-fr">
           {automationCards.map((card, index) => (
             <motion.div
               key={card.id}
@@ -77,7 +77,7 @@ export default function AutomationExamples() {
                   overflow-hidden
                 `}
                 style={{
-                  minHeight: '320px',
+                  minHeight: '280px',
                   background: 'linear-gradient(to bottom, rgba(15, 15, 15, 0.85), rgba(42, 21, 10, 0.85), rgba(26, 15, 8, 0.85))'
                 }}
               >

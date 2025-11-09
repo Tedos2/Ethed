@@ -81,12 +81,30 @@ export default function IdeasToReality() {
             <div
               className="relative w-full max-w-md h-[300px] md:h-[400px] lg:h-[450px] flex items-center justify-center"
             >
+              {/* Yellow neon glow behind lightbulb */}
+              <div
+                className="absolute inset-0 flex items-center justify-center"
+                style={{
+                  filter: 'blur(30px)',
+                  opacity: 0.8
+                }}
+              >
+                <div
+                  style={{
+                    width: '75%',
+                    height: '75%',
+                    background: 'radial-gradient(circle, rgba(255, 235, 59, 0.9) 0%, rgba(255, 215, 0, 0.6) 35%, rgba(255, 193, 7, 0.3) 60%, transparent 80%)',
+                    borderRadius: '50%'
+                  }}
+                />
+              </div>
+
               <Image
                 src="/images to use/neon-light-bulb-icon-design.png"
                 alt="Neon Lightbulb Icon"
                 width={400}
                 height={400}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain relative z-10"
                 priority
               />
             </div>
