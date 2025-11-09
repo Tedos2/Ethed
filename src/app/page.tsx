@@ -4,7 +4,9 @@ import EmotionalHook from "@/components/sections/EmotionalHook";
 import GlassCardsSection from "@/components/sections/GlassCardsSection";
 import Integrations from "@/components/sections/Integrations";
 import CTABanner from "@/components/sections/CTABanner";
+import AutomationExamples from "@/components/sections/AutomationExamples";
 import Demo from "@/components/ui/demo";
+import IdeasToReality from "@/components/sections/IdeasToReality";
 import FAQ from "@/components/ui/faq";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
@@ -26,7 +28,9 @@ export default function Home() {
           <GlassCardsSection />
           <Integrations />
           <CTABanner />
+          <AutomationExamples />
           <Demo />
+          <IdeasToReality />
           <FAQ />
           <Contact />
         </div>

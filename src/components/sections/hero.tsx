@@ -62,7 +62,7 @@ export default function Hero() {
               />
             </div>
 
-            {/* Desktop Nav Links (center) */}
+            {/* Desktop Nav Links (center) - Updated */}
             <ul className="hidden md:flex items-center gap-12 text-lg font-bold">
               <li>
                 <a
@@ -80,6 +80,15 @@ export default function Hero() {
                   className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
                 >
                   פתרונות
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#automations"
+                  onClick={(e) => handleSmoothScroll(e, 'automations')}
+                  className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                >
+                  הבוטים שלנו
                 </a>
               </li>
               <li>
@@ -159,6 +168,15 @@ export default function Hero() {
                 className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
               >
                 פתרונות
+              </a>
+            </li>
+            <li>
+              <a
+                href="#automations"
+                onClick={(e) => handleSmoothScroll(e, 'automations')}
+                className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+              >
+                הבוטים שלנו
               </a>
             </li>
             <li>
