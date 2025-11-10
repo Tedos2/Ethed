@@ -11,7 +11,19 @@
       "Bash(ping:*)",
       "Bash(nul)",
       "Bash(powershell -Command:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(del \"src\\app\\favicon.ico\" 2)",
+      "Bash(taskkill //F //PID 36992)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill //F //PID 4804)",
+      "Bash(npx next dev --turbo=false)",
+      "Bash(taskkill //F //PID 17404)",
+      "Bash(taskkill //F //PID 39668)",
+      "Bash(taskkill //F //PID 20260)",
+      "Bash(taskkill:*)",
+      "Bash(npx next dev --help:*)",
+      "Bash(npx next dev:*)"
     ],
     "deny": [],
     "ask": []
