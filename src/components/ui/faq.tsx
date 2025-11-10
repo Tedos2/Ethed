@@ -39,18 +39,31 @@ const App = () => {
                         כל מה שצריך לדעת לפני שמתחילים - ואם יש לך שאלה נוספת, נשמח לענות בשיחת ייעוץ ללא עלות
                     </p>
                     {faqs.map((faq, index) => (
-                        <div className="border-b border-white/20 py-3 md:py-4 cursor-pointer w-full" key={index} onClick={() => setOpenIndex(openIndex === index ? null : index)} dir="rtl">
-                            <div className="flex items-center justify-between gap-3">
+                        <div className="border-b border-white/20 py-3 md:py-4 w-full" key={index} dir="rtl">
+                            <button
+                                className="flex items-center justify-between gap-3 w-full cursor-pointer text-left"
+                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                aria-expanded={openIndex === index}
+                                aria-controls={`faq-answer-${index}`}
+                            >
                                 <h3 className="text-lg md:text-2xl font-semibold text-white text-right flex-1">
                                     {faq.question}
                                 </h3>
-                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${openIndex === index ? "rotate-180" : ""} transition-all duration-500 ease-in-out flex-shrink-0 ml-2 md:ml-3 md:w-[18px] md:h-[18px]`}>
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${openIndex === index ? "rotate-180" : ""} transition-all duration-300 ease-in-out flex-shrink-0 ml-2 md:ml-3 md:w-[18px] md:h-[18px]`}>
                                     <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
+                            </button>
+                            <div
+                                id={`faq-answer-${index}`}
+                                className={`grid transition-all duration-500 ease-in-out ${openIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                                style={{ pointerEvents: openIndex === index ? 'auto' : 'none' }}
+                            >
+                                <div className="overflow-hidden">
+                                    <p className={`text-base md:text-lg text-white text-right whitespace-pre-line leading-snug ${openIndex === index ? "pt-3 md:pt-4 pb-1" : ""}`}>
+                                        {faq.answer}
+                                    </p>
+                                </div>
                             </div>
-                            <p className={`text-base md:text-lg text-white transition-all duration-500 ease-in-out text-right whitespace-pre-line leading-snug ${openIndex === index ? "opacity-100 max-h-[500px] translate-y-0 pt-3 md:pt-4" : "opacity-0 max-h-0 -translate-y-2"}`} >
-                                {faq.answer}
-                            </p>
                         </div>
                     ))}
                 </motion.div>

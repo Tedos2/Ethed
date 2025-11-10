@@ -12,6 +12,7 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 import { FullPageBeamsBackground } from "@/components/ui/FullPageBeamsBackground";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import AccessibilityWidget from "@/components/ui/AccessibilityWidget";
 
 export default function Home() {
   return (
@@ -37,6 +38,9 @@ export default function Home() {
 
         {/* Floating WhatsApp button */}
         <FloatingWhatsApp />
+
+        {/* Accessibility Widget */}
+        <AccessibilityWidget />
       </main>
       <Footer />
     </>

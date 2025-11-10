@@ -2,8 +2,22 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function IdeasToReality() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section className="py-12 md:py-24 px-4 md:px-6 relative">
       <div className="max-w-6xl mx-auto">
@@ -26,11 +40,16 @@ export default function IdeasToReality() {
                   linear-gradient(rgba(255, 119, 66, 0.25) 1.5px, transparent 1.5px),
                   linear-gradient(90deg, rgba(255, 119, 66, 0.25) 1.5px, transparent 1.5px)
                 `,
-                backgroundSize: '60px 60px',
+                backgroundSize: isMobile ? '40px 40px' : '60px 60px',
                 backgroundPosition: 'center center',
+                backgroundAttachment: isMobile ? 'scroll' : 'fixed',
                 pointerEvents: 'none',
-                maskImage: 'radial-gradient(ellipse 90% 100% at center, black 0%, black 15%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 70%, transparent 85%)',
-                WebkitMaskImage: 'radial-gradient(ellipse 90% 100% at center, black 0%, black 15%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 70%, transparent 85%)'
+                maskImage: isMobile
+                  ? 'radial-gradient(ellipse 80% 90% at center, black 0%, black 10%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.2) 50%, transparent 65%)'
+                  : 'radial-gradient(ellipse 90% 100% at center, black 0%, black 15%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 70%, transparent 85%)',
+                WebkitMaskImage: isMobile
+                  ? 'radial-gradient(ellipse 80% 90% at center, black 0%, black 10%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.2) 50%, transparent 65%)'
+                  : 'radial-gradient(ellipse 90% 100% at center, black 0%, black 15%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 70%, transparent 85%)'
               }}
             />
             <div

@@ -239,21 +239,21 @@ export default function Hero() {
           {/* Left Side - Content (main content for RTL) */}
           <div className="order-1 md:order-1 space-y-4 md:space-y-6 flex flex-col items-end w-full">
             {/* Main Headline */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight md:leading-tight text-right w-full" style={{ fontFamily: 'Rubik, sans-serif' }}>
+            <h1 className="text-[1.75rem] sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug md:leading-tight text-right w-full px-2 md:px-0" style={{ fontFamily: 'Rubik, sans-serif' }}>
               {/* Mobile version - 3 lines */}
               <span className="md:hidden">
                 <span className="block mb-2">
                   עוד כמה זמן אתה מתכוון לשחק אותה{' '}
-                  <span className="relative inline-block whitespace-nowrap">
+                  <span className="relative inline-block sm:whitespace-nowrap">
                     <span className="relative z-10 text-[#FF7742]">
                       'עסק רציני'
                     </span>
                     <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
                   </span>
                 </span>
-                <span className="block">
+                <span className="block mb-2">
                   כשאין לך אפילו מענה{' '}
-                  <span className="relative inline-block whitespace-nowrap">
+                  <span className="relative inline-block sm:whitespace-nowrap">
                     <span className="relative z-10 text-[#FF7742]">
                       קבוע
                     </span>
@@ -262,7 +262,7 @@ export default function Hero() {
                 </span>
                 <span className="block">
                   שמחזיר ללקוח תשובה{' '}
-                  <span className="relative inline-block whitespace-nowrap">
+                  <span className="relative inline-block sm:whitespace-nowrap">
                     <span className="relative z-10 text-[#FF7742]">
                       בזמן?
                     </span>
@@ -301,26 +301,49 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* CTA Button */}
-            <Button
-              size="lg"
-              suppressHydrationWarning
-              onClick={() => {
-                document.getElementById('contact')?.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }}
-              className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 md:px-10 md:py-6 rounded-full text-sm md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 self-start cursor-pointer w-auto"
-              style={{ fontFamily: 'Rubik, sans-serif' }}
-            >
-              לקביעת פגישה
-            </Button>
+            {/* CTA Buttons */}
+            <div className="flex flex-row gap-3 md:gap-4 self-start">
+              <Button
+                size="lg"
+                suppressHydrationWarning
+                onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }}
+                className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 md:px-10 md:py-6 rounded-full text-sm md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
+                style={{ fontFamily: 'Rubik, sans-serif' }}
+              >
+                לקביעת פגישה ◄
+              </Button>
+
+              <Button
+                size="lg"
+                suppressHydrationWarning
+                onClick={() => {
+                  const automationsElement = document.getElementById('automations');
+                  if (automationsElement) {
+                    const offset = 100;
+                    const elementPosition = automationsElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - offset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 md:px-10 md:py-6 rounded-full text-sm md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
+                style={{ fontFamily: 'Rubik, sans-serif' }}
+              >
+                דוגמאות לסוכני AI ◄
+              </Button>
+            </div>
 
             {/* Platform Logos Section */}
             <div className="flex flex-col gap-3 md:gap-4 pt-1 w-full items-end">
               {/* Section Header */}
-              <p className="text-base md:text-xl text-white text-right max-w-2xl leading-snug md:leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }}>
+              <p className="text-lg md:text-xl text-white text-right max-w-2xl leading-snug md:leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }}>
                 אנחנו מתמחים באפיון והתאמה של הכלים והאוטומציות המתאימות ביותר לייעול המחלקות והתהליכים בעסק.
               </p>
 
@@ -329,12 +352,12 @@ export default function Hero() {
               {/* Make.com Logo */}
               <div className="relative group">
                 <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-16 h-8 md:w-24 md:h-10">
+                  <div className="relative w-20 h-10 md:w-24 md:h-10">
                     <Image
                       src="/images to use/Make-Logo-RGB@2x-1.webp"
                       alt="Make.com"
                       fill
-                      sizes="(max-width: 768px) 64px, 96px"
+                      sizes="(max-width: 768px) 80px, 96px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -344,12 +367,12 @@ export default function Hero() {
               {/* Zapier Logo */}
               <div className="relative group">
                 <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-16 h-8 md:w-24 md:h-10">
+                  <div className="relative w-20 h-10 md:w-24 md:h-10">
                     <Image
                       src="/images to use/Zapier_Company_Logo_2022.png"
                       alt="Zapier"
                       fill
-                      sizes="(max-width: 768px) 64px, 96px"
+                      sizes="(max-width: 768px) 80px, 96px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -359,12 +382,12 @@ export default function Hero() {
               {/* n8n Logo */}
               <div className="relative group">
                 <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-16 h-8 md:w-24 md:h-10">
+                  <div className="relative w-20 h-10 md:w-24 md:h-10">
                     <Image
                       src="/images to use/N8n-logo-new.svg.png"
                       alt="n8n"
                       fill
-                      sizes="(max-width: 768px) 64px, 96px"
+                      sizes="(max-width: 768px) 80px, 96px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
