@@ -119,6 +119,7 @@
   html {
     max-width: 100vw;
     position: relative;
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;
@@ -133,13 +134,14 @@
       overflow-x: clip;
       max-width: 100vw;
       width: 100%;
+      -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
     }
 
     /* Only apply overflow constraints to specific sections that need it */
     section#hero,
     section#contact,
     section.emotional-hook {
-      overflow-x: hidden;
+      overflow-x: clip; /* Changed from hidden to clip for better scroll performance */
       max-width: 100vw;
     }
   }

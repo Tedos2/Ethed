@@ -26,8 +26,10 @@ export default function Hero() {
         behavior: 'smooth'
       });
 
-      // Close mobile menu if open
-      setMobileMenuOpen(false);
+      // Close mobile menu after scroll starts (small delay ensures animation isn't interrupted)
+      setTimeout(() => {
+        setMobileMenuOpen(false);
+      }, 100);
     }
   };
 
@@ -210,7 +212,9 @@ export default function Hero() {
                   behavior: 'smooth'
                 });
               }
-              setMobileMenuOpen(false);
+              setTimeout(() => {
+                setMobileMenuOpen(false);
+              }, 100);
             }}
           >
             בואו לשמוע עוד :)
@@ -308,10 +312,16 @@ export default function Hero() {
                 size="lg"
                 suppressHydrationWarning
                 onClick={() => {
-                  document.getElementById('contact')?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                  });
+                  const contactElement = document.getElementById('contact');
+                  if (contactElement) {
+                    const offset = 100;
+                    const elementPosition = contactElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - offset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
                 }}
                 className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 md:px-10 md:py-6 rounded-full text-sm md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
                 style={{ fontFamily: 'Rubik, sans-serif' }}

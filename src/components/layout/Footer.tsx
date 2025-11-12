@@ -1,6 +1,25 @@
+"use client";
+
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 export default function Footer() {
+  // Smooth scroll handler with offset (same as hero)
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const offset = 100; // Offset from top in pixels
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <footer className="bg-[#0a0505] border-t border-orange-500/20">
       <div className="container mx-auto px-4 py-12">
@@ -13,29 +32,33 @@ export default function Footer() {
             </h3>
             <nav className="space-y-3">
               <a
-                href="#chatbot"
-                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                href="#automations"
+                onClick={(e) => handleSmoothScroll(e, 'automations')}
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 cursor-pointer"
                 suppressHydrationWarning
               >
                 צ'אטבוט AI מתקדם
               </a>
               <a
-                href="#automation"
-                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                href="#automations"
+                onClick={(e) => handleSmoothScroll(e, 'automations')}
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 cursor-pointer"
                 suppressHydrationWarning
               >
                 אוטומציות עסקיות
               </a>
               <a
-                href="#crm"
-                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                href="#about"
+                onClick={(e) => handleSmoothScroll(e, 'about')}
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 cursor-pointer"
                 suppressHydrationWarning
               >
                 מערכת CRM מותאמת
               </a>
               <a
-                href="#analytics"
-                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                href="#about"
+                onClick={(e) => handleSmoothScroll(e, 'about')}
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 cursor-pointer"
                 suppressHydrationWarning
               >
                 מעקב ביצועים
@@ -50,36 +73,44 @@ export default function Footer() {
             </h3>
             <nav className="space-y-3">
               <a
-                href="#home"
-                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                href="#hero"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 cursor-pointer"
                 suppressHydrationWarning
               >
                 דף הבית
               </a>
               <a
-                href="#services"
-                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                href="#automations"
+                onClick={(e) => handleSmoothScroll(e, 'automations')}
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 cursor-pointer"
                 suppressHydrationWarning
               >
                 השירותים שלנו
               </a>
               <a
                 href="#demo"
-                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                onClick={(e) => handleSmoothScroll(e, 'demo')}
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 cursor-pointer"
                 suppressHydrationWarning
               >
                 הדגמה
               </a>
               <a
                 href="#faq"
-                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                onClick={(e) => handleSmoothScroll(e, 'faq')}
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 cursor-pointer"
                 suppressHydrationWarning
               >
                 שאלות נפוצות
               </a>
               <a
                 href="#contact"
-                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                onClick={(e) => handleSmoothScroll(e, 'contact')}
+                className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 cursor-pointer"
                 suppressHydrationWarning
               >
                 צור קשר
