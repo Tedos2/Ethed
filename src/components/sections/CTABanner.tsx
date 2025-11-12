@@ -31,7 +31,7 @@ export default function CTABanner() {
 
               {/* Right Side - Headline Text (RTL) */}
               <div className="text-white text-right w-full md:flex-1" dir="rtl">
-                <h2 className="text-lg md:text-2xl font-bold leading-tight">
+                <h2 className="text-lg md:text-2xl font-bold leading-tight" suppressHydrationWarning>
                   נשמע מעניין? בואו לשמוע איך אנחנו יכולים לייעל את העסק שלך:
                 </h2>
               </div>
@@ -70,8 +70,8 @@ export default function CTABanner() {
                   suppressHydrationWarning
                   className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap hover:scale-105 transform"
                 >
-                  <span>שליחה</span>
-                  <span>◄</span>
+                  <span suppressHydrationWarning>שליחה</span>
+                  <span suppressHydrationWarning>◄</span>
                 </button>
               </div>
 

@@ -27,15 +27,15 @@ export default function Services() {
       viewport={{ once: true, margin: "-100px" }}
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4">What We Build</h2>
-        <p className="text-2xl text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-4" suppressHydrationWarning>What We Build</h2>
+        <p className="text-2xl text-gray-600 text-center mb-12 max-w-2xl mx-auto" suppressHydrationWarning>
           Tailored solutions with built-in KPI tracking to prove real value
         </p>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <div key={index} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-              <p className="text-gray-600 text-lg">{service.description}</p>
+              <h3 className="text-2xl font-semibold mb-4" suppressHydrationWarning>{service.title}</h3>
+              <p className="text-gray-600 text-lg" suppressHydrationWarning>{service.description}</p>
             </div>
           ))}
         </div>

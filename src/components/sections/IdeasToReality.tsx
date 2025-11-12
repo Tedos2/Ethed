@@ -63,28 +63,28 @@ export default function IdeasToReality() {
               }}
             >
               {/* Heading */}
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight" suppressHydrationWarning>
                 הרעיון שלך,{' '}
-                <span className="text-[#FF7742]">המציאות שלנו</span>
+                <span className="text-[#FF7742]" suppressHydrationWarning>המציאות שלנו</span>
               </h2>
 
               {/* Paragraph 1 */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed" suppressHydrationWarning>
                 אנחנו לא רק מקשיבים - אנחנו באמת <strong className="text-[#ffb84d] font-bold">שומעים</strong>.
                 כל רעיון, כל חלום, כל מחשבה שיש לכם - זה נקודת המוצא שלנו.
               </p>
 
               {/* Paragraph 2 */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed" suppressHydrationWarning>
                 אנחנו מתמחים לקחת את מה שנמצא בראש שלכם ולהפוך את זה למשהו מוחשי,
                 פועל, ומותאם בדיוק לצרכים שלכם. כי הפתרון הכי טוב הוא זה שנבנה{' '}
                 <strong className="text-[#ffb84d] font-bold">ביחד איתכם</strong>.
               </p>
 
               {/* Paragraph 3 */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed" suppressHydrationWarning>
                 פתוחים לכל רעיון. מתאימים לכל חזון. הופכים כל חלום{' '}
-                <span className="text-[#FF7742] font-bold">למציאות</span>.
+                <span className="text-[#FF7742] font-bold" suppressHydrationWarning>למציאות</span>.
               </p>
             </div>
           </motion.div>

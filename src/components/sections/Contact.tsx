@@ -91,6 +91,7 @@ export default function Contact() {
           <motion.h2
             variants={itemVariants}
             className="text-2xl md:text-5xl font-extrabold text-center mb-4 md:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500"
+            suppressHydrationWarning
           >
             בואו נבדוק יחד איך אפשר לייעל את העסק שלכם.
           </motion.h2>
@@ -99,6 +100,7 @@ export default function Contact() {
           <motion.p
             variants={itemVariants}
             className="text-lg md:text-2xl text-center text-gray-300 mb-8 md:mb-16"
+            suppressHydrationWarning
           >
             תאמו איתנו שיחת אפיון ראשונית, ללא עלות
           </motion.p>
@@ -111,8 +113,8 @@ export default function Contact() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Name Field */}
               <motion.div variants={itemVariants} className="relative">
-                <label htmlFor="name" className="block text-white font-medium mb-2 text-right">
-                  שם <span className="text-orange-500">*</span>
+                <label htmlFor="name" className="block text-white font-medium mb-2 text-right" suppressHydrationWarning>
+                  שם <span className="text-orange-500" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
                   <User className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
@@ -138,8 +140,8 @@ export default function Contact() {
 
               {/* Phone Field */}
               <motion.div variants={itemVariants} className="relative">
-                <label htmlFor="phone" className="block text-white font-medium mb-2 text-right">
-                  טלפון <span className="text-orange-500">*</span>
+                <label htmlFor="phone" className="block text-white font-medium mb-2 text-right" suppressHydrationWarning>
+                  טלפון <span className="text-orange-500" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
                   <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
@@ -165,8 +167,8 @@ export default function Contact() {
 
               {/* Business Field */}
               <motion.div variants={itemVariants} className="relative">
-                <label htmlFor="businessField" className="block text-white font-medium mb-2 text-right">
-                  תחום העסק <span className="text-orange-500">*</span>
+                <label htmlFor="businessField" className="block text-white font-medium mb-2 text-right" suppressHydrationWarning>
+                  תחום העסק <span className="text-orange-500" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
                   <Briefcase className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
@@ -213,15 +215,16 @@ export default function Contact() {
 
               {/* Privacy Consent */}
               <motion.div variants={itemVariants} className="flex items-start gap-3 flex-row-reverse">
-                <label htmlFor="privacyConsent" className="text-gray-300 text-base flex-1 text-right">
+                <label htmlFor="privacyConsent" className="text-gray-300 text-base flex-1 text-right" suppressHydrationWarning>
                   אני מסכים למסור את פרטיי בהתאם ל
                   <a
                     href="/privacy-policy"
                     className="text-orange-500 hover:text-orange-400 underline mx-1"
+                    suppressHydrationWarning
                   >
                     מדיניות הפרטיות
                   </a>
-                  <span className="text-orange-500">*</span>
+                  <span className="text-orange-500" suppressHydrationWarning>*</span>
                 </label>
                 <input
                   {...register("privacyConsent")}

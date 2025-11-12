@@ -84,7 +84,7 @@ export default function EmotionalHook() {
                 lineHeight: '1.3',
                 textAlign: 'center',
                 margin: 0
-              }}>
+              }} suppressHydrationWarning>
                 אתה יודע שאתה צריך עוד ידיים בעסק. אבל אין לך תקציב לעובד נוסף.
               </h3>
             </motion.div>
@@ -105,8 +105,9 @@ export default function EmotionalHook() {
                 delay: 0
               }}
               viewport={{ once: true, margin: "-100px" }}
+              suppressHydrationWarning
             >
-              אז מה קורה? אתה עושה הכל בעצמך. עונה ללקוחות בוואטסאפ עד מאוחר בלילה, מעביר מידע בין המערכות ידנית, מזכיר ללקוחות להגיע לפגישות... <strong style={{ color: '#ffb84d', fontWeight: '900' }}>כל יום אותו הדבר, ואתה תקוע במקום</strong>.
+              אז מה קורה? אתה עושה הכל בעצמך. עונה ללקוחות בוואטסאפ עד מאוחר בלילה, מעביר מידע בין המערכות ידנית, מזכיר ללקוחות להגיע לפגישות... <strong style={{ color: '#ffb84d', fontWeight: '900' }} suppressHydrationWarning>כל יום אותו הדבר, ואתה תקוע במקום</strong>.
             </motion.p>
 
             <motion.p
@@ -124,8 +125,9 @@ export default function EmotionalHook() {
                 delay: 0
               }}
               viewport={{ once: true, margin: "-100px" }}
+              suppressHydrationWarning
             >
-              יש לך רעיונות איך לגדול. אתה יודע מה צריך לעשות. אבל <strong style={{ color: '#ffb84d', fontWeight: '900' }}>אין לך זמן – כי כל היום אתה רק מכבה שריפות</strong>.
+              יש לך רעיונות איך לגדול. אתה יודע מה צריך לעשות. אבל <strong style={{ color: '#ffb84d', fontWeight: '900' }} suppressHydrationWarning>אין לך זמן – כי כל היום אתה רק מכבה שריפות</strong>.
             </motion.p>
 
             {/* Solution with pop animation */}
@@ -145,8 +147,9 @@ export default function EmotionalHook() {
                 delay: 0
               }}
               viewport={{ once: true, margin: "-100px" }}
+              suppressHydrationWarning
             >
-              אז מה אם היה לך <span style={{ color: '#ffb84d', fontWeight: '900' }}>עובד מושלם</span> שעובד בשבילך 24/7, לא מתלונן, לא צריך משכורת, ועושה בדיוק מה שאמרת לו?
+              אז מה אם היה לך <span style={{ color: '#ffb84d', fontWeight: '900' }} suppressHydrationWarning>עובד מושלם</span> שעובד בשבילך 24/7, לא מתלונן, לא צריך משכורת, ועושה בדיוק מה שאמרת לו?
             </motion.p>
 
             {/* Benefit with pop animation */}
@@ -166,6 +169,7 @@ export default function EmotionalHook() {
                 delay: 0
               }}
               viewport={{ once: true, margin: "-100px" }}
+              suppressHydrationWarning
             >
               זה בדיוק מה שסוכני AI עושים. ואתה סוף סוף יכול להפסיק לעבוד בעסק ולהתחיל לבנות אותו.
             </motion.p>

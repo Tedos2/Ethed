@@ -34,8 +34,8 @@ const App = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <h1 className="text-2xl md:text-3xl font-semibold text-center text-orange-500">מחפשים תשובה?</h1>
-                    <p className="text-base md:text-xl text-white mt-2 pb-6 md:pb-8 text-center">
+                    <h1 className="text-2xl md:text-3xl font-semibold text-center text-orange-500" suppressHydrationWarning>מחפשים תשובה?</h1>
+                    <p className="text-base md:text-xl text-white mt-2 pb-6 md:pb-8 text-center" suppressHydrationWarning>
                         כל מה שצריך לדעת לפני שמתחילים - ואם יש לך שאלה נוספת, נשמח לענות בשיחת ייעוץ ללא עלות
                     </p>
                     {faqs.map((faq, index) => (
@@ -46,7 +46,7 @@ const App = () => {
                                 aria-expanded={openIndex === index}
                                 aria-controls={`faq-answer-${index}`}
                             >
-                                <h3 className="text-lg md:text-2xl font-semibold text-white text-right flex-1">
+                                <h3 className="text-lg md:text-2xl font-semibold text-white text-right flex-1" suppressHydrationWarning>
                                     {faq.question}
                                 </h3>
                                 <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${openIndex === index ? "rotate-180" : ""} transition-all duration-300 ease-in-out flex-shrink-0 ml-2 md:ml-3 md:w-[18px] md:h-[18px]`}>
@@ -63,7 +63,7 @@ const App = () => {
                                 }}
                             >
                                 <div className="overflow-hidden">
-                                    <p className={`text-base md:text-lg text-white text-right leading-tight ${openIndex === index ? "pt-3 md:pt-4 pb-2 md:pb-1" : ""}`}>
+                                    <p className={`text-base md:text-lg text-white text-right leading-tight ${openIndex === index ? "pt-3 md:pt-4 pb-2 md:pb-1" : ""}`} suppressHydrationWarning>
                                         {faq.answer}
                                     </p>
                                 </div>

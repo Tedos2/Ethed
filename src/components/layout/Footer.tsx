@@ -8,31 +8,35 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           {/* פתרונות - Solutions */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white mb-6 border-b border-orange-500/30 pb-2">
+            <h3 className="text-xl font-bold text-white mb-6 border-b border-orange-500/30 pb-2" suppressHydrationWarning>
               פתרונות
             </h3>
             <nav className="space-y-3">
               <a
                 href="#chatbot"
                 className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                suppressHydrationWarning
               >
                 צ'אטבוט AI מתקדם
               </a>
               <a
                 href="#automation"
                 className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                suppressHydrationWarning
               >
                 אוטומציות עסקיות
               </a>
               <a
                 href="#crm"
                 className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                suppressHydrationWarning
               >
                 מערכת CRM מותאמת
               </a>
               <a
                 href="#analytics"
                 className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                suppressHydrationWarning
               >
                 מעקב ביצועים
               </a>
@@ -41,37 +45,42 @@ export default function Footer() {
 
           {/* ניווט - Navigation */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white mb-6 border-b border-orange-500/30 pb-2">
+            <h3 className="text-xl font-bold text-white mb-6 border-b border-orange-500/30 pb-2" suppressHydrationWarning>
               ניווט
             </h3>
             <nav className="space-y-3">
               <a
                 href="#home"
                 className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                suppressHydrationWarning
               >
                 דף הבית
               </a>
               <a
                 href="#services"
                 className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                suppressHydrationWarning
               >
                 השירותים שלנו
               </a>
               <a
                 href="#demo"
                 className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                suppressHydrationWarning
               >
                 הדגמה
               </a>
               <a
                 href="#faq"
                 className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                suppressHydrationWarning
               >
                 שאלות נפוצות
               </a>
               <a
                 href="#contact"
                 className="block text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200"
+                suppressHydrationWarning
               >
                 צור קשר
               </a>
@@ -80,10 +89,10 @@ export default function Footer() {
 
           {/* עקבו אחרינו - Follow Us */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white mb-6 border-b border-orange-500/30 pb-2">
+            <h3 className="text-xl font-bold text-white mb-6 border-b border-orange-500/30 pb-2" suppressHydrationWarning>
               עקבו אחרינו
             </h3>
-            <p className="text-gray-300 text-lg mb-6">
+            <p className="text-gray-300 text-lg mb-6" suppressHydrationWarning>
               הצטרפו אלינו ברשתות החברתיות ועדכנו בחידושים ופתרונות חדשניים
             </p>
             <div className="flex gap-4">
@@ -92,6 +101,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300 hover:scale-110"
+                suppressHydrationWarning
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -100,6 +110,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300 hover:scale-110"
+                suppressHydrationWarning
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -108,6 +119,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300 hover:scale-110"
+                suppressHydrationWarning
               >
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -116,6 +128,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300 hover:scale-110"
+                suppressHydrationWarning
               >
                 <Youtube className="w-5 h-5" />
               </a>
@@ -128,10 +141,10 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-base text-center md:text-right">
+          <p className="text-gray-400 text-base text-center md:text-right" suppressHydrationWarning>
             © {new Date().getFullYear()} כל הזכויות שמורות ל-Ethed. אין להשתמש, להעתיק או לשכפל תכנים המוצגים באתר זה.
           </p>
-          <p className="text-orange-500 font-medium">
+          <p className="text-orange-500 font-medium" suppressHydrationWarning>
             עובדים חכם, לא קשה
           </p>
         </div>

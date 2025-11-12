@@ -14,7 +14,7 @@ export default function GlassCardsSection() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-2" suppressHydrationWarning>
           אז מה אנחנו עושים?
         </h2>
       </motion.div>

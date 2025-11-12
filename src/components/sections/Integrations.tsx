@@ -50,7 +50,7 @@ export default function Integrations() {
                   lineHeight: '1.3',
                   textAlign: 'right',
                   marginBottom: isMobile ? '0.5rem' : '1rem'
-                }}>
+                }} suppressHydrationWarning>
                   התאמה מושלמת לכלים שכבר עובדים איתם
                 </h2>
 
@@ -60,7 +60,7 @@ export default function Integrations() {
                   color: 'rgba(255, 255, 255, 0.9)',
                   lineHeight: isMobile ? '1.8' : '1.7',
                   textAlign: 'right'
-                }}>
+                }} suppressHydrationWarning>
                   אנחנו לא מחליפים את המערכות שלך - אנחנו משדרגים אותן.
                 </p>
 
@@ -69,7 +69,7 @@ export default function Integrations() {
                   color: 'rgba(255, 255, 255, 0.9)',
                   lineHeight: isMobile ? '1.8' : '1.7',
                   textAlign: 'right'
-                }}>
+                }} suppressHydrationWarning>
                   האוטומציות שלנו מתחברות בצורה חלקה לכל הכלים שאתה כבר משתמש בהם: CRM, יומנים, וואטסאפ, דוא"ל, מדיה חברתית ועוד עשרות פלטפורמות.
                 </p>
 
@@ -78,8 +78,8 @@ export default function Integrations() {
                   color: 'rgba(255, 255, 255, 0.9)',
                   lineHeight: isMobile ? '1.8' : '1.7',
                   textAlign: 'right'
-                }}>
-                  אין צורך להחליף כלום. אנחנו פשוט גורמים לכל הכלים האלה לעבוד ביחד - <strong style={{ color: '#ffb84d', fontWeight: '900' }}>בצורה אוטומטית, חכמה ויעילה</strong>.
+                }} suppressHydrationWarning>
+                  אין צורך להחליף כלום. אנחנו פשוט גורמים לכל הכלים האלה לעבוד ביחד - <strong style={{ color: '#ffb84d', fontWeight: '900' }} suppressHydrationWarning>בצורה אוטומטית, חכמה ויעילה</strong>.
                 </p>
               </div>
             </motion.div>

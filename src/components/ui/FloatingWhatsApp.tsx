@@ -16,6 +16,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 group cursor-pointer"
+      suppressHydrationWarning
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{
@@ -39,7 +40,7 @@ export default function FloatingWhatsApp() {
 
       {/* Tooltip on hover */}
       <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-white text-gray-800 px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-        <span className="text-sm font-medium">צור קשר בוואטסאפ</span>
+        <span className="text-sm font-medium" suppressHydrationWarning>צור קשר בוואטסאפ</span>
         {/* Arrow pointing to button */}
         <div className="absolute left-full top-1/2 -translate-y-1/2 -ml-1">
           <div className="w-0 h-0 border-t-4 border-t-transparent border-b-4 border-b-transparent border-r-4 border-r-white" />

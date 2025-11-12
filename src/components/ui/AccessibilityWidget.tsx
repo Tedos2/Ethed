@@ -7,17 +7,37 @@ export default function AccessibilityWidget() {
     // Suppress hydration warnings caused by Sienna accessibility widget
     // The widget adds data-asw-org-font-size attributes and inline styles after SSR
     const originalConsoleError = console.error;
+    const originalConsoleWarn = console.warn;
+
     console.error = (...args: any[]) => {
       if (
         typeof args[0] === 'string' &&
         (args[0].includes('Hydration') ||
+         args[0].includes('hydration') ||
          args[0].includes('data-asw-org-font-size') ||
          args[0].includes('fontFamily') ||
-         args[0].includes('font-size'))
+         args[0].includes('font-size') ||
+         args[0].includes('font-family') ||
+         args[0].includes('suppressHydrationWarning'))
       ) {
         return;
       }
       originalConsoleError.apply(console, args);
+    };
+
+    console.warn = (...args: any[]) => {
+      if (
+        typeof args[0] === 'string' &&
+        (args[0].includes('Hydration') ||
+         args[0].includes('hydration') ||
+         args[0].includes('data-asw-org-font-size') ||
+         args[0].includes('fontFamily') ||
+         args[0].includes('font-size') ||
+         args[0].includes('font-family'))
+      ) {
+        return;
+      }
+      originalConsoleWarn.apply(console, args);
     };
 
     // Wait for the widget to be loaded and positioned
@@ -48,6 +68,7 @@ export default function AccessibilityWidget() {
 
     return () => {
       console.error = originalConsoleError;
+      console.warn = originalConsoleWarn;
       clearInterval(checkForWidget);
       clearTimeout(timeout);
     };

@@ -101,13 +101,14 @@ export default function AutomationExamples() {
                     border: '1px dashed rgba(255,255,255,0.2)'
                   }}
                 >
-                  <span className="text-white/30 text-xs md:text-sm">Bot Image</span>
+                  <span className="text-white/30 text-xs md:text-sm" suppressHydrationWarning>Bot Image</span>
                 </div>
 
                 {/* Card Title */}
                 <h3
                   className="relative z-10 text-lg md:text-xl font-bold text-white mb-3 text-right"
                   dir="rtl"
+                  suppressHydrationWarning
                 >
                   {card.title}
                 </h3>
@@ -116,6 +117,7 @@ export default function AutomationExamples() {
                 <p
                   className="relative z-10 text-xs md:text-sm text-white/90 leading-relaxed mb-4 text-right"
                   dir="rtl"
+                  suppressHydrationWarning
                 >
                   {card.description}
                 </p>
@@ -127,9 +129,10 @@ export default function AutomationExamples() {
                       key={idx}
                       className="flex items-start gap-2 text-right"
                       dir="rtl"
+                      suppressHydrationWarning
                     >
                       <Check className="w-4 h-4 text-[#FF7742] shrink-0 mt-0.5" />
-                      <span className="text-xs md:text-sm text-white/80 leading-relaxed">
+                      <span className="text-xs md:text-sm text-white/80 leading-relaxed" suppressHydrationWarning>
                         {feature}
                       </span>
                     </li>
@@ -143,7 +146,7 @@ export default function AutomationExamples() {
                       key={iconNum}
                       className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                     >
-                      <span className="text-white/40 text-xs">{iconNum}</span>
+                      <span className="text-white/40 text-xs" suppressHydrationWarning>{iconNum}</span>
                     </div>
                   ))}
                 </div>

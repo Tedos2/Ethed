@@ -47,8 +47,8 @@ export default function Hero() {
       <div className="absolute inset-0 z-[5] bg-gradient-to-b from-[#0f0f0f] via-[#0f0f0f]/70 via-30% to-transparent pointer-events-none" />
 
       {/* Navigation - Floating with Glassmorphism */}
-      <nav className="fixed top-2 md:top-4 right-2 left-2 md:right-6 md:left-6 z-50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 md:px-6 py-2 md:py-3 shadow-lg">
+      <nav className="fixed top-2 md:top-4 right-2 left-2 md:right-6 md:left-6 z-50 transition-all duration-300 pointer-events-none">
+        <div className="max-w-7xl mx-auto border border-white/30 rounded-full px-3 md:px-6 py-2 md:py-3 shadow-lg pointer-events-auto bg-black/85 md:bg-black/50 backdrop-blur-xl">
           <div className="flex items-center justify-between">
             {/* Logo (right side for RTL) */}
             <div className="relative w-28 h-9 md:w-48 md:h-14 -mr-2 md:-mr-8">
@@ -64,38 +64,42 @@ export default function Hero() {
 
             {/* Desktop Nav Links (center) - Updated */}
             <ul className="hidden md:flex items-center gap-12 text-lg font-bold">
-              <li>
+              <li suppressHydrationWarning>
                 <a
                   href="#about"
                   onClick={(e) => handleSmoothScroll(e, 'about')}
                   className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  suppressHydrationWarning
                 >
                   עלינו
                 </a>
               </li>
-              <li>
+              <li suppressHydrationWarning>
                 <a
                   href="#solutions"
                   onClick={(e) => handleSmoothScroll(e, 'solutions')}
                   className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  suppressHydrationWarning
                 >
                   פתרונות
                 </a>
               </li>
-              <li>
+              <li suppressHydrationWarning>
                 <a
                   href="#automations"
                   onClick={(e) => handleSmoothScroll(e, 'automations')}
                   className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  suppressHydrationWarning
                 >
                   הבוטים שלנו
                 </a>
               </li>
-              <li>
+              <li suppressHydrationWarning>
                 <a
                   href="#contact"
                   onClick={(e) => handleSmoothScroll(e, 'contact')}
                   className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  suppressHydrationWarning
                 >
                   צור קשר
                 </a>
@@ -239,63 +243,63 @@ export default function Hero() {
           {/* Left Side - Content (main content for RTL) */}
           <div className="order-1 md:order-1 space-y-4 md:space-y-6 flex flex-col items-end w-full">
             {/* Main Headline */}
-            <h1 className="text-[1.75rem] sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug md:leading-tight text-right w-full px-2 md:px-0" style={{ fontFamily: 'Rubik, sans-serif' }}>
+            <h1 className="text-[1.75rem] sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug md:leading-tight text-right w-full px-2 md:px-0" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
               {/* Mobile version - 3 lines */}
-              <span className="md:hidden">
-                <span className="block mb-2">
+              <span className="md:hidden" suppressHydrationWarning>
+                <span className="block mb-2" suppressHydrationWarning>
                   עוד כמה זמן אתה מתכוון לשחק אותה{' '}
-                  <span className="relative inline-block sm:whitespace-nowrap">
-                    <span className="relative z-10 text-[#FF7742]">
+                  <span className="relative inline-block sm:whitespace-nowrap" suppressHydrationWarning>
+                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
                       'עסק רציני'
                     </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
                   </span>
                 </span>
-                <span className="block mb-2">
+                <span className="block mb-2" suppressHydrationWarning>
                   כשאין לך אפילו מענה{' '}
-                  <span className="relative inline-block sm:whitespace-nowrap">
-                    <span className="relative z-10 text-[#FF7742]">
+                  <span className="relative inline-block sm:whitespace-nowrap" suppressHydrationWarning>
+                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
                       קבוע
                     </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
                   </span>
                 </span>
-                <span className="block">
+                <span className="block" suppressHydrationWarning>
                   שמחזיר ללקוח תשובה{' '}
-                  <span className="relative inline-block sm:whitespace-nowrap">
-                    <span className="relative z-10 text-[#FF7742]">
+                  <span className="relative inline-block sm:whitespace-nowrap" suppressHydrationWarning>
+                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
                       בזמן?
                     </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
                   </span>
                 </span>
               </span>
 
               {/* Desktop version - 2 lines (original) */}
-              <span className="hidden md:inline">
-                <span className="block">
+              <span className="hidden md:inline" suppressHydrationWarning>
+                <span className="block" suppressHydrationWarning>
                   עוד כמה זמן אתה מתכוון לשחק אותה{' '}
-                  <span className="relative inline-block">
-                    <span className="relative z-10 text-[#FF7742]">
+                  <span className="relative inline-block" suppressHydrationWarning>
+                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
                       'עסק רציני'
                     </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
                   </span>
                 </span>
-                <span className="block">
+                <span className="block" suppressHydrationWarning>
                   כשאין לך אפילו מענה{' '}
-                  <span className="relative inline-block">
-                    <span className="relative z-10 text-[#FF7742]">
+                  <span className="relative inline-block" suppressHydrationWarning>
+                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
                       קבוע
                     </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
                   </span>
                   {' '}שמחזיר ללקוח תשובה{' '}
-                  <span className="relative inline-block">
-                    <span className="relative z-10 text-[#FF7742]">
+                  <span className="relative inline-block" suppressHydrationWarning>
+                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
                       בזמן?
                     </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10"></span>
+                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
                   </span>
                 </span>
               </span>
@@ -343,7 +347,7 @@ export default function Hero() {
             {/* Platform Logos Section */}
             <div className="flex flex-col gap-3 md:gap-4 pt-1 w-full items-end">
               {/* Section Header */}
-              <p className="text-lg md:text-xl text-white text-right max-w-2xl leading-snug md:leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }}>
+              <p className="text-lg md:text-xl text-white text-right max-w-2xl leading-snug md:leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
                 אנחנו מתמחים באפיון והתאמה של הכלים והאוטומציות המתאימות ביותר לייעול המחלקות והתהליכים בעסק.
               </p>
 

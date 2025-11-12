@@ -234,7 +234,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                                 lineHeight: isMobile ? '1.4' : '1.3',
                                 wordBreak: 'break-word',
                                 overflowWrap: 'break-word'
-                            }}>
+                            }} suppressHydrationWarning>
                                 {title}
                             </h2>
                             <p style={{
@@ -244,7 +244,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                                 textAlign: 'right',
                                 wordBreak: 'break-word',
                                 overflowWrap: 'break-word'
-                            }}>
+                            }} suppressHydrationWarning>
                                 {description}
                             </p>
                         </div>
@@ -302,14 +302,14 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                                     color: 'rgba(255, 255, 255, 0.4)',
                                     fontSize: '0.9rem',
                                     padding: '1rem'
-                                }}>
+                                }} suppressHydrationWarning>
                                     <div style={{
                                         fontSize: '3rem',
                                         marginBottom: '0.5rem',
                                         opacity: 0.3
-                                    }}>🖼️</div>
-                                    <div>Image Placeholder</div>
-                                    <div style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}>350x350px recommended</div>
+                                    }} suppressHydrationWarning>🖼️</div>
+                                    <div suppressHydrationWarning>Image Placeholder</div>
+                                    <div style={{ fontSize: '0.75rem', marginTop: '0.25rem' }} suppressHydrationWarning>350x350px recommended</div>
                                 </div>
                             )}
                         </div>
