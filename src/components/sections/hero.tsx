@@ -64,38 +64,42 @@ export default function Hero() {
 
             {/* Desktop Nav Links (center) */}
             <ul className="flex items-center gap-12 text-lg font-bold">
-              <li>
+              <li suppressHydrationWarning>
                 <a
                   href="#about"
                   onClick={(e) => handleSmoothScroll(e, 'about')}
                   className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  suppressHydrationWarning
                 >
                   עלינו
                 </a>
               </li>
-              <li>
+              <li suppressHydrationWarning>
                 <a
                   href="#solutions"
                   onClick={(e) => handleSmoothScroll(e, 'solutions')}
                   className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  suppressHydrationWarning
                 >
                   פתרונות
                 </a>
               </li>
-              <li>
+              <li suppressHydrationWarning>
                 <a
                   href="#automations"
                   onClick={(e) => handleSmoothScroll(e, 'automations')}
                   className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  suppressHydrationWarning
                 >
                   הבוטים שלנו
                 </a>
               </li>
-              <li>
+              <li suppressHydrationWarning>
                 <a
                   href="#contact"
                   onClick={(e) => handleSmoothScroll(e, 'contact')}
                   className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  suppressHydrationWarning
                 >
                   צור קשר
                 </a>
@@ -134,9 +138,9 @@ export default function Hero() {
       >
         <div className="relative w-6 h-6 flex items-center justify-center">
           {/* Hamburger to X animation - Improved */}
-          <span className={`absolute h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'rotate-45' : '-translate-y-2'}`} />
-          <span className={`absolute h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'}`} />
-          <span className={`absolute h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen ? '-rotate-45' : 'translate-y-2'}`} />
+          <span className={`absolute h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'rotate-45' : '-translate-y-2'}`} suppressHydrationWarning />
+          <span className={`absolute h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'}`} suppressHydrationWarning />
+          <span className={`absolute h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen ? '-rotate-45' : 'translate-y-2'}`} suppressHydrationWarning />
         </div>
       </button>
 
@@ -148,38 +152,42 @@ export default function Hero() {
 
           {/* Mobile Nav Links */}
           <ul className="flex flex-col gap-6 text-right">
-            <li>
+            <li suppressHydrationWarning>
               <a
                 href="#about"
                 onClick={(e) => handleSmoothScroll(e, 'about')}
                 className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                suppressHydrationWarning
               >
                 עלינו
               </a>
             </li>
-            <li>
+            <li suppressHydrationWarning>
               <a
                 href="#solutions"
                 onClick={(e) => handleSmoothScroll(e, 'solutions')}
                 className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                suppressHydrationWarning
               >
                 פתרונות
               </a>
             </li>
-            <li>
+            <li suppressHydrationWarning>
               <a
                 href="#automations"
                 onClick={(e) => handleSmoothScroll(e, 'automations')}
                 className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                suppressHydrationWarning
               >
                 הבוטים שלנו
               </a>
             </li>
-            <li>
+            <li suppressHydrationWarning>
               <a
                 href="#contact"
                 onClick={(e) => handleSmoothScroll(e, 'contact')}
                 className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                suppressHydrationWarning
               >
                 צור קשר
               </a>
