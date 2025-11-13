@@ -53,21 +53,27 @@ const App = () => {
                                     <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </button>
-                            <div
+                            <motion.div
                                 id={`faq-answer-${index}`}
-                                className={`grid transition-all ease-in-out ${openIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                                initial={false}
+                                animate={{
+                                    height: openIndex === index ? "auto" : 0,
+                                    opacity: openIndex === index ? 1 : 0
+                                }}
+                                transition={{
+                                    duration: 0.4,
+                                    ease: [0.4, 0, 0.2, 1],
+                                    opacity: { duration: 0.3 }
+                                }}
                                 style={{
-                                    pointerEvents: openIndex === index ? 'auto' : 'none',
-                                    transitionDuration: '600ms',
-                                    willChange: 'grid-template-rows, opacity'
+                                    overflow: "hidden",
+                                    pointerEvents: openIndex === index ? 'auto' : 'none'
                                 }}
                             >
-                                <div className="overflow-hidden">
-                                    <p className={`text-base md:text-lg text-white text-right leading-tight ${openIndex === index ? "pt-3 md:pt-4 pb-2 md:pb-1" : ""}`} suppressHydrationWarning>
-                                        {faq.answer}
-                                    </p>
-                                </div>
-                            </div>
+                                <p className={`text-base md:text-lg text-white text-right leading-tight ${openIndex === index ? "pt-3 md:pt-4 pb-2 md:pb-1" : ""}`} suppressHydrationWarning>
+                                    {faq.answer}
+                                </p>
+                            </motion.div>
                         </div>
                     ))}
                 </motion.div>

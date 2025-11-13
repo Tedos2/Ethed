@@ -249,29 +249,20 @@ export default function Hero() {
               <span className="md:hidden" suppressHydrationWarning>
                 <span className="block mb-2" suppressHydrationWarning>
                   עוד כמה זמן אתה מתכוון לשחק אותה{' '}
-                  <span className="relative inline-block sm:whitespace-nowrap" suppressHydrationWarning>
-                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
-                      'עסק רציני'
-                    </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
+                  <span className="inline-block sm:whitespace-nowrap text-[#FF7742]" suppressHydrationWarning>
+                    'עסק רציני'
                   </span>
                 </span>
                 <span className="block mb-2" suppressHydrationWarning>
                   כשאין לך אפילו מענה{' '}
-                  <span className="relative inline-block sm:whitespace-nowrap" suppressHydrationWarning>
-                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
-                      קבוע
-                    </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
+                  <span className="inline-block sm:whitespace-nowrap text-[#FF7742]" suppressHydrationWarning>
+                    קבוע
                   </span>
                 </span>
                 <span className="block" suppressHydrationWarning>
                   שמחזיר ללקוח תשובה{' '}
-                  <span className="relative inline-block sm:whitespace-nowrap" suppressHydrationWarning>
-                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
-                      בזמן?
-                    </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
+                  <span className="inline-block sm:whitespace-nowrap text-[#FF7742]" suppressHydrationWarning>
+                    בזמן?
                   </span>
                 </span>
               </span>
@@ -280,27 +271,18 @@ export default function Hero() {
               <span className="hidden md:inline" suppressHydrationWarning>
                 <span className="block" suppressHydrationWarning>
                   עוד כמה זמן אתה מתכוון לשחק אותה{' '}
-                  <span className="relative inline-block" suppressHydrationWarning>
-                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
-                      'עסק רציני'
-                    </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
+                  <span className="inline-block text-[#FF7742]" suppressHydrationWarning>
+                    'עסק רציני'
                   </span>
                 </span>
                 <span className="block" suppressHydrationWarning>
                   כשאין לך אפילו מענה{' '}
-                  <span className="relative inline-block" suppressHydrationWarning>
-                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
-                      קבוע
-                    </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
+                  <span className="inline-block text-[#FF7742]" suppressHydrationWarning>
+                    קבוע
                   </span>
                   {' '}שמחזיר ללקוח תשובה{' '}
-                  <span className="relative inline-block" suppressHydrationWarning>
-                    <span className="relative z-10 text-[#FF7742]" suppressHydrationWarning>
-                      בזמן?
-                    </span>
-                    <span className="absolute inset-0 bg-[#FF7742]/40 blur-lg -z-10" suppressHydrationWarning></span>
+                  <span className="inline-block text-[#FF7742]" suppressHydrationWarning>
+                    בזמן?
                   </span>
                 </span>
               </span>

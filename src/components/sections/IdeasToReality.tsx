@@ -59,30 +59,30 @@ export default function IdeasToReality() {
                 direction: 'rtl',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '1.5rem'
+                gap: '0.5rem'
               }}
             >
               {/* Heading */}
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight" suppressHydrationWarning>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-2" suppressHydrationWarning>
                 הרעיון שלך,{' '}
                 <span className="text-[#FF7742]" suppressHydrationWarning>המציאות שלנו</span>
               </h2>
 
               {/* Paragraph 1 */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed" suppressHydrationWarning>
+              <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
                 אנחנו לא רק מקשיבים - אנחנו באמת <strong className="text-[#ffb84d] font-bold">שומעים</strong>.
                 כל רעיון, כל חלום, כל מחשבה שיש לכם - זה נקודת המוצא שלנו.
               </p>
 
               {/* Paragraph 2 */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed" suppressHydrationWarning>
+              <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
                 אנחנו מתמחים לקחת את מה שנמצא בראש שלכם ולהפוך את זה למשהו מוחשי,
                 פועל, ומותאם בדיוק לצרכים שלכם. כי הפתרון הכי טוב הוא זה שנבנה{' '}
                 <strong className="text-[#ffb84d] font-bold">ביחד איתכם</strong>.
               </p>
 
               {/* Paragraph 3 */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed" suppressHydrationWarning>
+              <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
                 פתוחים לכל רעיון. מתאימים לכל חזון. הופכים כל חלום{' '}
                 <span className="text-[#FF7742] font-bold" suppressHydrationWarning>למציאות</span>.
               </p>
