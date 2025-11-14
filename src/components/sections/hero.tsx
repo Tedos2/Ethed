@@ -242,54 +242,19 @@ export default function Hero() {
           </div>
 
           {/* Left Side - Content (main content for RTL) */}
-          <div className="order-1 md:order-1 space-y-4 md:space-y-6 flex flex-col items-end w-full">
+          <div className="order-1 md:order-1 space-y-4 md:space-y-6 flex flex-col items-center md:items-end w-full">
             {/* Main Headline */}
-            <h1 className="text-[1.75rem] sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug md:leading-tight text-right w-full px-2 md:px-0" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
-              {/* Mobile version - 3 lines */}
-              <span className="md:hidden" suppressHydrationWarning>
-                <span className="block mb-2" suppressHydrationWarning>
-                  עוד כמה זמן אתה מתכוון לשחק אותה{' '}
-                  <span className="inline-block sm:whitespace-nowrap text-[#FF7742]" suppressHydrationWarning>
-                    'עסק רציני'
-                  </span>
-                </span>
-                <span className="block mb-2" suppressHydrationWarning>
-                  כשאין לך אפילו מענה{' '}
-                  <span className="inline-block sm:whitespace-nowrap text-[#FF7742]" suppressHydrationWarning>
-                    קבוע
-                  </span>
-                </span>
-                <span className="block" suppressHydrationWarning>
-                  שמחזיר ללקוח תשובה{' '}
-                  <span className="inline-block sm:whitespace-nowrap text-[#FF7742]" suppressHydrationWarning>
-                    בזמן?
-                  </span>
-                </span>
-              </span>
-
-              {/* Desktop version - 2 lines (original) */}
-              <span className="hidden md:inline" suppressHydrationWarning>
-                <span className="block" suppressHydrationWarning>
-                  עוד כמה זמן אתה מתכוון לשחק אותה{' '}
-                  <span className="inline-block text-[#FF7742]" suppressHydrationWarning>
-                    'עסק רציני'
-                  </span>
-                </span>
-                <span className="block" suppressHydrationWarning>
-                  כשאין לך אפילו מענה{' '}
-                  <span className="inline-block text-[#FF7742]" suppressHydrationWarning>
-                    קבוע
-                  </span>
-                  {' '}שמחזיר ללקוח תשובה{' '}
-                  <span className="inline-block text-[#FF7742]" suppressHydrationWarning>
-                    בזמן?
-                  </span>
-                </span>
-              </span>
+            {/* Mobile version - natural wrap */}
+            <h1 className="md:hidden text-[1.5rem] sm:text-2xl font-bold leading-snug text-center w-full px-2" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
+              פתרונות אוטומציה והטמעת סוכני בינה מלאכותית לעסקים
+            </h1>
+            {/* Desktop version - forced 2 lines */}
+            <h1 className="hidden md:block font-normal leading-tight text-right w-full" style={{ fontFamily: 'Rubik, sans-serif', fontSize: '2.9rem', whiteSpace: 'normal' }} suppressHydrationWarning>
+              פתרונות אוטומציה והטמעת<br />סוכני בינה מלאכותית לעסקים
             </h1>
 
             {/* CTA Buttons */}
-            <div className="flex flex-row gap-3 md:gap-4 self-start">
+            <div className="flex flex-row gap-3 md:gap-4 self-center md:self-start">
               <Button
                 size="lg"
                 suppressHydrationWarning
@@ -334,9 +299,9 @@ export default function Hero() {
             </div>
 
             {/* Platform Logos Section */}
-            <div className="flex flex-col gap-3 md:gap-4 pt-1 w-full items-end">
+            <div className="flex flex-col gap-3 md:gap-4 pt-1 w-full items-center md:items-end">
               {/* Section Header */}
-              <p className="text-lg md:text-xl text-white text-right max-w-2xl leading-snug md:leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
+              <p className="text-lg md:text-xl text-white text-center md:text-right max-w-2xl leading-snug md:leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
                 אנחנו מתמחים באפיון והתאמה של הכלים והאוטומציות המתאימות ביותר לייעול המחלקות והתהליכים בעסק.
               </p>
 
@@ -345,12 +310,12 @@ export default function Hero() {
               {/* Make.com Logo */}
               <div className="relative group">
                 <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-20 h-10 md:w-24 md:h-10">
+                  <div className="relative w-20 h-10 md:w-36 md:h-18">
                     <Image
                       src="/images to use/Make-Logo-RGB@2x-1.webp"
                       alt="Make.com"
                       fill
-                      sizes="(max-width: 768px) 80px, 96px"
+                      sizes="(max-width: 768px) 80px, 144px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -360,12 +325,12 @@ export default function Hero() {
               {/* Zapier Logo */}
               <div className="relative group">
                 <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-20 h-10 md:w-24 md:h-10">
+                  <div className="relative w-20 h-10 md:w-36 md:h-18">
                     <Image
                       src="/images to use/Zapier_Company_Logo_2022.png"
                       alt="Zapier"
                       fill
-                      sizes="(max-width: 768px) 80px, 96px"
+                      sizes="(max-width: 768px) 80px, 144px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -375,12 +340,12 @@ export default function Hero() {
               {/* n8n Logo */}
               <div className="relative group">
                 <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-20 h-10 md:w-24 md:h-10">
+                  <div className="relative w-20 h-10 md:w-36 md:h-18">
                     <Image
                       src="/images to use/N8n-logo-new.svg.png"
                       alt="n8n"
                       fill
-                      sizes="(max-width: 768px) 80px, 96px"
+                      sizes="(max-width: 768px) 80px, 144px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
