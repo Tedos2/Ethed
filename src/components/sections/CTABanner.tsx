@@ -7,13 +7,63 @@ export default function CTABanner() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [businessField, setBusinessField] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    document.getElementById('contact')?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+
+    // Validate fields
+    if (!name.trim() || !phone.trim() || !businessField.trim()) {
+      alert('נא למלא את כל השדות');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          phone: phone.trim(),
+          businessField: businessField.trim(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Clear form
+        setName('');
+        setPhone('');
+        setBusinessField('');
+
+        // Show success message
+        alert('הטופס נשלח בהצלחה! נחזור אליך בהקדם');
+
+        // Scroll to contact section after brief delay
+        setTimeout(() => {
+          document.getElementById('contact')?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 500);
+      } else {
+        throw new Error(data.error || 'Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+      alert('שגיאה בשליחת הטופס. אנא נסה שוב');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -67,11 +117,25 @@ export default function CTABanner() {
                 />
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   suppressHydrationWarning
-                  className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap hover:scale-105 transform"
+                  className={`bg-white text-black px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 whitespace-nowrap ${
+                    isSubmitting
+                      ? 'opacity-70 cursor-not-allowed'
+                      : 'hover:bg-gray-100 hover:shadow-lg cursor-pointer hover:scale-105 transform'
+                  }`}
                 >
-                  <span suppressHydrationWarning>שליחה</span>
-                  <span suppressHydrationWarning>◄</span>
+                  {isSubmitting ? (
+                    <>
+                      <span suppressHydrationWarning>שולח...</span>
+                      <span className="animate-spin" suppressHydrationWarning>⟳</span>
+                    </>
+                  ) : (
+                    <>
+                      <span suppressHydrationWarning>שליחה</span>
+                      <span suppressHydrationWarning>◄</span>
+                    </>
+                  )}
                 </button>
               </div>
 

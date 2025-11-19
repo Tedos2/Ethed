@@ -23,7 +23,8 @@
       "Bash(taskkill //F //PID 20260)",
       "Bash(taskkill:*)",
       "Bash(npx next dev --help:*)",
-      "Bash(npx next dev:*)"
+      "Bash(npx next dev:*)",
+      "Bash(xargs kill:*)"
     ],
     "deny": [],
     "ask": []
