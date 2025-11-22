@@ -226,7 +226,7 @@ const DatabaseWithRestApi = ({
         {/* box title */}
         <div className="absolute -top-3 z-20 flex items-center justify-center rounded-lg border bg-[#101112] px-2 py-1 sm:-top-4 sm:py-1.5">
           <SparklesIcon className="size-3" />
-          <span className="ml-2 text-[10px]">
+          <span className="ml-2 text-[10px]" suppressHydrationWarning>
             {title ? title : "Data exchange using a customized REST API"}
           </span>
         </div>
@@ -239,11 +239,11 @@ const DatabaseWithRestApi = ({
           {/* Badges */}
           <div className="absolute bottom-8 left-12 z-10 h-7 rounded-full bg-[#101112] px-3 text-xs border flex items-center gap-2 ">
             <HeartHandshakeIcon className="size-4" />
-            <span>{buttonTexts?.first || "LegionDev"}</span>
+            <span suppressHydrationWarning>{buttonTexts?.first || "LegionDev"}</span>
           </div>
           <div className="absolute right-16 z-10 hidden h-7 rounded-full bg-[#101112] px-3 text-xs sm:flex border items-center gap-2">
             <Folder className="size-4" />
-            <span>{buttonTexts?.second || "v2_updates"}</span>
+            <span suppressHydrationWarning>{buttonTexts?.second || "v2_updates"}</span>
           </div>
           {/* Circles */}
           <motion.div

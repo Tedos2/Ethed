@@ -31,7 +31,7 @@ export default function Integrations() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
             >
               <div
                 style={{
@@ -56,8 +56,8 @@ export default function Integrations() {
 
                 {/* Body Paragraphs */}
                 <p style={{
-                  fontSize: isMobile ? 'clamp(1.1rem, 3vw, 1.25rem)' : 'clamp(1.25rem, 2vw, 1.5rem)',
-                  color: 'rgba(255, 255, 255, 0.9)',
+                  fontSize: isMobile ? '1rem' : '1.125rem',
+                  color: '#ffffff',
                   lineHeight: isMobile ? '1.5' : '1.6',
                   textAlign: 'right',
                   margin: 0
@@ -66,8 +66,8 @@ export default function Integrations() {
                 </p>
 
                 <p style={{
-                  fontSize: isMobile ? 'clamp(1.1rem, 3vw, 1.25rem)' : 'clamp(1.25rem, 2vw, 1.5rem)',
-                  color: 'rgba(255, 255, 255, 0.9)',
+                  fontSize: isMobile ? '1rem' : '1.125rem',
+                  color: '#ffffff',
                   lineHeight: isMobile ? '1.5' : '1.6',
                   textAlign: 'right',
                   margin: 0
@@ -76,8 +76,8 @@ export default function Integrations() {
                 </p>
 
                 <p style={{
-                  fontSize: isMobile ? 'clamp(1.1rem, 3vw, 1.25rem)' : 'clamp(1.25rem, 2vw, 1.5rem)',
-                  color: 'rgba(255, 255, 255, 0.9)',
+                  fontSize: isMobile ? '1rem' : '1.125rem',
+                  color: '#ffffff',
                   lineHeight: isMobile ? '1.5' : '1.6',
                   textAlign: 'right',
                   margin: 0
@@ -93,7 +93,7 @@ export default function Integrations() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
             >
               <div
                 style={{
