@@ -24,7 +24,8 @@
       "Bash(taskkill:*)",
       "Bash(npx next dev --help:*)",
       "Bash(npx next dev:*)",
-      "Bash(xargs kill:*)"
+      "Bash(xargs kill:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

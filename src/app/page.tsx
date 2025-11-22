@@ -4,7 +4,7 @@ import EmotionalHook from "@/components/sections/EmotionalHook";
 import GlassCardsSection from "@/components/sections/GlassCardsSection";
 import Integrations from "@/components/sections/Integrations";
 import CTABanner from "@/components/sections/CTABanner";
-import AutomationExamples from "@/components/sections/AutomationExamples";
+import CRMDataOrganization from "@/components/sections/CRMDataOrganization";
 import Demo from "@/components/ui/demo";
 import IdeasToReality from "@/components/sections/IdeasToReality";
 import FAQ from "@/components/ui/faq";
@@ -29,7 +29,7 @@ export default function Home() {
           <GlassCardsSection />
           <Integrations />
           <CTABanner />
-          <AutomationExamples />
+          <CRMDataOrganization />
           <Demo />
           <IdeasToReality />
           <FAQ />
