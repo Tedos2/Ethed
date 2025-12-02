@@ -9,7 +9,8 @@ export default function Mobile3DScene() {
       style={{
         overflow: 'visible',
         contain: 'none',
-        height: '380px',
+        height: 'clamp(280px, 50vh, 380px)',
+        minHeight: '280px',
         position: 'relative',
         marginTop: '0px',
         marginBottom: '0px'

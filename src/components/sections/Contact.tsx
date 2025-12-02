@@ -37,18 +37,39 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
+    setShowError(false);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          phone: data.phone,
+          businessField: data.businessField,
+          currentSystem: data.currentSystem || '',
+        }),
+      });
 
-    console.log("Form submitted:", data);
+      const result = await response.json();
 
-    setIsSubmitting(false);
-    setShowSuccess(true);
-    reset();
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit form');
+      }
 
-    // Hide success message after 5 seconds
-    setTimeout(() => setShowSuccess(false), 5000);
+      // Success
+      setShowSuccess(true);
+      reset();
+      setTimeout(() => setShowSuccess(false), 5000);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setShowError(true);
+      setTimeout(() => setShowError(false), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {

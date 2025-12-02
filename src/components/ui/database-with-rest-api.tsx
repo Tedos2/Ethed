@@ -236,15 +236,10 @@ const DatabaseWithRestApi = ({
         </div>
         {/* box content */}
         <div className="relative z-10 flex h-[150px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background shadow-md">
-          {/* Badges */}
-          <div className="absolute bottom-8 left-12 z-10 h-7 rounded-full bg-[#101112] px-3 text-xs border flex items-center gap-2 ">
-            <HeartHandshakeIcon className="size-4" />
-            <span suppressHydrationWarning>{buttonTexts?.first || "LegionDev"}</span>
-          </div>
-          <div className="absolute right-16 z-10 hidden h-7 rounded-full bg-[#101112] px-3 text-xs sm:flex border items-center gap-2">
-            <Folder className="size-4" />
-            <span suppressHydrationWarning>{buttonTexts?.second || "v2_updates"}</span>
-          </div>
+          {/* Center Text */}
+          <h3 className="relative z-50 text-2xl md:text-3xl font-bold text-gray-900 text-center px-4" dir="rtl" suppressHydrationWarning>
+            ה-CRM המותאם שלך
+          </h3>
           {/* Circles */}
           <motion.div
             className="absolute -bottom-14 h-[100px] w-[100px] rounded-full border-t bg-accent/5"

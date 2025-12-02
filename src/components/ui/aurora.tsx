@@ -152,6 +152,10 @@ const AuroraComponent = (props: AuroraProps) => {
       if (!ctn || !program) return;
       const width = ctn.offsetWidth;
       const height = ctn.offsetHeight;
+
+      // Prevent WebGL framebuffer errors on zero-sized containers
+      if (width <= 0 || height <= 0) return;
+
       renderer.setSize(width, height);
       program.uniforms.uResolution.value = [width, height];
     }

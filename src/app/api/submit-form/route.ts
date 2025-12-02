@@ -4,25 +4,31 @@ import { google } from 'googleapis';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, phone, businessField } = body;
+    const { name, phone, businessField, currentSystem } = body;
 
-    // Validate input
+    // Validate required fields
     if (!name || !phone || !businessField) {
       return NextResponse.json(
-        { error: 'All fields are required' },
+        { error: 'All required fields must be provided' },
         { status: 400 }
       );
     }
 
-    // Google Sheets configuration
-    const spreadsheetId = '1qtwo0QYrZGbHdmPghNlNFedJfMbvDlFEuTY6KOlmJf4';
+    // Get service account credentials from environment
+    const spreadsheetId = process.env.GOOGLE_SHEET_ID || '1qtwo0QYrZGbHdmPghNlNFedJfMbvDlFEuTY6KOlmJf4';
 
-    // Parse the service account credentials from environment variable
     const credentials = JSON.parse(
       process.env.GOOGLE_SERVICE_ACCOUNT_KEY || '{}'
     );
 
-    // Create auth client
+    if (!credentials.client_email) {
+      return NextResponse.json(
+        { error: 'Google Service Account not configured' },
+        { status: 500 }
+      );
+    }
+
+    // Create auth client with Service Account
     const auth = new google.auth.GoogleAuth({
       credentials,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
@@ -30,19 +36,19 @@ export async function POST(request: NextRequest) {
 
     const sheets = google.sheets({ version: 'v4', auth });
 
-    // Get the current timestamp
+    // Get the current timestamp in Israel timezone
     const timestamp = new Date().toLocaleString('he-IL', {
       timeZone: 'Asia/Jerusalem',
     });
 
-    // Prepare the row data (columns A, B, C, D based on your sheet structure)
-    // A: שם מלא, B: טלפון, C: עיסוק, D: מקור ליד
-    const values = [[name, phone, businessField, timestamp]];
+    // Prepare the row data (columns A-E)
+    // A: שם מלא, B: טלפון, C: תחום העסק, D: תאריך, E: מערכת נוכחית
+    const values = [[name, phone, businessField, timestamp, currentSystem || 'לא צוין']];
 
-    // Append the data to the sheet
+    // Append the data to the sheet (A1 notation will auto-detect the sheet)
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Sheet1!A:D', // Adjust if your sheet has a different name
+      range: 'A:E', // Just specify columns, will use first sheet
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values,

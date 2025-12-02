@@ -105,7 +105,8 @@ export default function Spline3DScene() {
   };
 
   // Only render Spline when container has valid dimensions (prevents WebGL errors)
-  const shouldRender = dimensions.width > 0 && dimensions.height > 0;
+  // Require minimum 64px to prevent zero-size framebuffer issues on mobile
+  const shouldRender = dimensions.width >= 64 && dimensions.height >= 64;
 
   if (hasError) {
     return (
