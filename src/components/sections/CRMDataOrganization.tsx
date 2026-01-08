@@ -6,9 +6,9 @@ import { Check } from "lucide-react";
 
 export default function CRMDataOrganization() {
   return (
-    <section id="crm-data" className="py-12 md:py-24 px-4 md:px-6 relative">
+    <section id="crm-data" className="py-4 md:py-24 px-4 md:px-6 relative">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-center">
           {/* Database Component - Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

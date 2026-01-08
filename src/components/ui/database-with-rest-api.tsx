@@ -45,6 +45,11 @@ const DatabaseWithRestApi = ({
   buttonTexts,
   title,
 }: DatabaseWithRestApiProps) => {
+  // Calculate responsive box size
+  const responsiveBoxSize = typeof window !== 'undefined' && window.innerWidth < 768
+    ? Math.round(lottieBoxSize * 1.1) // 10% bigger on mobile
+    : lottieBoxSize;
+
   return (
     <div
       className={cn(
@@ -53,7 +58,12 @@ const DatabaseWithRestApi = ({
       )}
     >
       {/* SVG Container with controlled height */}
-      <div className="relative w-full" style={{ height: svgHeight || "450px" }}>
+      <div
+        className="relative w-full"
+        style={{
+          height: svgHeight || (typeof window !== 'undefined' && window.innerWidth < 768 ? "650px" : "450px")
+        }}
+      >
         <svg
           className="h-full w-full text-muted"
           width="100%"
@@ -242,11 +252,11 @@ const DatabaseWithRestApi = ({
         <div
           className="absolute pointer-events-none z-10"
           style={{
-            top: typeof window !== 'undefined' && window.innerWidth < 768 ? '78%' : '85%',
+            top: typeof window !== 'undefined' && window.innerWidth < 768 ? '72%' : '85%',
             left: '50%',
             transform: 'translate(-50%, -100%)',
-            width: `${lottieBoxSize}px`,
-            height: `${lottieBoxSize}px`,
+            width: `${responsiveBoxSize}px`,
+            height: `${responsiveBoxSize}px`,
           }}
         >
           <DotLottieReact
