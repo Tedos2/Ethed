@@ -133,6 +133,10 @@ const OrbitingSkill = memo(({ config, angle }: OrbitingSkillProps) => {
         transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`,
         willChange: 'transform',
         zIndex: isHovered ? 20 : 10,
+        backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+        perspective: 1000,
+        WebkitPerspective: 1000,
       }}
       onMouseEnter={() => window.matchMedia('(hover: hover) and (pointer: fine)').matches && setIsHovered(true)}
       onMouseLeave={() => window.matchMedia('(hover: hover) and (pointer: fine)').matches && setIsHovered(false)}
@@ -279,6 +283,12 @@ export default function CompactOrbitingSkills() {
   return (
     <div
       className="relative w-full h-full flex items-center justify-center"
+      style={{
+        transformStyle: 'preserve-3d',
+        WebkitTransformStyle: 'preserve-3d',
+        backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+      }}
       onMouseEnter={() => window.matchMedia('(hover: hover) and (pointer: fine)').matches && setIsPaused(true)}
       onMouseLeave={() => window.matchMedia('(hover: hover) and (pointer: fine)').matches && setIsPaused(false)}
     >

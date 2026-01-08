@@ -6,7 +6,6 @@ import { Check, Sparkles, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ResponsiveMacBook from "./ResponsiveMacBook";
 import { Aurora } from "@/components/ui/aurora";
-import Spline3DScene from "@/components/ui/Spline3DScene";
 import { LogoCarousel, type Logo } from "@/components/ui/logo-carousel";
 import type { SVGProps } from "react";
 import { motion } from "framer-motion";
@@ -141,16 +140,6 @@ export default function Hero() {
               </li>
               <li suppressHydrationWarning>
                 <a
-                  href="#automations"
-                  onClick={(e) => handleSmoothScroll(e, 'automations')}
-                  className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
-                  suppressHydrationWarning
-                >
-                  הבוטים שלנו
-                </a>
-              </li>
-              <li suppressHydrationWarning>
-                <a
                   href="#contact"
                   onClick={(e) => handleSmoothScroll(e, 'contact')}
                   className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
@@ -229,16 +218,6 @@ export default function Hero() {
             </li>
             <li suppressHydrationWarning>
               <a
-                href="#automations"
-                onClick={(e) => handleSmoothScroll(e, 'automations')}
-                className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
-                suppressHydrationWarning
-              >
-                הבוטים שלנו
-              </a>
-            </li>
-            <li suppressHydrationWarning>
-              <a
                 href="#contact"
                 onClick={(e) => handleSmoothScroll(e, 'contact')}
                 className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
@@ -287,27 +266,25 @@ export default function Hero() {
           {/* Right Side - Automation Flow Visualization */}
           <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 space-y-8">
             <ResponsiveMacBook />
-
-            {/* 3D Robot Scene - Desktop only */}
-            <div className="hidden md:flex w-[70%] max-w-md mx-auto relative -mt-16 md:-mt-20 justify-center items-center">
-              <Spline3DScene />
-            </div>
           </div>
 
           {/* Left Side - Content (main content for RTL) */}
           <div className="order-1 md:order-1 space-y-4 md:space-y-6 flex flex-col items-center md:items-end w-full">
             {/* Main Headline */}
-            {/* Mobile version - natural wrap */}
-            <h1 className="md:hidden text-[1.5rem] sm:text-2xl font-bold leading-snug text-center w-full px-2" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
-              פתרונות אוטומציה והטמעת סוכני בינה מלאכותית לעסקים
+            {/* Mobile version - 2 lines with darker yellow highlights and glow */}
+            <h1 className="md:hidden text-[1.75rem] sm:text-3xl font-bold leading-snug text-center w-full px-2" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
+              אתה יודע שאתה צריך <span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>עוד ידיים בעסק</span><br />
+              אבל <span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>אין לך תקציב</span> לעובד נוסף
             </h1>
-            {/* Desktop version - forced 2 lines */}
-            <h1 className="hidden md:block font-bold leading-tight text-right w-full" style={{ fontFamily: 'Rubik, sans-serif', fontSize: '2.9rem', whiteSpace: 'normal' }} suppressHydrationWarning>
-              פתרונות אוטומציה והטמעת<br />סוכני בינה מלאכותית לעסקים
+            {/* Desktop version - 3 lines with darker yellow highlights and glow */}
+            <h1 className="hidden md:block font-bold text-right w-full" style={{ fontFamily: 'Rubik, sans-serif', fontSize: 'clamp(2.5rem, 4.5vw, 3rem)', lineHeight: '1.3' }} suppressHydrationWarning>
+              <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning>אתה יודע שאתה צריך</span><br />
+              <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning><span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>עוד ידיים בעסק</span> אבל</span><br />
+              <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning><span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>אין לך תקציב</span> לעובד נוסף</span>
             </h1>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-row gap-3 md:gap-4 self-center md:self-start">
+            {/* CTA Button - Desktop Only */}
+            <div className="hidden md:flex flex-row gap-3 md:gap-4 self-center md:self-start">
               <Button
                 size="lg"
                 suppressHydrationWarning
@@ -328,47 +305,26 @@ export default function Hero() {
               >
                 לקביעת פגישה ◄
               </Button>
-
-              <Button
-                size="lg"
-                suppressHydrationWarning
-                onClick={() => {
-                  const automationsElement = document.getElementById('automations');
-                  if (automationsElement) {
-                    const offset = 100;
-                    const elementPosition = automationsElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.scrollY - offset;
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: 'smooth'
-                    });
-                  }
-                }}
-                className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 md:px-10 md:py-6 rounded-full text-sm md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
-                style={{ fontFamily: 'Rubik, sans-serif' }}
-              >
-                דוגמאות לסוכני AI ◄
-              </Button>
             </div>
 
             {/* Platform Logos Section */}
-            <div className="flex flex-col gap-3 md:gap-4 pt-1 w-full items-center md:items-end">
+            <div className="flex flex-col gap-4 md:gap-6 pt-4 md:pt-6 w-full items-center md:items-end">
               {/* Section Header */}
-              <p className="text-lg md:text-xl text-white text-center md:text-right max-w-2xl leading-snug md:leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
-                אנחנו מתמחים באפיון והתאמה של הכלים והאוטומציות המתאימות ביותר לייעול המחלקות והתהליכים בעסק.
+              <p className="text-xl md:text-2xl text-white text-center md:text-right max-w-2xl leading-relaxed md:leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
+                אנחנו נתאים ונאפיין את הכלים המתאימים עבור העסק שלך כדי שתוכל להפסיק לעבוד עבור העסק שלך ולהתחיל לנהל את העסק שלך
               </p>
 
               {/* Platform Logos */}
-              <div className="flex flex-row-reverse gap-3 md:gap-4 w-full justify-center md:justify-end items-end">
+              <div className="flex flex-row-reverse gap-4 md:gap-6 w-full justify-center md:justify-end items-end">
               {/* Make.com Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-20 h-10 md:w-36 md:h-18">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-8 md:py-5 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-24 h-12 md:w-44 md:h-20">
                     <Image
                       src="/images to use/Make-Logo-RGB@2x-1.webp"
                       alt="Make.com"
                       fill
-                      sizes="(max-width: 768px) 80px, 144px"
+                      sizes="(max-width: 768px) 96px, 176px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -377,13 +333,13 @@ export default function Hero() {
 
               {/* Zapier Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-20 h-10 md:w-36 md:h-18">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-8 md:py-5 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-24 h-12 md:w-44 md:h-20">
                     <Image
                       src="/images to use/Zapier_Company_Logo_2022.png"
                       alt="Zapier"
                       fill
-                      sizes="(max-width: 768px) 80px, 144px"
+                      sizes="(max-width: 768px) 96px, 176px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -392,13 +348,13 @@ export default function Hero() {
 
               {/* n8n Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-4 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-20 h-10 md:w-36 md:h-18">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-8 md:py-5 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-24 h-12 md:w-44 md:h-20">
                     <Image
                       src="/images to use/N8n-logo-new.svg.png"
                       alt="n8n"
                       fill
-                      sizes="(max-width: 768px) 80px, 144px"
+                      sizes="(max-width: 768px) 96px, 176px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -407,14 +363,28 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Logo Carousel Section - Desktop Only */}
-            <div className="hidden md:flex flex-col gap-4 w-full items-end pt-8">
-              <h3 className="text-xl md:text-2xl text-white text-right w-full leading-snug md:leading-relaxed font-bold" style={{ fontFamily: 'Rubik, sans-serif' }} dir="rtl" suppressHydrationWarning>
-                בחרו בנו בכדי לייעל את העסק שלהם
-              </h3>
-              <div className="w-full flex justify-end">
-                <LogoCarousel columnCount={2} logos={clientLogos} />
-              </div>
+            {/* CTA Button - Mobile Only (below logos) */}
+            <div className="flex md:hidden flex-row gap-3 self-center w-full justify-center pt-4">
+              <Button
+                size="lg"
+                suppressHydrationWarning
+                onClick={() => {
+                  const contactElement = document.getElementById('contact');
+                  if (contactElement) {
+                    const offset = 100;
+                    const elementPosition = contactElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - offset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
+                style={{ fontFamily: 'Rubik, sans-serif' }}
+              >
+                לקביעת פגישה ◄
+              </Button>
             </div>
           </div>
         </div>

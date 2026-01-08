@@ -5,15 +5,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion } from "framer-motion";
-import { User, Phone, Briefcase, Settings, Shield, Send } from "lucide-react";
+import { User, Phone, Briefcase, Shield, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Spline3DScene from "@/components/ui/Spline3DScene";
 
 // Zod validation schema
 const contactSchema = z.object({
   name: z.string().min(2, "השם חייב להכיל לפחות 2 תווים"),
   phone: z.string().regex(/^0\d{1,2}-?\d{7}$/, "מספר טלפון לא תקין"),
   businessField: z.string().min(2, "נא להזין את תחום העסק"),
-  currentSystem: z.string().optional(),
   privacyConsent: z.boolean().refine((val) => val === true, {
     message: "יש לאשר את מדיניות הפרטיות",
   }),
@@ -49,7 +49,6 @@ export default function Contact() {
           name: data.name,
           phone: data.phone,
           businessField: data.businessField,
-          currentSystem: data.currentSystem || '',
         }),
       });
 
@@ -96,49 +95,42 @@ export default function Contact() {
     <section id="contact" className="relative py-12 md:py-20 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-20 w-72 h-72 bg-pink-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 md:px-4 relative z-10">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-          className="max-w-4xl mx-auto"
-        >
-          {/* Heading */}
-          <motion.h2
-            variants={itemVariants}
-            className="text-2xl md:text-5xl font-extrabold text-center mb-4 md:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500"
-            suppressHydrationWarning
-          >
-            בואו נבדוק יחד איך אפשר לייעל את העסק שלכם.
-          </motion.h2>
-
-          {/* Subheading */}
-          <motion.p
-            variants={itemVariants}
-            className="text-lg md:text-2xl text-center text-gray-300 mb-8 md:mb-16"
-            suppressHydrationWarning
-          >
-            תאמו איתנו שיחת אפיון ראשונית, ללא עלות
-          </motion.p>
-
-          {/* Form Card */}
+        <div className="max-w-7xl mx-auto">
+          {/* Unified block with bot and form */}
           <motion.div
-            variants={itemVariants}
-            className="bg-black/40 backdrop-blur-md border border-orange-500/30 rounded-2xl p-6 md:p-12 shadow-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="bg-gradient-to-br from-orange-700/95 via-pink-700/90 to-orange-800/90 backdrop-blur-md border border-orange-500/40 rounded-3xl p-4 md:p-8 shadow-2xl"
           >
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {/* Two-column grid inside unified block */}
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+
+              {/* Left Column - Form (switched position) */}
+              <div className="order-1"
+              >
+                {/* Heading inside form card */}
+                <h3 className="text-white text-2xl md:text-3xl font-bold mb-2 text-right" suppressHydrationWarning>
+                  רוצים לשמוע איך אפשר לייעל את העסק שלכם?
+                </h3>
+                <p className="text-white/90 text-lg mb-6 text-right" suppressHydrationWarning>
+                  תאמו איתנו שיחת אפיון ראשונית ללא עלות:
+                </p>
+
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Name Field */}
-              <motion.div variants={itemVariants} className="relative">
+              <div className="relative">
                 <label htmlFor="name" className="block text-white font-medium mb-2 text-right" suppressHydrationWarning>
-                  שם <span className="text-orange-500" suppressHydrationWarning>*</span>
+                  שם <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <User className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
+                  <User className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white" />
                   <input
                     {...register("name")}
                     type="text"
@@ -147,25 +139,25 @@ export default function Contact() {
                     dir="rtl"
                     suppressHydrationWarning
                     className={cn(
-                      "w-full bg-black/50 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 transition-all",
+                      "w-full bg-white/10 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all",
                       errors.name
-                        ? "border-red-500 focus:ring-red-500/50"
-                        : "border-orange-500/30 focus:ring-orange-500/50"
+                        ? "border-red-400 focus:ring-red-400/50"
+                        : "border-white/20 focus:ring-white/50"
                     )}
                   />
                 </div>
                 {errors.name && (
-                  <p className="text-red-400 text-sm mt-1 text-right">{errors.name.message}</p>
+                  <p className="text-red-200 text-sm mt-1 text-right">{errors.name.message}</p>
                 )}
-              </motion.div>
+              </div>
 
               {/* Phone Field */}
-              <motion.div variants={itemVariants} className="relative">
+              <div className="relative">
                 <label htmlFor="phone" className="block text-white font-medium mb-2 text-right" suppressHydrationWarning>
-                  טלפון <span className="text-orange-500" suppressHydrationWarning>*</span>
+                  טלפון <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
+                  <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white" />
                   <input
                     {...register("phone")}
                     type="tel"
@@ -174,25 +166,25 @@ export default function Contact() {
                     dir="rtl"
                     suppressHydrationWarning
                     className={cn(
-                      "w-full bg-black/50 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 transition-all",
+                      "w-full bg-white/10 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all",
                       errors.phone
-                        ? "border-red-500 focus:ring-red-500/50"
-                        : "border-orange-500/30 focus:ring-orange-500/50"
+                        ? "border-red-400 focus:ring-red-400/50"
+                        : "border-white/20 focus:ring-white/50"
                     )}
                   />
                 </div>
                 {errors.phone && (
-                  <p className="text-red-400 text-sm mt-1 text-right">{errors.phone.message}</p>
+                  <p className="text-red-200 text-sm mt-1 text-right">{errors.phone.message}</p>
                 )}
-              </motion.div>
+              </div>
 
               {/* Business Field */}
-              <motion.div variants={itemVariants} className="relative">
+              <div className="relative">
                 <label htmlFor="businessField" className="block text-white font-medium mb-2 text-right" suppressHydrationWarning>
-                  תחום העסק <span className="text-orange-500" suppressHydrationWarning>*</span>
+                  תחום העסק <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <Briefcase className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
+                  <Briefcase className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white" />
                   <input
                     {...register("businessField")}
                     type="text"
@@ -201,75 +193,55 @@ export default function Contact() {
                     dir="rtl"
                     suppressHydrationWarning
                     className={cn(
-                      "w-full bg-black/50 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 transition-all",
+                      "w-full bg-white/10 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all",
                       errors.businessField
-                        ? "border-red-500 focus:ring-red-500/50"
-                        : "border-orange-500/30 focus:ring-orange-500/50"
+                        ? "border-red-400 focus:ring-red-400/50"
+                        : "border-white/20 focus:ring-white/50"
                     )}
                   />
                 </div>
                 {errors.businessField && (
-                  <p className="text-red-400 text-sm mt-1 text-right">
+                  <p className="text-red-200 text-sm mt-1 text-right">
                     {errors.businessField.message}
                   </p>
                 )}
-              </motion.div>
-
-              {/* Current System Field (Optional) */}
-              <motion.div variants={itemVariants} className="relative">
-                <label htmlFor="currentSystem" className="block text-white font-medium mb-2 text-right">
-                  עם איזו מערכת אתם עובדים היום?
-                </label>
-                <div className="relative">
-                  <Settings className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-orange-500" />
-                  <input
-                    {...register("currentSystem")}
-                    type="text"
-                    id="currentSystem"
-                    placeholder="בחר מערכת (לא חובה)"
-                    dir="rtl"
-                    suppressHydrationWarning
-                    className="w-full bg-black/50 border border-orange-500/30 rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all"
-                  />
-                </div>
-              </motion.div>
+              </div>
 
               {/* Privacy Consent */}
-              <motion.div variants={itemVariants} className="flex items-start gap-3 flex-row-reverse">
-                <label htmlFor="privacyConsent" className="text-gray-300 text-base flex-1 text-right" suppressHydrationWarning>
+              <div className="flex items-start gap-3 flex-row-reverse">
+                <label htmlFor="privacyConsent" className="text-white/90 text-base flex-1 text-right" suppressHydrationWarning>
                   אני מסכים למסור את פרטיי בהתאם ל
                   <a
                     href="/privacy-policy"
-                    className="text-orange-500 hover:text-orange-400 underline mx-1"
+                    className="text-white hover:text-white/80 underline mx-1"
                     suppressHydrationWarning
                   >
                     מדיניות הפרטיות
                   </a>
-                  <span className="text-orange-500" suppressHydrationWarning>*</span>
+                  <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <input
                   {...register("privacyConsent")}
                   type="checkbox"
                   id="privacyConsent"
-                  className="w-5 h-5 mt-1 accent-orange-500 cursor-pointer"
+                  className="w-5 h-5 mt-1 accent-white cursor-pointer"
                 />
-              </motion.div>
+              </div>
               {errors.privacyConsent && (
-                <p className="text-red-400 text-sm -mt-4 text-right">
+                <p className="text-red-200 text-sm -mt-4 text-right">
                   {errors.privacyConsent.message}
                 </p>
               )}
 
               {/* Submit Button */}
-              <motion.button
-                variants={itemVariants}
+              <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold py-4 px-8 rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
+                className="w-full bg-white text-purple-600 font-bold py-4 px-8 rounded-lg hover:bg-white/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <div className="w-5 h-5 border-2 border-purple-600/30 border-t-purple-600 rounded-full animate-spin" />
                     שולח...
                   </>
                 ) : (
@@ -278,10 +250,20 @@ export default function Contact() {
                     שליחה
                   </>
                 )}
-              </motion.button>
+              </button>
             </form>
+              </div>
+
+              {/* Right Column - 3D Bot Component (Desktop Only) */}
+              <div className="hidden md:flex order-2 justify-center md:justify-end">
+                <div className="w-full max-w-md h-[350px] md:h-[500px]">
+                  <Spline3DScene />
+                </div>
+              </div>
+
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Success Toast */}

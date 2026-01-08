@@ -107,7 +107,7 @@ export default function EmotionalHook() {
               viewport={{ once: true, margin: "-100px" }}
               suppressHydrationWarning
             >
-              אז מה קורה? אתה עושה הכל בעצמך. עונה ללקוחות בוואטסאפ עד מאוחר בלילה, מעביר מידע בין המערכות ידנית, מזכיר ללקוחות להגיע לפגישות... <strong style={{ color: '#ffb84d', fontWeight: '900' }} suppressHydrationWarning>כל יום אותו הדבר, ואתה תקוע במקום</strong>.
+              אתה עושה הכל בעצמך, עונה ללקוחות בוואטסאפ עד מאוחר בלילה, מעביר מידע בין המערכות ידנית, מזכיר ללקוחות להגיע לפגישות... <strong style={{ color: '#ffb84d', fontWeight: '900' }} suppressHydrationWarning>כל יום אותו הדבר, ואתה תקוע במקום</strong>.
             </motion.p>
 
             <motion.p
@@ -127,7 +127,7 @@ export default function EmotionalHook() {
               viewport={{ once: true, margin: "-100px" }}
               suppressHydrationWarning
             >
-              יש לך רעיונות איך לגדול. אתה יודע מה צריך לעשות. אבל <strong style={{ color: '#ffb84d', fontWeight: '900' }} suppressHydrationWarning>אין לך זמן – כי כל היום אתה רק מכבה שריפות</strong>.
+              יש לך רעיונות איך לגדול, אתה יודע מה צריך לעשות. אבל <strong style={{ color: '#ffb84d', fontWeight: '900' }} suppressHydrationWarning>אין לך זמן – כי כל היום אתה רק מכבה שריפות</strong>.
             </motion.p>
 
             {/* Solution with pop animation */}
@@ -171,7 +171,8 @@ export default function EmotionalHook() {
               viewport={{ once: true, margin: "-100px" }}
               suppressHydrationWarning
             >
-              זה בדיוק מה שסוכני AI עושים. ואתה סוף סוף יכול להפסיק לעבוד בעסק ולהתחיל לבנות אותו.
+              זה בדיוק מה שסוכני בינה מלאכותית עושים.
+              ואתה תוכל להפסיק לעבוד בעסק שלך, ולהתחיל לנהל את המקום
             </motion.p>
           </div>
         </div>

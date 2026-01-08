@@ -81,18 +81,6 @@ export default function Example() {
                             />
                         </div>
 
-                        {/* ETHED Logo Background - Above background shadows, below avatars */}
-                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-5 opacity-35">
-                            <img
-                                src="/images to use/ETHEDLOGO.png"
-                                alt="Ethed Logo Background"
-                                className="w-full h-auto object-contain"
-                                style={{
-                                    filter: 'drop-shadow(0 0.5px 1px rgba(255, 119, 66, 0.1))',
-                                }}
-                            />
-                        </div>
-
                         {/* Teddy's avatar shadow - Simple circular shadow */}
                         <div className="absolute bottom-16 right-16 w-48 h-48 pointer-events-none z-0">
                             <div

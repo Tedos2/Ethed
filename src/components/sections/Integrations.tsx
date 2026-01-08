@@ -51,38 +51,61 @@ export default function Integrations() {
                   textAlign: 'right',
                   marginBottom: isMobile ? '0.25rem' : '0.5rem'
                 }} suppressHydrationWarning>
-                  התאמה מושלמת לכלים שכבר עובדים איתם
+                  התאמה מדויקת עבור העסק שלך
                 </h2>
 
                 {/* Body Paragraphs */}
                 <p style={{
-                  fontSize: isMobile ? '1rem' : '1.125rem',
+                  fontSize: isMobile ? '1rem' : 'clamp(1.125rem, 2vw, 1.25rem)',
                   color: '#ffffff',
-                  lineHeight: isMobile ? '1.5' : '1.6',
+                  lineHeight: '1.6',
                   textAlign: 'right',
                   margin: 0
                 }} suppressHydrationWarning>
-                  אנחנו לא מחליפים את המערכות שלך - אנחנו משדרגים אותן.
+                  כמה זמן ביום אתה מבזבז על מיילים? ומה עם לקבוע פגישות? או לסדר את הלידים החדשים בcrm שלך?
                 </p>
 
                 <p style={{
-                  fontSize: isMobile ? '1rem' : '1.125rem',
+                  fontSize: isMobile ? '1rem' : 'clamp(1.125rem, 2vw, 1.25rem)',
                   color: '#ffffff',
-                  lineHeight: isMobile ? '1.5' : '1.6',
+                  lineHeight: '1.6',
                   textAlign: 'right',
                   margin: 0
                 }} suppressHydrationWarning>
-                  האוטומציות שלנו מתחברות בצורה חלקה לכל הכלים שאתה כבר משתמש בהם: CRM, יומנים, וואטסאפ, דוא"ל, מדיה חברתית ועוד עשרות פלטפורמות.
+                  לפעמים אתה שוקל לוותר על חופשות כי אתה לא יודע מי יתפעל את המשימות התפעוליות האלו בעסק שלך?
                 </p>
 
                 <p style={{
-                  fontSize: isMobile ? '1rem' : '1.125rem',
+                  fontSize: isMobile ? '1rem' : 'clamp(1.125rem, 2vw, 1.25rem)',
                   color: '#ffffff',
-                  lineHeight: isMobile ? '1.5' : '1.6',
+                  lineHeight: '1.6',
                   textAlign: 'right',
                   margin: 0
                 }} suppressHydrationWarning>
-                  אין צורך להחליף כלום. אנחנו פשוט גורמים לכל הכלים האלה לעבוד ביחד - <strong style={{ color: '#ffb84d', fontWeight: '900' }} suppressHydrationWarning>בצורה אוטומטית, חכמה ויעילה</strong>.
+                  ומה אם היה לך עובד שעושה את כל זה במקומך
+                  כמה זמן וכאב ראש זה היה חוסך לך?
+                </p>
+
+                <p style={{
+                  fontSize: isMobile ? '1rem' : 'clamp(1.125rem, 2vw, 1.25rem)',
+                  color: '#ffffff',
+                  lineHeight: '1.6',
+                  textAlign: 'right',
+                  margin: 0
+                }} suppressHydrationWarning>
+                  אנחנו מזהים צווארי בקבוק, ונייעל רק איפה שצריך, ובונים לך עובד דיגיטלי שמותאם בול לצרכים שלך.
+                </p>
+
+                <p style={{
+                  fontSize: isMobile ? 'clamp(1.5rem, 4vw, 2rem)' : 'clamp(2rem, 3vw, 2.5rem)',
+                  fontWeight: '900',
+                  color: '#FFFF99',
+                  lineHeight: '1.4',
+                  textAlign: 'right',
+                  margin: 0,
+                  textShadow: '0 0 8px rgba(255, 255, 153, 0.4), 0 0 15px rgba(255, 255, 153, 0.2)',
+                }} suppressHydrationWarning>
+                  פחות עומס, יותר שליטה, יותר זמן להתמקד בעתיד של העסק שלך
                 </p>
               </div>
             </motion.div>

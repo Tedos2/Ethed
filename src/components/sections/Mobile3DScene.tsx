@@ -1,6 +1,7 @@
 "use client";
 
 import Spline3DScene from "@/components/ui/Spline3DScene";
+import { motion } from "framer-motion";
 
 export default function Mobile3DScene() {
   return (
@@ -16,7 +17,11 @@ export default function Mobile3DScene() {
         marginBottom: '0px'
       }}
     >
-      <div
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
         style={{
           position: 'relative',
           width: '100%',
@@ -40,7 +45,7 @@ export default function Mobile3DScene() {
         >
           <Spline3DScene />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

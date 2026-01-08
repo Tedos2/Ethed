@@ -24,9 +24,9 @@ export default function IdeasToReality() {
         {/* Two-column layout: Text (right in RTL) + 3D Lightbulb (left in RTL) */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
 
-          {/* Right Column - Text Content (appears first in RTL) */}
+          {/* Right Column - Text Content (now appears second in RTL) */}
           <motion.div
-            className="flex-1 max-w-2xl order-1 md:order-1 relative"
+            className="flex-1 max-w-2xl order-2 md:order-2 relative"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -70,28 +70,35 @@ export default function IdeasToReality() {
 
               {/* Paragraph 1 */}
               <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
-                אנחנו לא רק מקשיבים - אנחנו באמת <strong className="text-[#ffb84d] font-bold">שומעים</strong>.
-                כל רעיון, כל חלום, כל מחשבה שיש לכם - זה נקודת המוצא שלנו.
+                כל עסק עובד אחרת ולכן <strong className="text-[#ffb84d] font-bold">אין פתרון אחד שמתאים לכולם</strong>.
               </p>
 
               {/* Paragraph 2 */}
               <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
-                אנחנו מתמחים לקחת את מה שנמצא בראש שלכם ולהפוך את זה למשהו מוחשי,
-                פועל, ומותאם בדיוק לצרכים שלכם. כי הפתרון הכי טוב הוא זה שנבנה{' '}
-                <strong className="text-[#ffb84d] font-bold">ביחד איתכם</strong>.
+                אנחנו מקשיבים למה שקורה אצלכם בשטח,
+                מבינים מה חשוב לכם באמת
+                ובונים <strong className="text-[#ffb84d] font-bold">פתרון שמתחבר לחזון שלכם</strong> ולדרך שבה אתם עובדים.
               </p>
 
               {/* Paragraph 3 */}
               <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
-                פתוחים לכל רעיון. מתאימים לכל חזון. הופכים כל חלום{' '}
-                <span className="text-[#FF7742] font-bold" suppressHydrationWarning>למציאות</span>.
+                לא מסבכים
+                לא ממציאים מחדש מה שכבר עובד.
+                רק לוקחים רעיון, צורך או בעיה
+                והופכים אותו למשהו שעובד בשבילכם, <strong className="text-[#ffb84d] font-bold">יום אחרי יום</strong>.
+              </p>
+
+              {/* Paragraph 4 */}
+              <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
+                ובסוף זה לא עוד מערכת,
+                זה משהנו שנבנה סביבכם עם <strong className="text-[#ffb84d] font-bold">הבנה אמיתית</strong> של מי אתם, ואיך אתם רוצים לעבוד
               </p>
             </div>
           </motion.div>
 
-          {/* Left Column - Neon Lightbulb Image (appears second in RTL) */}
+          {/* Left Column - Neon Lightbulb Image (now appears first in RTL) */}
           <motion.div
-            className="flex-1 flex items-center justify-center order-2 md:order-2"
+            className="flex-1 flex items-center justify-center order-1 md:order-1"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
