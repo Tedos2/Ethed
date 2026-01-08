@@ -86,7 +86,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen text-white">
+    <section id="hero" className="relative min-h-screen text-white overflow-x-hidden">
       {/* Aurora Background */}
       <div className="absolute inset-0 z-0">
         <Aurora
@@ -261,7 +261,7 @@ export default function Hero() {
       />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-6 pt-20 md:pt-32 pb-8 md:pb-2 min-h-screen flex items-start md:items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-20 md:pt-32 pb-8 md:pb-2 min-h-screen flex items-start md:items-center">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start w-full">
           {/* Right Side - Automation Flow Visualization */}
           <div className="order-2 md:order-2 flex flex-col items-center justify-start py-0 md:py-2 space-y-8">
@@ -310,21 +310,21 @@ export default function Hero() {
             {/* Platform Logos Section */}
             <div className="flex flex-col gap-4 md:gap-6 pt-4 md:pt-6 w-full items-center md:items-end">
               {/* Section Header */}
-              <p className="text-xl md:text-2xl text-white text-center md:text-right max-w-2xl leading-relaxed md:leading-relaxed font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
+              <p className="text-base sm:text-lg md:text-2xl text-white text-center md:text-right max-w-2xl leading-relaxed md:leading-relaxed px-2 font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
                 אנחנו נתאים ונאפיין את הכלים המתאימים עבור העסק שלך כדי שתוכל להפסיק לעבוד עבור העסק שלך ולהתחיל לנהל את העסק שלך
               </p>
 
               {/* Platform Logos */}
-              <div className="flex flex-row-reverse gap-4 md:gap-6 w-full justify-center md:justify-end items-end">
+              <div className="flex flex-row-reverse gap-2 sm:gap-3 md:gap-6 px-2 w-full justify-center md:justify-end items-end">
               {/* Make.com Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-8 md:py-5 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-24 h-12 md:w-44 md:h-20">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-lg sm:rounded-xl md:rounded-2xl px-2 py-2 sm:px-3 sm:py-2.5 md:px-8 md:py-5 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-16 h-8 sm:w-20 sm:h-10 md:w-44 md:h-20">
                     <Image
                       src="/images to use/Make-Logo-RGB@2x-1.webp"
                       alt="Make.com"
                       fill
-                      sizes="(max-width: 768px) 96px, 176px"
+                      sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 176px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -333,13 +333,13 @@ export default function Hero() {
 
               {/* Zapier Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-8 md:py-5 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-24 h-12 md:w-44 md:h-20">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-lg sm:rounded-xl md:rounded-2xl px-2 py-2 sm:px-3 sm:py-2.5 md:px-8 md:py-5 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-16 h-8 sm:w-20 sm:h-10 md:w-44 md:h-20">
                     <Image
                       src="/images to use/Zapier_Company_Logo_2022.png"
                       alt="Zapier"
                       fill
-                      sizes="(max-width: 768px) 96px, 176px"
+                      sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 176px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -348,13 +348,13 @@ export default function Hero() {
 
               {/* n8n Logo */}
               <div className="relative group">
-                <div className="relative bg-white/5 border-2 border-white/20 rounded-xl md:rounded-2xl px-4 py-3 md:px-8 md:py-5 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
-                  <div className="relative w-24 h-12 md:w-44 md:h-20">
+                <div className="relative bg-white/5 border-2 border-white/20 rounded-lg sm:rounded-xl md:rounded-2xl px-2 py-2 sm:px-3 sm:py-2.5 md:px-8 md:py-5 transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-lg hover:shadow-white/10">
+                  <div className="relative w-16 h-8 sm:w-20 sm:h-10 md:w-44 md:h-20">
                     <Image
                       src="/images to use/N8n-logo-new.svg.png"
                       alt="n8n"
                       fill
-                      sizes="(max-width: 768px) 96px, 176px"
+                      sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 176px"
                       className="object-contain brightness-0 invert"
                     />
                   </div>
@@ -364,7 +364,7 @@ export default function Hero() {
             </div>
 
             {/* CTA Button - Mobile Only (below logos) */}
-            <div className="flex md:hidden flex-row gap-3 self-center w-full justify-center pt-4">
+            <div className="flex md:hidden flex-row gap-3 self-center w-full justify-center pt-4 px-4">
               <Button
                 size="lg"
                 suppressHydrationWarning
@@ -380,7 +380,7 @@ export default function Hero() {
                     });
                   }
                 }}
-                className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
+                className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 rounded-full w-full max-w-[280px] text-sm font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
                 style={{ fontFamily: 'Rubik, sans-serif' }}
               >
                 לקביעת פגישה ◄

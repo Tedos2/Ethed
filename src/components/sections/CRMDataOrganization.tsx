@@ -31,6 +31,10 @@ export default function CRMDataOrganization() {
                 second: "מערכת CRM"
               }}
               lightColor="#FF7742"
+              showLottieBox={true}
+              lottieBoxSize={150}
+              lottieAutoplay={true}
+              lottieLoop={true}
             />
           </motion.div>
 

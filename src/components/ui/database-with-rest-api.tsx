@@ -4,12 +4,17 @@ import React from "react";
 import { motion } from "motion/react";
 import { Folder, HeartHandshakeIcon, SparklesIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 interface DatabaseWithRestApiProps {
   className?: string;
   lightColor?: string;
   children?: React.ReactNode;
   svgHeight?: string;
+  showLottieBox?: boolean;
+  lottieBoxSize?: number;
+  lottieAutoplay?: boolean;
+  lottieLoop?: boolean;
   // Deprecated props (kept for backward compatibility)
   circleText?: string;
   badgeTexts?: {
@@ -30,6 +35,10 @@ const DatabaseWithRestApi = ({
   lightColor,
   children,
   svgHeight,
+  showLottieBox = true,
+  lottieBoxSize = 80,
+  lottieAutoplay = true,
+  lottieLoop = true,
   // Deprecated props
   circleText,
   badgeTexts,
@@ -227,6 +236,30 @@ const DatabaseWithRestApi = ({
         </defs>
         </svg>
       </div>
+
+      {/* Lottie Box Animation - positioned at path convergence */}
+      {showLottieBox && (
+        <div
+          className="absolute pointer-events-none z-10"
+          style={{
+            top: typeof window !== 'undefined' && window.innerWidth < 768 ? '78%' : '85%',
+            left: '50%',
+            transform: 'translate(-50%, -100%)',
+            width: `${lottieBoxSize}px`,
+            height: `${lottieBoxSize}px`,
+          }}
+        >
+          <DotLottieReact
+            src="/images to use/Empty Box.lottie"
+            loop={lottieLoop}
+            autoplay={lottieAutoplay}
+            style={{
+              width: '100%',
+              height: '100%',
+            }}
+          />
+        </div>
+      )}
 
       {/* Replacement Component Slot */}
       {children && (
