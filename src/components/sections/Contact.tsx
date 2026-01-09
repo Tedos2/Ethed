@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { User, Phone, Briefcase, Shield, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Spline3DScene from "@/components/ui/Spline3DScene";
+import PrivacyPolicyDialog from "@/components/ui/privacy-policy";
 
 // Zod validation schema
 const contactSchema = z.object({
@@ -130,7 +131,7 @@ export default function Contact() {
                   שם <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <User className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white" />
+                  <User className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400 pointer-events-none" />
                   <input
                     {...register("name")}
                     type="text"
@@ -157,7 +158,7 @@ export default function Contact() {
                   טלפון <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white" />
+                  <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400 pointer-events-none" />
                   <input
                     {...register("phone")}
                     type="tel"
@@ -184,7 +185,7 @@ export default function Contact() {
                   תחום העסק <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <Briefcase className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white" />
+                  <Briefcase className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400 pointer-events-none" />
                   <input
                     {...register("businessField")}
                     type="text"
@@ -211,13 +212,9 @@ export default function Contact() {
               <div className="flex items-start gap-3 flex-row-reverse">
                 <label htmlFor="privacyConsent" className="text-white/90 text-base flex-1 text-right" suppressHydrationWarning>
                   אני מסכים למסור את פרטיי בהתאם ל
-                  <a
-                    href="/privacy-policy"
-                    className="text-white hover:text-white/80 underline mx-1"
-                    suppressHydrationWarning
-                  >
-                    מדיניות הפרטיות
-                  </a>
+                  <span className="inline-block mx-1">
+                    <PrivacyPolicyDialog variant="contact" />
+                  </span>
                   <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <input

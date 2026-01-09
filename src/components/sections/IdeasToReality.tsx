@@ -63,25 +63,43 @@ export default function IdeasToReality() {
               }}
             >
               {/* Heading */}
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-2" suppressHydrationWarning>
-                הרעיון שלך,{' '}
-                <span className="text-[#FF7742]" suppressHydrationWarning>המציאות שלנו</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-2" suppressHydrationWarning>
+                <span className="text-[#FF7742]" suppressHydrationWarning>הרעיון שלך,{' '}</span>
+                <span className="text-white" suppressHydrationWarning>המציאות שלנו</span>
               </h2>
 
               {/* Paragraph 1 */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
+              <p className="text-white/90" style={{
+                fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
+                  ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
+                  : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+                lineHeight: '1.6',
+                margin: 0
+              }} suppressHydrationWarning>
                 כל עסק עובד אחרת ולכן <strong className="text-[#ffb84d] font-bold">אין פתרון אחד שמתאים לכולם</strong>.
               </p>
 
               {/* Paragraph 2 */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
+              <p className="text-white/90" style={{
+                fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
+                  ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
+                  : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+                lineHeight: '1.6',
+                margin: 0
+              }} suppressHydrationWarning>
                 אנחנו מקשיבים למה שקורה אצלכם בשטח,
                 מבינים מה חשוב לכם באמת
                 ובונים <strong className="text-[#ffb84d] font-bold">פתרון שמתחבר לחזון שלכם</strong> ולדרך שבה אתם עובדים.
               </p>
 
               {/* Paragraph 3 */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
+              <p className="text-white/90" style={{
+                fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
+                  ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
+                  : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+                lineHeight: '1.6',
+                margin: 0
+              }} suppressHydrationWarning>
                 לא מסבכים
                 לא ממציאים מחדש מה שכבר עובד.
                 רק לוקחים רעיון, צורך או בעיה
@@ -89,7 +107,13 @@ export default function IdeasToReality() {
               </p>
 
               {/* Paragraph 4 */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90" style={{ lineHeight: '1.6', margin: 0 }} suppressHydrationWarning>
+              <p className="text-white/90" style={{
+                fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
+                  ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
+                  : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+                lineHeight: '1.6',
+                margin: 0
+              }} suppressHydrationWarning>
                 ובסוף זה לא עוד מערכת,
                 זה משהנו שנבנה סביבכם עם <strong className="text-[#ffb84d] font-bold">הבנה אמיתית</strong> של מי אתם, ואיך אתם רוצים לעבוד
               </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import PrivacyPolicyDialog from "@/components/ui/privacy-policy";
 
 export default function Footer() {
   // Smooth scroll handler with offset (same as hero)
@@ -115,6 +116,9 @@ export default function Footer() {
               >
                 צור קשר
               </a>
+              <div className="block">
+                <PrivacyPolicyDialog variant="footer" />
+              </div>
             </nav>
           </div>
 

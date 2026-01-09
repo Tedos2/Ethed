@@ -48,23 +48,53 @@ export default function CRMDataOrganization() {
             dir="rtl"
           >
             {/* Main Headline */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight" suppressHydrationWarning>
+            <h2 style={{
+              fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
+                ? 'clamp(1.5rem, 4vw, 2rem)'
+                : 'clamp(2rem, 3vw, 2.5rem)',
+              fontWeight: '900',
+              color: '#FFFF99',
+              lineHeight: '1.4',
+              margin: 0,
+              textShadow: '0 0 8px rgba(255, 255, 153, 0.4), 0 0 15px rgba(255, 255, 153, 0.2)'
+            }} suppressHydrationWarning>
               CRM בהתאמה אישית לעסק שלך
             </h2>
 
-            {/* Subheadline */}
-            <p className="text-lg md:text-xl font-semibold text-white leading-relaxed" suppressHydrationWarning>
-              אנחנו בונים עבורך מערכת מותאמת בדיוק למערכות ולנתונים שלך
-            </p>
-
             {/* Value Proposition */}
-            <p className="text-base md:text-lg font-medium text-white leading-relaxed" suppressHydrationWarning>
+            <p style={{
+              fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
+                ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
+                : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+              lineHeight: '1.6',
+              margin: 0
+            }} className="font-medium text-white" suppressHydrationWarning>
               שירות מלא מהתכנון ועד ההטמעה - אנחנו לוקחים את כל המערכות הקיימות שלך ובונים CRM שמתאים בדיוק לצרכים שלך.
             </p>
 
             {/* Additional Copy */}
-            <p className="text-base md:text-lg font-medium text-white leading-relaxed" suppressHydrationWarning>
+            <p style={{
+              fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
+                ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
+                : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+              lineHeight: '1.6',
+              margin: 0
+            }} className="font-medium text-white" suppressHydrationWarning>
               במקום לבזבז שעות על חיפוש מידע בין אקסלים והודעות, תקבל מערכת אחת שמרכזת הכל - לקוחות, עסקאות, משימות ודוחות. מותאם בדיוק לעסק שלך, עובד עם הכלים שכבר יש לך, וחוסך לך זמן יקר כל יום.
+            </p>
+
+            {/* Glowing Subheadline - Last */}
+            <p style={{
+              fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
+                ? 'clamp(1.5rem, 4vw, 2rem)'
+                : 'clamp(2rem, 3vw, 2.5rem)',
+              fontWeight: '900',
+              color: '#FFFF99',
+              lineHeight: '1.4',
+              margin: 0,
+              textShadow: '0 0 8px rgba(255, 255, 153, 0.4), 0 0 15px rgba(255, 255, 153, 0.2)'
+            }} suppressHydrationWarning>
+              אנחנו בונים עבורך מערכת מותאמת בדיוק למערכות ולנתונים שלך
             </p>
           </motion.div>
         </div>

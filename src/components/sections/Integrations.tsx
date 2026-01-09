@@ -44,19 +44,21 @@ export default function Integrations() {
               >
                 {/* Headline */}
                 <h2 style={{
-                  fontSize: isMobile ? 'clamp(1.75rem, 4vw, 2rem)' : 'clamp(2rem, 3.5vw, 2.75rem)',
-                  fontWeight: '700',
-                  color: '#ffffff',
-                  lineHeight: '1.3',
+                  fontSize: isMobile ? 'clamp(1.5rem, 4vw, 2rem)' : 'clamp(2rem, 3vw, 2.5rem)',
+                  fontWeight: '900',
+                  color: '#FFFF99',
+                  lineHeight: '1.4',
                   textAlign: 'right',
-                  marginBottom: isMobile ? '0.25rem' : '0.5rem'
+                  marginBottom: isMobile ? '0.25rem' : '0.5rem',
+                  margin: 0,
+                  textShadow: '0 0 8px rgba(255, 255, 153, 0.4), 0 0 15px rgba(255, 255, 153, 0.2)'
                 }} suppressHydrationWarning>
                   התאמה מדויקת עבור העסק שלך
                 </h2>
 
                 {/* Body Paragraphs */}
                 <p style={{
-                  fontSize: isMobile ? '1rem' : 'clamp(1.125rem, 2vw, 1.25rem)',
+                  fontSize: isMobile ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)' : 'clamp(1.25rem, 2.25vw, 1.5rem)',
                   color: '#ffffff',
                   lineHeight: '1.6',
                   textAlign: 'right',
@@ -66,7 +68,7 @@ export default function Integrations() {
                 </p>
 
                 <p style={{
-                  fontSize: isMobile ? '1rem' : 'clamp(1.125rem, 2vw, 1.25rem)',
+                  fontSize: isMobile ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)' : 'clamp(1.25rem, 2.25vw, 1.5rem)',
                   color: '#ffffff',
                   lineHeight: '1.6',
                   textAlign: 'right',
@@ -76,7 +78,7 @@ export default function Integrations() {
                 </p>
 
                 <p style={{
-                  fontSize: isMobile ? '1rem' : 'clamp(1.125rem, 2vw, 1.25rem)',
+                  fontSize: isMobile ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)' : 'clamp(1.25rem, 2.25vw, 1.5rem)',
                   color: '#ffffff',
                   lineHeight: '1.6',
                   textAlign: 'right',
@@ -87,7 +89,7 @@ export default function Integrations() {
                 </p>
 
                 <p style={{
-                  fontSize: isMobile ? '1rem' : 'clamp(1.125rem, 2vw, 1.25rem)',
+                  fontSize: isMobile ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)' : 'clamp(1.25rem, 2.25vw, 1.5rem)',
                   color: '#ffffff',
                   lineHeight: '1.6',
                   textAlign: 'right',
