@@ -9,6 +9,7 @@ import { User, Phone, Briefcase, Shield, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Spline3DScene from "@/components/ui/Spline3DScene";
 import PrivacyPolicyDialog from "@/components/ui/privacy-policy";
+import { PixelSnow } from "@/components/ui/PixelSnow";
 
 // Zod validation schema
 const contactSchema = z.object({
@@ -96,8 +97,8 @@ export default function Contact() {
     <section id="contact" className="relative py-12 md:py-20 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-pink-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+        {/* Pixel Snow Background Effect */}
+        <PixelSnow />
       </div>
 
       <div className="container mx-auto px-6 md:px-4 relative z-10">
@@ -108,7 +109,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
-            className="bg-gradient-to-br from-orange-700/95 via-pink-700/90 to-orange-800/90 backdrop-blur-md border border-orange-500/40 rounded-3xl p-4 md:p-8 shadow-2xl"
+            className="bg-gray-900 backdrop-blur-md border border-gray-800 rounded-3xl p-4 md:p-8 shadow-2xl"
           >
             {/* Two-column grid inside unified block */}
             <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
@@ -131,7 +132,7 @@ export default function Contact() {
                   שם <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <User className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400 pointer-events-none" />
+                  <User className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#FF7742] pointer-events-none" />
                   <input
                     {...register("name")}
                     type="text"
@@ -158,7 +159,7 @@ export default function Contact() {
                   טלפון <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400 pointer-events-none" />
+                  <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#FF7742] pointer-events-none" />
                   <input
                     {...register("phone")}
                     type="tel"
@@ -185,7 +186,7 @@ export default function Contact() {
                   תחום העסק <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <Briefcase className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400 pointer-events-none" />
+                  <Briefcase className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#FF7742] pointer-events-none" />
                   <input
                     {...register("businessField")}
                     type="text"
@@ -212,7 +213,7 @@ export default function Contact() {
               <div className="flex items-start gap-3 flex-row-reverse">
                 <label htmlFor="privacyConsent" className="text-white/90 text-base flex-1 text-right" suppressHydrationWarning>
                   אני מסכים למסור את פרטיי בהתאם ל
-                  <span className="inline-block mx-1">
+                  <span className="inline-block mx-1" suppressHydrationWarning>
                     <PrivacyPolicyDialog variant="contact" />
                   </span>
                   <span className="text-white" suppressHydrationWarning>*</span>
@@ -234,11 +235,11 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-white text-purple-600 font-bold py-4 px-8 rounded-lg hover:bg-white/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg"
+                className="w-full bg-white text-[#FF7742] font-bold py-4 px-8 rounded-lg hover:bg-white/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="w-5 h-5 border-2 border-purple-600/30 border-t-purple-600 rounded-full animate-spin" />
+                    <div className="w-5 h-5 border-2 border-[#FF7742]/30 border-t-[#FF7742] rounded-full animate-spin" />
                     שולח...
                   </>
                 ) : (

@@ -49,7 +49,6 @@ export default function Integrations() {
                   color: '#FFFF99',
                   lineHeight: '1.4',
                   textAlign: 'right',
-                  marginBottom: isMobile ? '0.25rem' : '0.5rem',
                   margin: 0,
                   textShadow: '0 0 8px rgba(255, 255, 153, 0.4), 0 0 15px rgba(255, 255, 153, 0.2)'
                 }} suppressHydrationWarning>

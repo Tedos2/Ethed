@@ -106,7 +106,7 @@ export default function AutomationFlowMobile() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[9px] truncate" style={{ fontFamily: 'Rubik, sans-serif' }}>נוצר ליד חדש ב-CRM</span>
+            <span className="text-gray-900 font-medium text-[9px] truncate">נוצר ליד חדש ב-CRM</span>
           </div>
         </div>
 
@@ -118,7 +118,7 @@ export default function AutomationFlowMobile() {
           isLineVisible(0) ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
         }`} dir="rtl">
           {/* "הגיע דרך" label */}
-          <span className="text-[9px] text-gray-400 font-medium flex-shrink-0" style={{ fontFamily: 'Rubik, sans-serif' }}>הגיע דרך:</span>
+          <span className="text-[9px] text-gray-400 font-medium flex-shrink-0">הגיע דרך:</span>
 
           {/* Platform Badge Icons */}
           <div className="flex gap-0.5">
@@ -176,7 +176,7 @@ export default function AutomationFlowMobile() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[9px] truncate" style={{ fontFamily: 'Rubik, sans-serif' }}>שלח הודעת חימום</span>
+            <span className="text-gray-900 font-medium text-[9px] truncate">שלח הודעת חימום</span>
           </div>
         </div>
 
@@ -196,7 +196,7 @@ export default function AutomationFlowMobile() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[9px] truncate" style={{ fontFamily: 'Rubik, sans-serif' }}>קבע פגישת היכרות</span>
+            <span className="text-gray-900 font-medium text-[9px] truncate">קבע פגישת היכרות</span>
           </div>
         </div>
 
@@ -216,7 +216,7 @@ export default function AutomationFlowMobile() {
                 />
               </div>
             </div>
-            <span className="text-gray-900 font-medium text-[9px] truncate" style={{ fontFamily: 'Rubik, sans-serif' }}>שלח זימון ליומן</span>
+            <span className="text-gray-900 font-medium text-[9px] truncate">שלח זימון ליומן</span>
           </div>
         </div>
       </div>

@@ -46,7 +46,10 @@ export default function Spline3DScene() {
         message.includes('glTexStorage') ||
         message.includes('glClear') ||
         message.includes('glDrawElements') ||
-        message.includes('Framebuffer')
+        message.includes('Framebuffer') ||
+        message.includes('style property during rerender') ||
+        message.includes('marginBottom') ||
+        message.includes("don't mix shorthand and non-shorthand properties")
       ) {
         return;
       }

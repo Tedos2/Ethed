@@ -117,12 +117,12 @@ export default function Hero() {
             </div>
 
             {/* Desktop Nav Links (center) */}
-            <ul className="flex items-center gap-12 text-lg font-bold">
+            <ul className="flex items-center gap-12 text-lg">
               <li suppressHydrationWarning>
                 <a
                   href="#about"
                   onClick={(e) => handleSmoothScroll(e, 'about')}
-                  className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  className="nav-tab px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
                   suppressHydrationWarning
                 >
                   עלינו
@@ -132,7 +132,7 @@ export default function Hero() {
                 <a
                   href="#solutions"
                   onClick={(e) => handleSmoothScroll(e, 'solutions')}
-                  className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  className="nav-tab px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
                   suppressHydrationWarning
                 >
                   פתרונות
@@ -142,7 +142,7 @@ export default function Hero() {
                 <a
                   href="#contact"
                   onClick={(e) => handleSmoothScroll(e, 'contact')}
-                  className="px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  className="nav-tab px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
                   suppressHydrationWarning
                 >
                   צור קשר
@@ -200,7 +200,7 @@ export default function Hero() {
               <a
                 href="#about"
                 onClick={(e) => handleSmoothScroll(e, 'about')}
-                className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                className="nav-tab text-xl hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
                 suppressHydrationWarning
               >
                 עלינו
@@ -210,7 +210,7 @@ export default function Hero() {
               <a
                 href="#solutions"
                 onClick={(e) => handleSmoothScroll(e, 'solutions')}
-                className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                className="nav-tab text-xl hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
                 suppressHydrationWarning
               >
                 פתרונות
@@ -220,7 +220,7 @@ export default function Hero() {
               <a
                 href="#contact"
                 onClick={(e) => handleSmoothScroll(e, 'contact')}
-                className="text-xl font-bold hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                className="nav-tab text-xl hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
                 suppressHydrationWarning
               >
                 צור קשר
@@ -272,12 +272,12 @@ export default function Hero() {
           <div className="order-1 md:order-1 space-y-4 md:space-y-6 flex flex-col items-center md:items-end w-full">
             {/* Main Headline */}
             {/* Mobile version - 2 lines with darker yellow highlights and glow */}
-            <h1 className="md:hidden text-[1.75rem] sm:text-3xl font-bold leading-snug text-center w-full px-2" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
+            <h1 className="hero-heading md:hidden text-center w-full px-2" suppressHydrationWarning>
               אתה יודע שאתה צריך <span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>עוד ידיים בעסק</span><br />
               אבל <span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>אין לך תקציב</span> לעובד נוסף
             </h1>
             {/* Desktop version - 3 lines with darker yellow highlights and glow */}
-            <h1 className="hidden md:block font-bold text-right w-full" style={{ fontFamily: 'Rubik, sans-serif', fontSize: 'clamp(2.5rem, 4.5vw, 3rem)', lineHeight: '1.3' }} suppressHydrationWarning>
+            <h1 className="hero-heading hidden md:block text-right w-full" suppressHydrationWarning>
               <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning>אתה יודע שאתה צריך</span><br />
               <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning><span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>עוד ידיים בעסק</span> אבל</span><br />
               <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning><span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>אין לך תקציב</span> לעובד נוסף</span>
@@ -301,7 +301,6 @@ export default function Hero() {
                   }
                 }}
                 className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 md:px-10 md:py-6 rounded-full text-sm md:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
-                style={{ fontFamily: 'Rubik, sans-serif' }}
               >
                 לקביעת פגישה ◄
               </Button>
@@ -310,7 +309,7 @@ export default function Hero() {
             {/* Platform Logos Section */}
             <div className="flex flex-col gap-4 md:gap-6 pt-4 md:pt-6 w-full items-center md:items-end">
               {/* Section Header */}
-              <p className="text-base sm:text-lg md:text-2xl text-white text-center md:text-right max-w-2xl leading-relaxed md:leading-relaxed px-2 font-semibold" style={{ fontFamily: 'Rubik, sans-serif' }} suppressHydrationWarning>
+              <p className="text-base sm:text-lg md:text-2xl text-white text-center md:text-right max-w-2xl leading-relaxed md:leading-relaxed px-2 font-semibold" suppressHydrationWarning>
                 אנחנו נתאים ונאפיין את הכלים המתאימים עבור העסק שלך כדי שתוכל להפסיק לעבוד עבור העסק שלך ולהתחיל לנהל את העסק שלך
               </p>
 
@@ -381,7 +380,6 @@ export default function Hero() {
                   }
                 }}
                 className="bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-3 rounded-full w-full max-w-[280px] text-sm font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
-                style={{ fontFamily: 'Rubik, sans-serif' }}
               >
                 לקביעת פגישה ◄
               </Button>

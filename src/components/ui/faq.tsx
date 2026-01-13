@@ -26,7 +26,7 @@ const App = () => {
     ];
     return (
         <>
-            <div className="py-12 md:py-20 relative">
+            <div id="faq" className="py-12 md:py-20 relative">
                 <motion.div
                     className="max-w-xl mx-auto flex flex-col items-center justify-center px-6 md:px-4 relative z-50"
                     initial={{ opacity: 0, y: 20 }}

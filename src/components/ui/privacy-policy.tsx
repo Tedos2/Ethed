@@ -35,8 +35,8 @@ export default function PrivacyPolicyDialog({ variant = 'contact', className }: 
 
   // Different trigger styles for different contexts
   const triggerClassName = variant === 'footer'
-    ? `text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 underline-offset-4 hover:underline ${className || ''}`
-    : `text-white hover:text-white/80 underline p-0 h-auto ${className || ''}`;
+    ? `text-gray-300 text-base hover:text-orange-500 transition-colors hover:translate-x-2 transform duration-200 underline-offset-4 hover:underline cursor-pointer ${className || ''}`
+    : `text-white hover:text-white/80 underline p-0 h-auto cursor-pointer ${className || ''}`;
 
   return (
     <Dialog>
@@ -45,15 +45,15 @@ export default function PrivacyPolicyDialog({ variant = 'contact', className }: 
           מדיניות הפרטיות
         </button>
       </DialogTrigger>
-      <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-2xl [&>button:last-child]:top-3.5 bg-black text-white border-gray-700">
-        <DialogHeader className="contents space-y-0 text-right" dir="rtl">
-          <DialogTitle className="border-b border-gray-700 px-6 py-4 text-base text-white">
+      <DialogContent className="flex flex-col gap-0 p-0 max-h-[90vh] max-w-[95vw] sm:max-h-[min(640px,80vh)] sm:max-w-2xl [&>button:last-child]:top-3.5 bg-black text-white border-gray-700">
+        <DialogHeader className="contents space-y-0" dir="rtl">
+          <DialogTitle className="border-b border-gray-700 px-6 py-4 text-base text-white text-center">
             מדיניות פרטיות
           </DialogTitle>
           <div
             ref={contentRef}
             onScroll={handleScroll}
-            className="overflow-y-auto"
+            className="overflow-y-auto flex-1 min-h-0"
           >
             <DialogDescription asChild>
               <div className="px-6 py-4 text-right" dir="rtl">

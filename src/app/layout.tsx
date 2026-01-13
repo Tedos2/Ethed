@@ -27,7 +27,24 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@300..900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <style dangerouslySetInnerHTML={{__html: `
+          .hero-heading {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 1.3;
+          }
+          @media (max-width: 768px) {
+            .hero-heading {
+              font-size: clamp(1.75rem, 5vw, 3rem);
+            }
+          }
+          .nav-tab {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 900;
+          }
+        `}} />
         <script src="https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js" defer></script>
       </head>
       <body

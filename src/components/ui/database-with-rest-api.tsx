@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Folder, HeartHandshakeIcon, SparklesIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -45,8 +45,21 @@ const DatabaseWithRestApi = ({
   buttonTexts,
   title,
 }: DatabaseWithRestApiProps) => {
+  // Use state to track if we're on mobile to avoid hydration mismatches
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Calculate responsive box size
-  const responsiveBoxSize = typeof window !== 'undefined' && window.innerWidth < 768
+  const responsiveBoxSize = isMobile
     ? Math.round(lottieBoxSize * 1.1) // 10% bigger on mobile
     : lottieBoxSize;
 
@@ -61,7 +74,7 @@ const DatabaseWithRestApi = ({
       <div
         className="relative w-full"
         style={{
-          height: svgHeight || (typeof window !== 'undefined' && window.innerWidth < 768 ? "650px" : "450px")
+          height: svgHeight || (isMobile ? "650px" : "450px")
         }}
       >
         <svg
@@ -252,7 +265,7 @@ const DatabaseWithRestApi = ({
         <div
           className="absolute pointer-events-none z-10"
           style={{
-            top: typeof window !== 'undefined' && window.innerWidth < 768 ? '72%' : '85%',
+            top: isMobile ? '72%' : '85%',
             left: '50%',
             transform: 'translate(-50%, -100%)',
             width: `${responsiveBoxSize}px`,

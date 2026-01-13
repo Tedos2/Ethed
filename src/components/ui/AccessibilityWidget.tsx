@@ -10,15 +10,16 @@ export default function AccessibilityWidget() {
     const originalConsoleWarn = console.warn;
 
     console.error = (...args: any[]) => {
+      const message = String(args[0] || '');
       if (
-        typeof args[0] === 'string' &&
-        (args[0].includes('Hydration') ||
-         args[0].includes('hydration') ||
-         args[0].includes('data-asw-org-font-size') ||
-         args[0].includes('fontFamily') ||
-         args[0].includes('font-size') ||
-         args[0].includes('font-family') ||
-         args[0].includes('suppressHydrationWarning'))
+        message.includes('Hydration') ||
+        message.includes('hydration') ||
+        message.includes('data-asw-org-font-size') ||
+        message.includes('fontFamily') ||
+        message.includes('font-size') ||
+        message.includes('font-family') ||
+        message.includes('suppressHydrationWarning') ||
+        message.includes('A tree hydrated but some attributes')
       ) {
         return;
       }
