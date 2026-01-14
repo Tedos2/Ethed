@@ -20,7 +20,7 @@ const SNOWFLAKE_COLOR = "#ffffff";
 export const PixelSnow = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const snowflakesRef = useRef<Snowflake[]>([]);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const canvas = canvasRef.current;
