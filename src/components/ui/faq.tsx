@@ -34,7 +34,7 @@ const App = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <h1 className="text-2xl md:text-3xl font-semibold text-center text-orange-500" suppressHydrationWarning>מחפשים תשובה?</h1>
+                    <h1 className="text-2xl md:text-3xl text-center text-orange-500" style={{ fontWeight: '900' }} suppressHydrationWarning>מחפשים תשובה?</h1>
                     <p className="text-base md:text-xl text-white mt-2 pb-6 md:pb-8 text-center" suppressHydrationWarning>
                         כל מה שצריך לדעת לפני שמתחילים - ואם יש לך שאלה נוספת, נשמח לענות בשיחת ייעוץ ללא עלות
                     </p>

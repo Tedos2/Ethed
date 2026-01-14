@@ -62,7 +62,7 @@ export default function Example() {
                     </div>
 
                     {/* Desktop: Header only */}
-                    <h1 className="hidden md:block text-4xl uppercase font-semibold text-white inline-block" suppressHydrationWarning>נעים מאוד 👋</h1>
+                    <h1 className="hidden md:block text-4xl uppercase text-white" style={{ fontWeight: '900' }} suppressHydrationWarning>נעים מאוד 👋</h1>
 
                     <p className="mt-4 text-white font-semibold" suppressHydrationWarning>אנחנו טדי ואיתן, עובדים יחד למעלה משנה ומתמחים בבניית מערכות CRM ואוטומציות לעסקים. טדי מגיע מעולם ה-SAAS ועיצוב דיגיטלי, איתן מעולמות השיווק והפרסום.</p>
                     <p className="mt-4 text-white font-semibold" suppressHydrationWarning>הקמנו את ETHED כי ראינו עסקים נתקעים בעבודה 'שחורה' - ניהול, מעקבים, משימות חוזרות - במקום להתמקד במה שבאמת חשוב. אנחנו מאמינים שבעלי עסקים צריכים להתמקד בעסק, לא בעבודה השוטפת.</p>

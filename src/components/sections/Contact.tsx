@@ -118,7 +118,7 @@ export default function Contact() {
               <div className="order-1"
               >
                 {/* Heading inside form card */}
-                <h3 className="text-white text-2xl md:text-3xl font-bold mb-2 text-right" suppressHydrationWarning>
+                <h3 className="text-white text-2xl md:text-3xl mb-2 text-right" style={{ fontWeight: '900' }} suppressHydrationWarning>
                   רוצים לשמוע איך אפשר לייעל את העסק שלכם?
                 </h3>
                 <p className="text-white/90 text-lg mb-6 text-right" suppressHydrationWarning>
