@@ -34,10 +34,15 @@ export default function RootLayout({
             font-weight: 900;
             font-size: 48px;
             line-height: 1.3;
+            -webkit-text-stroke: 2px black;
+            text-stroke: 2px black;
+            paint-order: stroke fill;
           }
           @media (max-width: 768px) {
             .hero-heading {
               font-size: clamp(1.75rem, 5vw, 3rem);
+              -webkit-text-stroke: 1.5px black;
+              text-stroke: 1.5px black;
             }
           }
           .nav-tab {

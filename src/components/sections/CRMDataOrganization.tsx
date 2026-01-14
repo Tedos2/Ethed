@@ -66,9 +66,10 @@ export default function CRMDataOrganization() {
               fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
                 ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
                 : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+              fontWeight: '600',
               lineHeight: '1.6',
               margin: 0
-            }} className="font-medium text-white" suppressHydrationWarning>
+            }} className="text-white" suppressHydrationWarning>
               שירות מלא מהתכנון ועד ההטמעה - אנחנו לוקחים את כל המערכות הקיימות שלך ובונים CRM שמתאים בדיוק לצרכים שלך.
             </p>
 
@@ -77,9 +78,10 @@ export default function CRMDataOrganization() {
               fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
                 ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
                 : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+              fontWeight: '600',
               lineHeight: '1.6',
               margin: 0
-            }} className="font-medium text-white" suppressHydrationWarning>
+            }} className="text-white" suppressHydrationWarning>
               במקום לבזבז שעות על חיפוש מידע בין אקסלים והודעות, תקבל מערכת אחת שמרכזת הכל - לקוחות, עסקאות, משימות ודוחות. מותאם בדיוק לעסק שלך, עובד עם הכלים שכבר יש לך, וחוסך לך זמן יקר כל יום.
             </p>
 

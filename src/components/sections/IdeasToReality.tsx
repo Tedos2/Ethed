@@ -63,7 +63,7 @@ export default function IdeasToReality() {
               }}
             >
               {/* Heading */}
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-2" suppressHydrationWarning>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-2" style={{ fontWeight: '900' }} suppressHydrationWarning>
                 <span className="text-[#FF7742]" suppressHydrationWarning>הרעיון שלך,{' '}</span>
                 <span className="text-white" suppressHydrationWarning>המציאות שלנו</span>
               </h2>
@@ -73,6 +73,7 @@ export default function IdeasToReality() {
                 fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
                   ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
                   : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+                fontWeight: '600',
                 lineHeight: '1.6',
                 margin: 0
               }} suppressHydrationWarning>
@@ -84,6 +85,7 @@ export default function IdeasToReality() {
                 fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
                   ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
                   : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+                fontWeight: '600',
                 lineHeight: '1.6',
                 margin: 0
               }} suppressHydrationWarning>
@@ -97,6 +99,7 @@ export default function IdeasToReality() {
                 fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
                   ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
                   : 'clamp(1.25rem, 2.25vw, 1.5rem)',
+                fontWeight: '600',
                 lineHeight: '1.6',
                 margin: 0
               }} suppressHydrationWarning>
@@ -111,7 +114,8 @@ export default function IdeasToReality() {
                 fontSize: typeof window !== 'undefined' && window.innerWidth <= 768
                   ? 'clamp(1.0625rem, 3.5vw, 1.1875rem)'
                   : 'clamp(1.25rem, 2.25vw, 1.5rem)',
-                lineHeight: '1.6',
+                fontWeight: '600',
+                lineHeight: '1.3',
                 margin: 0
               }} suppressHydrationWarning>
                 ובסוף זה לא עוד מערכת,
