@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import PrivacyPolicyDialog from "@/components/ui/privacy-policy";
 
 export default function CTABanner() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [businessField, setBusinessField] = useState("");
+  const [privacyConsent, setPrivacyConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -16,6 +18,12 @@ export default function CTABanner() {
     // Validate fields
     if (!name.trim() || !phone.trim() || !businessField.trim()) {
       alert('נא למלא את כל השדות');
+      return;
+    }
+
+    // Validate privacy consent
+    if (!privacyConsent) {
+      alert('יש לאשר את מדיניות הפרטיות');
       return;
     }
 
@@ -43,6 +51,7 @@ export default function CTABanner() {
         setName('');
         setPhone('');
         setBusinessField('');
+        setPrivacyConsent(false);
 
         // Show success message
         alert('הטופס נשלח בהצלחה! נחזור אליך בהקדם');
@@ -77,66 +86,96 @@ export default function CTABanner() {
       >
         <div className="bg-gradient-to-r from-[#B54A2A] to-[#C14D2D] rounded-2xl p-4 md:p-6 shadow-xl shadow-orange-900/20">
           <form onSubmit={handleSubmit}>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col gap-3">
 
-              {/* Right Side - Headline Text (RTL) */}
-              <div className="text-white text-right w-full md:flex-1" dir="rtl">
-                <h2 className="text-lg md:text-2xl font-bold leading-tight" suppressHydrationWarning>
-                  נשמע מעניין? בואו לשמוע איך אנחנו יכולים לייעל את העסק שלך:
-                </h2>
+              {/* Main Row - Title + Form Fields */}
+              <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+                {/* Right Side - Headline Text (RTL) */}
+                <div className="text-white text-right w-full md:flex-1" dir="rtl">
+                  <h2 className="text-lg md:text-2xl font-bold leading-tight" suppressHydrationWarning>
+                    נשמע מעניין? בואו לשמוע איך אנחנו יכולים לייעל את העסק שלך:
+                  </h2>
+                </div>
+
+                {/* Left Side - Form Fields */}
+                <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto" dir="rtl">
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="שם"
+                    dir="rtl"
+                    suppressHydrationWarning
+                    className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
+                  />
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="טלפון"
+                    dir="rtl"
+                    suppressHydrationWarning
+                    className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
+                  />
+                  <input
+                    type="text"
+                    value={businessField}
+                    onChange={(e) => setBusinessField(e.target.value)}
+                    placeholder="תחום העסק"
+                    dir="rtl"
+                    suppressHydrationWarning
+                    className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[120px] text-right"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    suppressHydrationWarning
+                    className={`bg-white text-black px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 whitespace-nowrap ${
+                      isSubmitting
+                        ? 'opacity-70 cursor-not-allowed'
+                        : 'hover:bg-gray-100 hover:shadow-lg cursor-pointer hover:scale-105 transform'
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <span suppressHydrationWarning>שולח...</span>
+                        <span className="animate-spin" suppressHydrationWarning>⟳</span>
+                      </>
+                    ) : (
+                      <>
+                        <span suppressHydrationWarning>שליחה</span>
+                        <span suppressHydrationWarning>◄</span>
+                      </>
+                    )}
+                  </button>
+                </div>
               </div>
 
-              {/* Left Side - Form Fields */}
-              <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto" dir="rtl">
+              {/* Privacy Consent Checkbox - Below form */}
+              <div className="flex items-center gap-2 justify-center md:justify-end" dir="rtl">
                 <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="שם"
-                  dir="rtl"
-                  suppressHydrationWarning
-                  className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
+                  type="checkbox"
+                  id="ctaPrivacyConsent"
+                  checked={privacyConsent}
+                  onChange={(e) => setPrivacyConsent(e.target.checked)}
+                  style={{
+                    width: '18px',
+                    height: '18px',
+                    accentColor: '#ffffff',
+                    cursor: 'pointer'
+                  }}
                 />
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="טלפון"
-                  dir="rtl"
+                <label
+                  htmlFor="ctaPrivacyConsent"
+                  className="text-white text-sm cursor-pointer"
                   suppressHydrationWarning
-                  className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
-                />
-                <input
-                  type="text"
-                  value={businessField}
-                  onChange={(e) => setBusinessField(e.target.value)}
-                  placeholder="תחום העסק"
-                  dir="rtl"
-                  suppressHydrationWarning
-                  className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[120px] text-right"
-                />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  suppressHydrationWarning
-                  className={`bg-white text-black px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 whitespace-nowrap ${
-                    isSubmitting
-                      ? 'opacity-70 cursor-not-allowed'
-                      : 'hover:bg-gray-100 hover:shadow-lg cursor-pointer hover:scale-105 transform'
-                  }`}
                 >
-                  {isSubmitting ? (
-                    <>
-                      <span suppressHydrationWarning>שולח...</span>
-                      <span className="animate-spin" suppressHydrationWarning>⟳</span>
-                    </>
-                  ) : (
-                    <>
-                      <span suppressHydrationWarning>שליחה</span>
-                      <span suppressHydrationWarning>◄</span>
-                    </>
-                  )}
-                </button>
+                  אני מסכים למסור את פרטיי בהתאם ל
+                  <span className="inline-block mx-1">
+                    <PrivacyPolicyDialog variant="contact" />
+                  </span>
+                  <span className="text-yellow-300">*</span>
+                </label>
               </div>
 
             </div>

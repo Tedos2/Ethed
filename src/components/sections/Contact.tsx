@@ -118,7 +118,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
-            className="bg-gray-900 backdrop-blur-md border border-gray-800 rounded-3xl p-4 md:p-8 shadow-2xl"
+            className="bg-gray-900/95 border border-gray-800 rounded-2xl p-4 md:p-8 shadow-2xl"
           >
             {/* Two-column grid inside unified block */}
             <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
@@ -218,28 +218,39 @@ export default function Contact() {
                 )}
               </div>
 
-              {/* Privacy Consent */}
-              <div className="flex items-center gap-2 flex-row-reverse">
-                <label htmlFor="privacyConsent" className="text-white/90 text-sm flex-1 text-right cursor-pointer" suppressHydrationWarning>
-                  אני מסכים למסור את פרטיי בהתאם ל
-                  <span className="inline-block mx-1" suppressHydrationWarning>
-                    <PrivacyPolicyDialog variant="contact" />
-                  </span>
-                  <span className="text-white" suppressHydrationWarning>*</span>
-                </label>
-                <input
-                  {...register("privacyConsent")}
-                  type="checkbox"
-                  id="privacyConsent"
-                  className="w-5 h-5 flex-shrink-0 cursor-pointer"
-                  style={{ accentColor: '#FF7742' }}
-                />
+              {/* Privacy Consent - Rebuilt */}
+              <div className="space-y-2">
+                <div className="flex gap-3 items-start bg-white/10 p-4 rounded-xl border border-white/30" dir="rtl">
+                  <input
+                    type="checkbox"
+                    id="privacyConsent"
+                    {...register("privacyConsent")}
+                    style={{
+                      width: '20px',
+                      height: '20px',
+                      accentColor: '#FF7742',
+                      cursor: 'pointer',
+                      marginTop: '2px'
+                    }}
+                  />
+                  <label
+                    htmlFor="privacyConsent"
+                    className="text-white text-sm cursor-pointer flex-1 text-right"
+                    suppressHydrationWarning
+                  >
+                    אני מסכים למסור את פרטיי בהתאם ל
+                    <span className="inline-block mx-1">
+                      <PrivacyPolicyDialog variant="contact" />
+                    </span>
+                    <span className="text-red-400">*</span>
+                  </label>
+                </div>
+                {errors.privacyConsent && (
+                  <p className="text-red-300 text-xs text-right">
+                    {errors.privacyConsent.message}
+                  </p>
+                )}
               </div>
-              {errors.privacyConsent && (
-                <p className="text-red-200 text-xs mt-1 text-right">
-                  {errors.privacyConsent.message}
-                </p>
-              )}
 
               {/* Submit Button */}
               <button

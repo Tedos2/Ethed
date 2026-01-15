@@ -166,27 +166,19 @@ const OrbitingSkill = memo(({ config, angle }: OrbitingSkillProps) => {
 });
 OrbitingSkill.displayName = 'OrbitingSkill';
 
-// --- Orbit Path Component ---
+// --- Orbit Path Component (Simplified for perfect circles) ---
 const GlowingOrbitPath = memo(({ radius, glowColor = 'cyan', animationDelay = 0 }: GlowingOrbitPathProps) => {
   const glowColors = {
     cyan: {
-      primary: 'rgba(6, 182, 212, 0.3)',
-      secondary: 'rgba(6, 182, 212, 0.15)',
-      border: 'rgba(6, 182, 212, 0.25)'
+      border: 'rgba(6, 182, 212, 0.3)'
     },
     purple: {
-      primary: 'rgba(147, 51, 234, 0.3)',
-      secondary: 'rgba(147, 51, 234, 0.15)',
-      border: 'rgba(147, 51, 234, 0.25)'
+      border: 'rgba(147, 51, 234, 0.3)'
     },
     orange: {
-      primary: 'rgba(255, 119, 66, 0.4)',
-      secondary: 'rgba(255, 119, 66, 0.2)',
-      border: 'rgba(255, 119, 66, 0.3)'
+      border: 'rgba(255, 119, 66, 0.35)'
     },
     white: {
-      primary: 'rgba(255, 255, 255, 0.3)',
-      secondary: 'rgba(255, 255, 255, 0.15)',
       border: 'rgba(255, 255, 255, 0.25)'
     }
   };
@@ -195,32 +187,16 @@ const GlowingOrbitPath = memo(({ radius, glowColor = 'cyan', animationDelay = 0 
 
   return (
     <div
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
+      className="absolute top-1/2 left-1/2 pointer-events-none"
       style={{
         width: `${radius * 2}px`,
         height: `${radius * 2}px`,
-        animationDelay: `${animationDelay}s`,
-        willChange: 'transform',
+        transform: 'translate(-50%, -50%)',
+        borderRadius: '50%',
+        border: `1px solid ${colors.border}`,
+        boxShadow: `0 0 10px ${colors.border}`,
       }}
-    >
-      <div
-        className="absolute inset-0 rounded-full"
-        style={{
-          background: `radial-gradient(circle, transparent 30%, ${colors.secondary} 70%, ${colors.primary} 100%)`,
-          boxShadow: `0 0 40px ${colors.primary}, inset 0 0 40px ${colors.secondary}`,
-          animation: 'pulse 4s ease-in-out infinite',
-          animationDelay: `${animationDelay}s`,
-          willChange: 'opacity',
-        }}
-      />
-      <div
-        className="absolute inset-0 rounded-full"
-        style={{
-          border: `1px solid ${colors.border}`,
-          boxShadow: `inset 0 0 15px ${colors.secondary}`,
-        }}
-      />
-    </div>
+    />
   );
 });
 GlowingOrbitPath.displayName = 'GlowingOrbitPath';
