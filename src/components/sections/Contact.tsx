@@ -220,7 +220,7 @@ export default function Contact() {
 
               {/* Privacy Consent */}
               <div className="flex items-start gap-3 flex-row-reverse">
-                <label htmlFor="privacyConsent" className="text-white/90 text-base flex-1 text-right" suppressHydrationWarning>
+                <label htmlFor="privacyConsent" className="text-white/90 text-base flex-1 text-right cursor-pointer" suppressHydrationWarning>
                   אני מסכים למסור את פרטיי בהתאם ל
                   <span className="inline-block mx-1" suppressHydrationWarning>
                     <PrivacyPolicyDialog variant="contact" />
@@ -231,7 +231,7 @@ export default function Contact() {
                   {...register("privacyConsent")}
                   type="checkbox"
                   id="privacyConsent"
-                  className="w-5 h-5 mt-1 accent-white cursor-pointer"
+                  className="w-6 h-6 mt-1 accent-[#FF7742] cursor-pointer rounded border-2 border-white/30 bg-white/10"
                 />
               </div>
               {errors.privacyConsent && (
