@@ -165,7 +165,8 @@ export default function Hero() {
                   });
                 }
               }}
-              className="flex bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg cursor-pointer"
+              className="flex bg-[#FF7742] hover:bg-[#ff6632] text-white px-6 py-2.5 rounded-full text-sm transition-colors shadow-lg cursor-pointer"
+              style={{ fontWeight: '900' }}
             >
               בואו לשמוע עוד :)
             </Button>
