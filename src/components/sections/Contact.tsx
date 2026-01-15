@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import Spline3DScene from "@/components/ui/Spline3DScene";
 import PrivacyPolicyDialog from "@/components/ui/privacy-policy";
 import { PixelSnow } from "@/components/ui/PixelSnow";
+import { trackLead, trackContact } from "@/lib/fbPixel";
 
 // Zod validation schema
 const contactSchema = z.object({
@@ -62,6 +63,14 @@ export default function Contact() {
 
       // Success
       setShowSuccess(true);
+
+      // Track Facebook Lead conversion
+      trackLead({
+        content_name: 'Contact Form',
+        content_category: 'Lead Generation',
+      });
+      trackContact();
+
       reset();
       setTimeout(() => setShowSuccess(false), 5000);
     } catch (error) {

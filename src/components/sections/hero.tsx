@@ -271,10 +271,10 @@ export default function Hero() {
           {/* Left Side - Content (main content for RTL) */}
           <div className="order-1 md:order-1 space-y-4 md:space-y-6 flex flex-col items-center md:items-end w-full">
             {/* Main Headline */}
-            {/* Mobile version - 2 lines with darker yellow highlights and glow */}
+            {/* Mobile version - 2 lines without yellow highlights and glow */}
             <h1 className="hero-heading md:hidden text-center w-full px-2" suppressHydrationWarning>
-              אתה יודע שאתה צריך <span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>עוד ידיים בעסק</span><br />
-              אבל <span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>אין לך תקציב</span> לעובד נוסף
+              אתה יודע שאתה צריך עוד ידיים בעסק<br />
+              אבל אין לך תקציב לעובד נוסף
             </h1>
             {/* Desktop version - 3 lines with darker yellow highlights and glow */}
             <h1 className="hero-heading hidden md:block text-right w-full" suppressHydrationWarning>

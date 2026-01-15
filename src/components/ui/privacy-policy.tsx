@@ -286,6 +286,71 @@ export default function PrivacyPolicyDialog({ variant = 'contact', className }: 
                     </p>
                   </div>
 
+                  {/* Facebook Pixel and Analytics */}
+                  <div className="space-y-2">
+                    <p>
+                      <strong>13. מעקב ואנליטיקס - Facebook Pixel</strong>
+                    </p>
+                    <p>
+                      אנו משתמשים ב-Facebook Pixel (פיקסל של מטא) כדי למדוד את האפקטיביות של מסעות הפרסום שלנו ולשפר את השירותים שאנו מציעים. פיקסל זה מאפשר לנו להבין טוב יותר כיצד משתמשים מגיבים לתוכן שלנו ולמודעות הדיגיטליות.
+                    </p>
+                    <p>
+                      <strong>מה זה Facebook Pixel?</strong>
+                    </p>
+                    <p>
+                      Facebook Pixel הוא קוד JavaScript קטן המוטמע באתר שלנו. הוא אוסף מידע אודות הפעילות שלך באתר ושולח אותו לפייסבוק (מטא) לצורך ניתוח ואופטימיזציה של קמפיינים פרסומיים.
+                    </p>
+                    <p>
+                      <strong>איזה מידע נאסף?</strong>
+                    </p>
+                    <ul className="list-disc pr-6 space-y-1">
+                      <li><strong>נתוני גלישה:</strong> הדפים שביקרת, זמן השהייה, אינטראקציות עם תוכן</li>
+                      <li><strong>פרטי מכשיר:</strong> סוג הדפדפן, מערכת ההפעלה, רזולוציית המסך</li>
+                      <li><strong>כתובת IP:</strong> מיקום גיאוגרפי משוער (מדינה/עיר)</li>
+                      <li><strong>עוגיות (Cookies):</strong> מזהים ייחודיים לצורך מעקב חוזר</li>
+                      <li><strong>אירועי המרה:</strong> פעולות כמו שליחת טופס יצירת קשר, צפייה בעמודים מסוימים</li>
+                    </ul>
+                    <p>
+                      <strong>למה אנחנו משתמשים בפיקסל?</strong>
+                    </p>
+                    <ul className="list-disc pr-6 space-y-1">
+                      <li><strong>מדידת המרות:</strong> למדוד כמה אנשים ביצעו פעולה רצויה (כמו שליחת טופס) לאחר צפייה במודעה</li>
+                      <li><strong>אופטימיזציה:</strong> לשפר את הפרסומות שלנו ולהציג אותן לקהל הרלוונטי ביותר</li>
+                      <li><strong>רימרקטינג:</strong> להציג מודעות רלוונטיות למשתמשים שכבר ביקרו באתר</li>
+                      <li><strong>בניית קהלים:</strong> ליצור קהלי מטרה דומים (Lookalike Audiences) למשתמשים הקיימים</li>
+                      <li><strong>מדידת ROI:</strong> להבין את התשואה על ההשקעה בקמפיינים השיווקיים שלנו</li>
+                    </ul>
+                    <p>
+                      <strong>שליטה והסכמה:</strong>
+                    </p>
+                    <p>
+                      השימוש באתר שלנו מהווה הסכמה למעקב באמצעות Facebook Pixel. אם אינך מעוניין במעקב זה, תוכל:
+                    </p>
+                    <ul className="list-disc pr-6 space-y-1">
+                      <li>להשתמש בהגדרות הפרטיות של הדפדפן שלך לחסימת עוגיות צד שלישי</li>
+                      <li>להתקין תוסף דפדפן לחסימת מעקבים (כגון Privacy Badger, uBlock Origin)</li>
+                      <li>לבקר במדיניות הפרטיות של פייסבוק ולהשבית התאמה אישית של מודעות</li>
+                    </ul>
+                    <p>
+                      <strong>מדיניות פרטיות של מטא (Facebook):</strong>
+                    </p>
+                    <p>
+                      מטא (החברה האם של פייסבוק) היא בעלת הנתונים שנאספים דרך הפיקסל. למידע נוסף על אופן השימוש במידע על ידי מטא, אנא עיין ב<a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline">מדיניות הפרטיות של פייסבוק</a>.
+                    </p>
+                    <p>
+                      <strong>חשוב לדעת:</strong>
+                    </p>
+                    <ul className="list-disc pr-6 space-y-1">
+                      <li>אנו <strong>לא</strong> משתפים פרטים אישיים מזהים (שם, טלפון, אימייל) עם פייסבוק ללא הסכמתך המפורשת</li>
+                      <li>הפיקסל פועל באופן אנונימי - פייסבוק מקבל נתונים מצטברים ולא מזהה אישי</li>
+                      <li>Facebook Pixel נטען רק בסביבת ייצור (Production) - לא בסביבת פיתוח</li>
+                      <li>בהתאם לתיקון 13 לחוק הגנת הפרטיות, את רשאי לבקש מחיקת הנתונים הקשורים אליך</li>
+                    </ul>
+                    <p>
+                      למימוש זכויותיך בנוגע לנתונים הנאספים על ידי Facebook Pixel, ניתן לפנות אלינו באמצעות פרטי הקשר המופיעים בסעיף "יצירת קשר".
+                    </p>
+                  </div>
+
                 </div>
               </div>
             </DialogDescription>

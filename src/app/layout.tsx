@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import FacebookPixel from "@/components/analytics/FacebookPixel";
 
 export const metadata: Metadata = {
   title: "Ethed - פתרונות אוטומציה מבוססי AI לעסקים קטנים",
@@ -41,8 +42,8 @@ export default function RootLayout({
           @media (max-width: 768px) {
             .hero-heading {
               font-size: clamp(1.75rem, 5vw, 3rem);
-              -webkit-text-stroke: 1.5px black;
-              text-stroke: 1.5px black;
+              -webkit-text-stroke: 0;
+              text-stroke: 0;
             }
           }
           .nav-tab {
@@ -56,6 +57,7 @@ export default function RootLayout({
         className="antialiased font-sans"
         suppressHydrationWarning
       >
+        <FacebookPixel />
         {children}
       </body>
     </html>
