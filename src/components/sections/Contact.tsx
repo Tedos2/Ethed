@@ -134,14 +134,14 @@ export default function Contact() {
                   תאמו איתנו שיחת אפיון ראשונית ללא עלות:
                 </p>
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               {/* Name Field */}
               <div className="relative">
-                <label htmlFor="name" className="block text-white font-medium mb-2 text-right" suppressHydrationWarning>
+                <label htmlFor="name" className="block text-white font-medium mb-1.5 text-right text-sm" suppressHydrationWarning>
                   שם <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <User className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#FF7742] pointer-events-none" />
+                  <User className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#FF7742] pointer-events-none" />
                   <input
                     {...register("name")}
                     type="text"
@@ -150,7 +150,7 @@ export default function Contact() {
                     dir="rtl"
                     suppressHydrationWarning
                     className={cn(
-                      "w-full bg-white/10 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all",
+                      "w-full bg-white/10 border rounded-lg pr-10 pl-3 py-2.5 text-white text-right placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all text-sm",
                       errors.name
                         ? "border-red-400 focus:ring-red-400/50"
                         : "border-white/20 focus:ring-white/50"
@@ -158,17 +158,17 @@ export default function Contact() {
                   />
                 </div>
                 {errors.name && (
-                  <p className="text-red-200 text-sm mt-1 text-right">{errors.name.message}</p>
+                  <p className="text-red-200 text-xs mt-1 text-right">{errors.name.message}</p>
                 )}
               </div>
 
               {/* Phone Field */}
               <div className="relative">
-                <label htmlFor="phone" className="block text-white font-medium mb-2 text-right" suppressHydrationWarning>
+                <label htmlFor="phone" className="block text-white font-medium mb-1.5 text-right text-sm" suppressHydrationWarning>
                   טלפון <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#FF7742] pointer-events-none" />
+                  <Phone className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#FF7742] pointer-events-none" />
                   <input
                     {...register("phone")}
                     type="tel"
@@ -177,7 +177,7 @@ export default function Contact() {
                     dir="rtl"
                     suppressHydrationWarning
                     className={cn(
-                      "w-full bg-white/10 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all",
+                      "w-full bg-white/10 border rounded-lg pr-10 pl-3 py-2.5 text-white text-right placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all text-sm",
                       errors.phone
                         ? "border-red-400 focus:ring-red-400/50"
                         : "border-white/20 focus:ring-white/50"
@@ -185,17 +185,17 @@ export default function Contact() {
                   />
                 </div>
                 {errors.phone && (
-                  <p className="text-red-200 text-sm mt-1 text-right">{errors.phone.message}</p>
+                  <p className="text-red-200 text-xs mt-1 text-right">{errors.phone.message}</p>
                 )}
               </div>
 
               {/* Business Field */}
               <div className="relative">
-                <label htmlFor="businessField" className="block text-white font-medium mb-2 text-right" suppressHydrationWarning>
+                <label htmlFor="businessField" className="block text-white font-medium mb-1.5 text-right text-sm" suppressHydrationWarning>
                   תחום העסק <span className="text-white" suppressHydrationWarning>*</span>
                 </label>
                 <div className="relative">
-                  <Briefcase className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#FF7742] pointer-events-none" />
+                  <Briefcase className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#FF7742] pointer-events-none" />
                   <input
                     {...register("businessField")}
                     type="text"
@@ -204,7 +204,7 @@ export default function Contact() {
                     dir="rtl"
                     suppressHydrationWarning
                     className={cn(
-                      "w-full bg-white/10 border rounded-lg pr-12 pl-4 py-3 text-white text-right placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all",
+                      "w-full bg-white/10 border rounded-lg pr-10 pl-3 py-2.5 text-white text-right placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all text-sm",
                       errors.businessField
                         ? "border-red-400 focus:ring-red-400/50"
                         : "border-white/20 focus:ring-white/50"
@@ -212,15 +212,15 @@ export default function Contact() {
                   />
                 </div>
                 {errors.businessField && (
-                  <p className="text-red-200 text-sm mt-1 text-right">
+                  <p className="text-red-200 text-xs mt-1 text-right">
                     {errors.businessField.message}
                   </p>
                 )}
               </div>
 
               {/* Privacy Consent */}
-              <div className="flex items-start gap-3 flex-row-reverse">
-                <label htmlFor="privacyConsent" className="text-white/90 text-base flex-1 text-right cursor-pointer" suppressHydrationWarning>
+              <div className="flex items-center gap-2 flex-row-reverse">
+                <label htmlFor="privacyConsent" className="text-white/90 text-sm flex-1 text-right cursor-pointer" suppressHydrationWarning>
                   אני מסכים למסור את פרטיי בהתאם ל
                   <span className="inline-block mx-1" suppressHydrationWarning>
                     <PrivacyPolicyDialog variant="contact" />
@@ -231,11 +231,12 @@ export default function Contact() {
                   {...register("privacyConsent")}
                   type="checkbox"
                   id="privacyConsent"
-                  className="w-6 h-6 mt-1 accent-[#FF7742] cursor-pointer rounded border-2 border-white/30 bg-white/10"
+                  className="w-5 h-5 flex-shrink-0 cursor-pointer"
+                  style={{ accentColor: '#FF7742' }}
                 />
               </div>
               {errors.privacyConsent && (
-                <p className="text-red-200 text-sm -mt-4 text-right">
+                <p className="text-red-200 text-xs mt-1 text-right">
                   {errors.privacyConsent.message}
                 </p>
               )}
@@ -244,7 +245,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-white text-[#FF7742] font-bold py-4 px-8 rounded-lg hover:bg-white/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg"
+                className="w-full bg-white text-[#FF7742] font-bold py-3 px-6 rounded-lg hover:bg-white/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg text-sm"
               >
                 {isSubmitting ? (
                   <>
