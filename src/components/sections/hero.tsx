@@ -276,11 +276,11 @@ export default function Hero() {
               אתה יודע שאתה צריך עוד ידיים בעסק<br />
               אבל אין לך תקציב לעובד נוסף
             </h1>
-            {/* Desktop version - 3 lines with darker yellow highlights and glow */}
+            {/* Desktop version - 3 lines */}
             <h1 className="hero-heading hidden md:block text-right w-full" suppressHydrationWarning>
               <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning>אתה יודע שאתה צריך</span><br />
-              <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning><span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>עוד ידיים בעסק</span> אבל</span><br />
-              <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning><span style={{ color: '#FFD700', textShadow: '0 0 12px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)' }} suppressHydrationWarning>אין לך תקציב</span> לעובד נוסף</span>
+              <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning>עוד ידיים בעסק אבל</span><br />
+              <span style={{ whiteSpace: 'nowrap' }} suppressHydrationWarning>אין לך תקציב לעובד נוסף</span>
             </h1>
 
             {/* CTA Button - Desktop Only */}
