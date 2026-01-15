@@ -1,16 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
-import { pageview, FB_PIXEL_ID } from '@/lib/fbPixel';
+import { FB_PIXEL_ID } from '@/lib/fbPixel';
 
 export default function FacebookPixel() {
-  useEffect(() => {
-    // Track initial pageview after pixel loads
-    if (typeof window !== 'undefined' && window.fbq) {
-      pageview();
-    }
-  }, []);
-
   // Only render in production
   if (process.env.NODE_ENV !== 'production') {
     return null;
