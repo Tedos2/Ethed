@@ -202,22 +202,30 @@ export default function CTABanner() {
                   }}
                   className="mt-0.5"
                   style={{
-                    width: '20px',
-                    height: '20px',
-                    minWidth: '20px',
-                    minHeight: '20px',
+                    width: '24px',
+                    height: '24px',
+                    minWidth: '24px',
+                    minHeight: '24px',
                     accentColor: '#ffffff',
                     cursor: 'pointer',
-                    flexShrink: 0
+                    flexShrink: 0,
+                    touchAction: 'manipulation'
                   }}
                 />
                 <label
-                  htmlFor="ctaPrivacyConsent"
-                  className="text-white text-sm cursor-pointer flex-1"
+                  className="text-white text-sm flex-1"
                   suppressHydrationWarning
                 >
-                  אני מסכים למסור את פרטיי בהתאם ל
-                  <span className="inline-block mx-1">
+                  <span
+                    onClick={() => {
+                      setPrivacyConsent(!privacyConsent);
+                      if (errors.privacyConsent) setErrors({...errors, privacyConsent: false});
+                    }}
+                    className="cursor-pointer"
+                  >
+                    אני מסכים למסור את פרטיי בהתאם ל
+                  </span>
+                  <span className="inline-block mx-1" onClick={(e) => e.stopPropagation()}>
                     <PrivacyPolicyDialog variant="contact" />
                   </span>
                   <span className="text-yellow-300">*</span>
