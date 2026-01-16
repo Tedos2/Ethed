@@ -225,12 +225,15 @@ export default function Contact() {
                     type="checkbox"
                     id="privacyConsent"
                     {...register("privacyConsent")}
+                    className="mt-0.5"
                     style={{
                       width: '20px',
                       height: '20px',
+                      minWidth: '20px',
+                      minHeight: '20px',
                       accentColor: '#FF7742',
                       cursor: 'pointer',
-                      marginTop: '2px'
+                      flexShrink: 0
                     }}
                   />
                   <label
