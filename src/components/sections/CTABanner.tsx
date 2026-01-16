@@ -206,10 +206,16 @@ export default function CTABanner() {
                     height: '24px',
                     minWidth: '24px',
                     minHeight: '24px',
-                    accentColor: '#ffffff',
+                    accentColor: '#FF7742',
                     cursor: 'pointer',
                     flexShrink: 0,
-                    touchAction: 'manipulation'
+                    touchAction: 'manipulation',
+                    backgroundColor: privacyConsent ? '#FF7742' : 'transparent',
+                    border: '2px solid white',
+                    borderRadius: '4px',
+                    appearance: 'none',
+                    WebkitAppearance: 'none',
+                    position: 'relative'
                   }}
                 />
                 <label

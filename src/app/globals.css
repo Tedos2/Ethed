@@ -359,6 +359,19 @@ canvas + div > a[href*="spline"] {
   pointer-events: none !important;
 }
 
+/* Custom checkbox with visible checkmark */
+input[type="checkbox"]#ctaPrivacyConsent:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+
 /* Database with REST API Component Animations */
 .database {
   offset-anchor: 10px 0px;
