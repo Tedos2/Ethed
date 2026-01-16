@@ -11,21 +11,28 @@ export default function CTABanner() {
   const [privacyConsent, setPrivacyConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errors, setErrors] = useState<{ [key: string]: boolean }>({});
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Reset errors
+    const newErrors: { [key: string]: boolean } = {};
+
     // Validate fields
-    if (!name.trim() || !phone.trim() || !businessField.trim()) {
-      alert('נא למלא את כל השדות');
+    if (!name.trim()) newErrors.name = true;
+    if (!phone.trim()) newErrors.phone = true;
+    if (!businessField.trim()) newErrors.businessField = true;
+    if (!privacyConsent) newErrors.privacyConsent = true;
+
+    // If there are errors, show them and return
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
-    // Validate privacy consent
-    if (!privacyConsent) {
-      alert('יש לאשר את מדיניות הפרטיות');
-      return;
-    }
+    // Clear errors if validation passes
+    setErrors({});
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
@@ -102,29 +109,50 @@ export default function CTABanner() {
                   <input
                     type="text"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      if (errors.name) setErrors({...errors, name: false});
+                    }}
                     placeholder="שם"
                     dir="rtl"
                     suppressHydrationWarning
-                    className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
+                    className={`bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 transition-all border min-w-[100px] text-right ${
+                      errors.name
+                        ? 'border-red-500 focus:ring-red-500'
+                        : 'border-white/20 focus:ring-white/50'
+                    }`}
                   />
                   <input
                     type="tel"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                      if (errors.phone) setErrors({...errors, phone: false});
+                    }}
                     placeholder="טלפון"
                     dir="rtl"
                     suppressHydrationWarning
-                    className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[100px] text-right"
+                    className={`bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 transition-all border min-w-[100px] text-right ${
+                      errors.phone
+                        ? 'border-red-500 focus:ring-red-500'
+                        : 'border-white/20 focus:ring-white/50'
+                    }`}
                   />
                   <input
                     type="text"
                     value={businessField}
-                    onChange={(e) => setBusinessField(e.target.value)}
+                    onChange={(e) => {
+                      setBusinessField(e.target.value);
+                      if (errors.businessField) setErrors({...errors, businessField: false});
+                    }}
                     placeholder="תחום העסק"
                     dir="rtl"
                     suppressHydrationWarning
-                    className="bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all border border-white/20 min-w-[120px] text-right"
+                    className={`bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-base font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 transition-all border min-w-[120px] text-right ${
+                      errors.businessField
+                        ? 'border-red-500 focus:ring-red-500'
+                        : 'border-white/20 focus:ring-white/50'
+                    }`}
                   />
                   <button
                     type="submit"
@@ -152,12 +180,17 @@ export default function CTABanner() {
               </div>
 
               {/* Privacy Consent Checkbox - Below form */}
-              <div className="flex items-start gap-3 justify-center md:justify-end bg-black/20 p-3 rounded-lg border border-white/20" dir="rtl">
+              <div className={`flex items-start gap-3 justify-center md:justify-end bg-black/20 p-3 rounded-lg border transition-all ${
+                errors.privacyConsent ? 'border-red-500' : 'border-white/20'
+              }`} dir="rtl">
                 <input
                   type="checkbox"
                   id="ctaPrivacyConsent"
                   checked={privacyConsent}
-                  onChange={(e) => setPrivacyConsent(e.target.checked)}
+                  onChange={(e) => {
+                    setPrivacyConsent(e.target.checked);
+                    if (errors.privacyConsent) setErrors({...errors, privacyConsent: false});
+                  }}
                   className="mt-0.5"
                   style={{
                     width: '20px',
