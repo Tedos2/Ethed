@@ -85,7 +85,7 @@ export default function EmotionalHook() {
                 textAlign: 'center',
                 margin: 0
               }} suppressHydrationWarning>
-                אתה יודע שאתה צריך עוד ידיים בעסק. אבל אין לך תקציב לעובד נוסף.
+                אתה יודע שאתה צריך עוד ידיים בעסק אבל אין לך תקציב לעובד נוסף
               </h3>
             </motion.div>
 

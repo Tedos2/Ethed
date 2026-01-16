@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 import FacebookPixel from "@/components/analytics/FacebookPixel";
 
@@ -51,12 +52,15 @@ export default function RootLayout({
             font-weight: 900;
           }
         `}} />
-        <script src="https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js" defer></script>
       </head>
       <body
         className="antialiased font-sans"
         suppressHydrationWarning
       >
+        <Script
+          src="https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js"
+          strategy="afterInteractive"
+        />
         <FacebookPixel />
         {children}
       </body>
