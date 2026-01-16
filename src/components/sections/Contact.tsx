@@ -11,6 +11,7 @@ import Spline3DScene from "@/components/ui/Spline3DScene";
 import PrivacyPolicyDialog from "@/components/ui/privacy-policy";
 import { PixelSnow } from "@/components/ui/PixelSnow";
 import { trackLead, trackContact } from "@/lib/fbPixel";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 // Zod validation schema
 const contactSchema = z.object({
@@ -103,7 +104,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-12 md:py-20 overflow-hidden">
+    <section id="contact" className="relative py-6 md:py-12 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Pixel Snow Background Effect */}
@@ -118,23 +119,23 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
-            className="bg-gray-900/95 border border-gray-800 rounded-2xl p-4 md:p-8 shadow-2xl"
+            className="bg-gray-900/95 border border-gray-800 rounded-2xl p-4 md:p-6 shadow-2xl"
           >
             {/* Two-column grid inside unified block */}
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
 
               {/* Left Column - Form (switched position) */}
               <div className="order-1"
               >
                 {/* Heading inside form card */}
-                <h3 className="text-white text-2xl md:text-3xl mb-2 text-right" style={{ fontWeight: '900' }} suppressHydrationWarning>
+                <h3 className="text-white text-2xl md:text-3xl mb-1 text-right" style={{ fontWeight: '900' }} suppressHydrationWarning>
                   רוצים לשמוע איך אפשר לייעל את העסק שלכם?
                 </h3>
-                <p className="text-white/90 text-lg mb-6 text-right" suppressHydrationWarning>
+                <p className="text-white/90 text-lg mb-4 text-right" suppressHydrationWarning>
                   תאמו איתנו שיחת אפיון ראשונית ללא עלות:
                 </p>
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
               {/* Name Field */}
               <div className="relative">
                 <label htmlFor="name" className="block text-white font-medium mb-1.5 text-right text-sm" suppressHydrationWarning>
@@ -278,8 +279,17 @@ export default function Contact() {
 
               {/* Right Column - 3D Bot Component (Desktop Only) */}
               <div className="hidden md:flex order-2 justify-center md:justify-end">
-                <div className="w-full max-w-md h-[350px] md:h-[500px]">
-                  <Spline3DScene />
+                <div className="w-full max-w-md flex flex-col items-center">
+                  <div className="w-full h-[350px] md:h-[500px]">
+                    <Spline3DScene />
+                  </div>
+                  <div className="w-full max-w-[350px] -mt-24">
+                    <DotLottieReact
+                      src="/ai-processor.lottie"
+                      loop
+                      autoplay
+                    />
+                  </div>
                 </div>
               </div>
 
