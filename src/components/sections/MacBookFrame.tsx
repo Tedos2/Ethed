@@ -31,7 +31,7 @@ export default function MacBookFrame({ children }: MacBookFrameProps) {
 
       {/* Floating Stars - Top Right Corner of Screen - Behind MacBook */}
       <div className="absolute top-[3.2%] right-[11.5%] pointer-events-none -z-10">
-        {/* Extra large background star with glow */}
+        {/* Extra large background star with dark blue border */}
         <motion.div
           className="absolute -top-8 -right-8 text-white/70"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -46,13 +46,13 @@ export default function MacBookFrame({ children }: MacBookFrameProps) {
             ease: "easeInOut"
           }}
           style={{
-            filter: "drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))"
+            filter: "drop-shadow(0 0 3px rgba(6, 78, 150, 0.9)) drop-shadow(0 0 1px rgba(6, 78, 150, 1))"
           }}
         >
           <StarsIcon size={120} />
         </motion.div>
 
-        {/* Large middle star */}
+        {/* Large middle star with dark blue border */}
         <motion.div
           className="absolute -top-4 -right-4 text-white/80"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -68,13 +68,13 @@ export default function MacBookFrame({ children }: MacBookFrameProps) {
             delay: 0.3
           }}
           style={{
-            filter: "drop-shadow(0 0 12px rgba(255, 255, 255, 0.7))"
+            filter: "drop-shadow(0 0 3px rgba(6, 78, 150, 0.9)) drop-shadow(0 0 1px rgba(6, 78, 150, 1))"
           }}
         >
           <StarsIcon size={80} />
         </motion.div>
 
-        {/* Medium front star */}
+        {/* Medium front star with dark blue border */}
         <motion.div
           className="absolute top-0 right-0 text-white/90"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -90,7 +90,7 @@ export default function MacBookFrame({ children }: MacBookFrameProps) {
             delay: 0.6
           }}
           style={{
-            filter: "drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))"
+            filter: "drop-shadow(0 0 3px rgba(6, 78, 150, 0.9)) drop-shadow(0 0 1px rgba(6, 78, 150, 1))"
           }}
         >
           <StarsIcon size={50} />
@@ -99,7 +99,7 @@ export default function MacBookFrame({ children }: MacBookFrameProps) {
 
       {/* Floating Stars - Bottom Left Corner of Screen - Behind MacBook - More Visible Outside */}
       <div className="absolute bottom-[9.5%] left-[11.5%] pointer-events-none -z-10">
-        {/* Extra large background star with glow - pushed further out */}
+        {/* Extra large background star with dark blue border - pushed further out */}
         <motion.div
           className="absolute -bottom-16 -left-16 text-white/70"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -115,13 +115,13 @@ export default function MacBookFrame({ children }: MacBookFrameProps) {
             delay: 0.2
           }}
           style={{
-            filter: "drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))"
+            filter: "drop-shadow(0 0 3px rgba(6, 78, 150, 0.9)) drop-shadow(0 0 1px rgba(6, 78, 150, 1))"
           }}
         >
           <StarsIcon size={120} />
         </motion.div>
 
-        {/* Large middle star - pushed further out */}
+        {/* Large middle star with dark blue border - pushed further out */}
         <motion.div
           className="absolute -bottom-10 -left-10 text-white/80"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -137,13 +137,13 @@ export default function MacBookFrame({ children }: MacBookFrameProps) {
             delay: 0.5
           }}
           style={{
-            filter: "drop-shadow(0 0 12px rgba(255, 255, 255, 0.7))"
+            filter: "drop-shadow(0 0 3px rgba(6, 78, 150, 0.9)) drop-shadow(0 0 1px rgba(6, 78, 150, 1))"
           }}
         >
           <StarsIcon size={80} />
         </motion.div>
 
-        {/* Medium front star - pushed further out */}
+        {/* Medium front star with dark blue border - pushed further out */}
         <motion.div
           className="absolute -bottom-6 -left-6 text-white/90"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -159,7 +159,7 @@ export default function MacBookFrame({ children }: MacBookFrameProps) {
             delay: 0.8
           }}
           style={{
-            filter: "drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))"
+            filter: "drop-shadow(0 0 3px rgba(6, 78, 150, 0.9)) drop-shadow(0 0 1px rgba(6, 78, 150, 1))"
           }}
         >
           <StarsIcon size={50} />

@@ -4,7 +4,7 @@ import { google } from 'googleapis';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, phone, businessField, currentSystem } = body;
+    const { name, phone, businessField } = body;
 
     // Validate required fields
     if (!name || !phone || !businessField) {
@@ -41,14 +41,14 @@ export async function POST(request: NextRequest) {
       timeZone: 'Asia/Jerusalem',
     });
 
-    // Prepare the row data (columns A-E)
-    // A: שם מלא, B: טלפון, C: תחום העסק, D: תאריך, E: מערכת נוכחית
-    const values = [[name, phone, businessField, timestamp, currentSystem || 'לא צוין']];
+    // Prepare the row data (columns A-D)
+    // A: שם מלא, B: טלפון, C: תחום העסק, D: תאריך
+    const values = [[name, phone, businessField, timestamp]];
 
     // Append the data to the sheet (A1 notation will auto-detect the sheet)
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'A:E', // Just specify columns, will use first sheet
+      range: 'A:D', // Just specify columns, will use first sheet
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values,

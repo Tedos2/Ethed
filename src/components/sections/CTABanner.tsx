@@ -152,22 +152,26 @@ export default function CTABanner() {
               </div>
 
               {/* Privacy Consent Checkbox - Below form */}
-              <div className="flex items-center gap-2 justify-center md:justify-end" dir="rtl">
+              <div className="flex items-start gap-3 justify-center md:justify-end bg-black/20 p-3 rounded-lg border border-white/20" dir="rtl">
                 <input
                   type="checkbox"
                   id="ctaPrivacyConsent"
                   checked={privacyConsent}
                   onChange={(e) => setPrivacyConsent(e.target.checked)}
+                  className="mt-0.5"
                   style={{
-                    width: '18px',
-                    height: '18px',
+                    width: '20px',
+                    height: '20px',
+                    minWidth: '20px',
+                    minHeight: '20px',
                     accentColor: '#ffffff',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    flexShrink: 0
                   }}
                 />
                 <label
                   htmlFor="ctaPrivacyConsent"
-                  className="text-white text-sm cursor-pointer"
+                  className="text-white text-sm cursor-pointer flex-1"
                   suppressHydrationWarning
                 >
                   אני מסכים למסור את פרטיי בהתאם ל
