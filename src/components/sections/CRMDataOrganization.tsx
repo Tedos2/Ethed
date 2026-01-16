@@ -53,10 +53,10 @@ export default function CRMDataOrganization() {
                 ? 'clamp(1.5rem, 4vw, 2rem)'
                 : 'clamp(2rem, 3vw, 2.5rem)',
               fontWeight: '900',
-              color: '#FFFF99',
+              color: '#FF7742',
               lineHeight: '1.4',
               margin: 0,
-              textShadow: '0 0 8px rgba(255, 255, 153, 0.4), 0 0 15px rgba(255, 255, 153, 0.2)'
+              textShadow: '0 0 8px rgba(255, 119, 66, 0.4), 0 0 15px rgba(255, 119, 66, 0.2)'
             }} suppressHydrationWarning>
               CRM בהתאמה אישית לעסק שלך
             </h2>
@@ -91,10 +91,10 @@ export default function CRMDataOrganization() {
                 ? 'clamp(1.5rem, 4vw, 2rem)'
                 : 'clamp(2rem, 3vw, 2.5rem)',
               fontWeight: '900',
-              color: '#FFFF99',
+              color: '#FF7742',
               lineHeight: '1.4',
               margin: 0,
-              textShadow: '0 0 8px rgba(255, 255, 153, 0.4), 0 0 15px rgba(255, 255, 153, 0.2)'
+              textShadow: '0 0 8px rgba(255, 119, 66, 0.4), 0 0 15px rgba(255, 119, 66, 0.2)'
             }} suppressHydrationWarning>
               אנחנו בונים עבורך מערכת מותאמת בדיוק למערכות ולנתונים שלך
             </p>

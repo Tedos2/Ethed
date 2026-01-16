@@ -46,11 +46,11 @@ export default function Integrations() {
                 <h2 style={{
                   fontSize: isMobile ? 'clamp(1.5rem, 4vw, 2rem)' : 'clamp(2rem, 3vw, 2.5rem)',
                   fontWeight: '900',
-                  color: '#FFFF99',
+                  color: '#FF7742',
                   lineHeight: '1.4',
                   textAlign: 'right',
                   margin: 0,
-                  textShadow: '0 0 8px rgba(255, 255, 153, 0.4), 0 0 15px rgba(255, 255, 153, 0.2)'
+                  textShadow: '0 0 8px rgba(255, 119, 66, 0.4), 0 0 15px rgba(255, 119, 66, 0.2)'
                 }} suppressHydrationWarning>
                   התאמה מדויקת עבור העסק שלך
                 </h2>
@@ -104,11 +104,11 @@ export default function Integrations() {
                 <p style={{
                   fontSize: isMobile ? 'clamp(1.5rem, 4vw, 2rem)' : 'clamp(2rem, 3vw, 2.5rem)',
                   fontWeight: '900',
-                  color: '#FFFF99',
+                  color: '#FF7742',
                   lineHeight: '1.4',
                   textAlign: 'right',
                   margin: 0,
-                  textShadow: '0 0 8px rgba(255, 255, 153, 0.4), 0 0 15px rgba(255, 255, 153, 0.2)',
+                  textShadow: '0 0 8px rgba(255, 119, 66, 0.4), 0 0 15px rgba(255, 119, 66, 0.2)',
                 }} suppressHydrationWarning>
                   פחות עומס, יותר שליטה, יותר זמן להתמקד בעתיד של העסק שלך
                 </p>
