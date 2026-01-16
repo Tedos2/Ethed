@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import PrivacyPolicyDialog from "@/components/ui/privacy-policy";
+import { trackLead, trackContact } from "@/lib/fbPixel";
 
 export default function CTABanner() {
   const [name, setName] = useState("");
@@ -54,6 +55,14 @@ export default function CTABanner() {
 
       if (response.ok) {
         setSubmitStatus('success');
+
+        // Track Facebook Lead conversion
+        trackLead({
+          content_name: 'CTA Banner Form',
+          content_category: 'Lead Generation',
+        });
+        trackContact();
+
         // Clear form
         setName('');
         setPhone('');
