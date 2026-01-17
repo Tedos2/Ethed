@@ -73,7 +73,11 @@ export default function Contact() {
       trackContact();
 
       reset();
-      setTimeout(() => setShowSuccess(false), 5000);
+
+      // Redirect to thank-you page after brief delay (allow tracking to complete)
+      setTimeout(() => {
+        window.location.href = '/thank-you';
+      }, 500);
     } catch (error) {
       console.error('Form submission error:', error);
       setShowError(true);

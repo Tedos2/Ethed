@@ -69,15 +69,9 @@ export default function CTABanner() {
         setBusinessField('');
         setPrivacyConsent(false);
 
-        // Show success message
-        alert('הטופס נשלח בהצלחה! נחזור אליך בהקדם');
-
-        // Scroll to contact section after brief delay
+        // Redirect to thank-you page after brief delay (allow tracking to complete)
         setTimeout(() => {
-          document.getElementById('contact')?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+          window.location.href = '/thank-you';
         }, 500);
       } else {
         throw new Error(data.error || 'Failed to submit form');
