@@ -83,6 +83,16 @@ export default function Header() {
             <ul className="flex items-center gap-12 text-lg">
               <li suppressHydrationWarning>
                 <a
+                  href="#about"
+                  onClick={(e) => handleSmoothScroll(e, 'about')}
+                  className="nav-tab px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  suppressHydrationWarning
+                >
+                  עלינו
+                </a>
+              </li>
+              <li suppressHydrationWarning>
+                <a
                   href="#solutions"
                   onClick={(e) => handleSmoothScroll(e, 'solutions')}
                   className="nav-tab px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
@@ -99,16 +109,6 @@ export default function Header() {
                   suppressHydrationWarning
                 >
                   שאלות נפוצות
-                </a>
-              </li>
-              <li suppressHydrationWarning>
-                <a
-                  href="#contact"
-                  onClick={(e) => handleSmoothScroll(e, 'contact')}
-                  className="nav-tab px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
-                  suppressHydrationWarning
-                >
-                  צור קשר
                 </a>
               </li>
             </ul>
@@ -158,6 +158,16 @@ export default function Header() {
             </li>
             <li suppressHydrationWarning>
               <a
+                href="#about"
+                onClick={(e) => handleSmoothScroll(e, 'about')}
+                className="nav-tab text-xl hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                suppressHydrationWarning
+              >
+                עלינו
+              </a>
+            </li>
+            <li suppressHydrationWarning>
+              <a
                 href="#solutions"
                 onClick={(e) => handleSmoothScroll(e, 'solutions')}
                 className="nav-tab text-xl hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
@@ -174,16 +184,6 @@ export default function Header() {
                 suppressHydrationWarning
               >
                 שאלות נפוצות
-              </a>
-            </li>
-            <li suppressHydrationWarning>
-              <a
-                href="#contact"
-                onClick={(e) => handleSmoothScroll(e, 'contact')}
-                className="nav-tab text-xl hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
-                suppressHydrationWarning
-              >
-                צור קשר
               </a>
             </li>
           </ul>
