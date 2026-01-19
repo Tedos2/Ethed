@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ThankYouContent from "@/components/sections/ThankYouContent";
 import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import { FullPageBeamsBackground } from "@/components/ui/FullPageBeamsBackground";
 
 export const metadata: Metadata = {
@@ -14,6 +15,9 @@ export default function ThankYouPage() {
     <main className="relative min-h-screen bg-gradient-to-b from-[#0f0f0f] via-[#2a150a] via-40% via-[#1a0f08] via-70% to-[#0a0505]">
       {/* Background Effects */}
       <FullPageBeamsBackground />
+
+      {/* Header Navigation */}
+      <Header />
 
       {/* Content */}
       <div className="relative z-10">

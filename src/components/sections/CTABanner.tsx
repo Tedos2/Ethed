@@ -4,8 +4,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import PrivacyPolicyDialog from "@/components/ui/privacy-policy";
 import { trackLead, trackContact } from "@/lib/fbPixel";
+import { useRouter } from "next/navigation";
 
 export default function CTABanner() {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [businessField, setBusinessField] = useState("");
@@ -71,7 +73,7 @@ export default function CTABanner() {
 
         // Redirect to thank-you page after brief delay (allow tracking to complete)
         setTimeout(() => {
-          window.location.href = '/thank-you';
+          router.push('/thank-you');
         }, 500);
       } else {
         throw new Error(data.error || 'Failed to submit form');

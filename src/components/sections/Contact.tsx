@@ -12,6 +12,7 @@ import PrivacyPolicyDialog from "@/components/ui/privacy-policy";
 import { PixelSnow } from "@/components/ui/PixelSnow";
 import { trackLead, trackContact } from "@/lib/fbPixel";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { useRouter } from "next/navigation";
 
 // Zod validation schema
 const contactSchema = z.object({
@@ -26,6 +27,7 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function Contact() {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
@@ -76,7 +78,7 @@ export default function Contact() {
 
       // Redirect to thank-you page after brief delay (allow tracking to complete)
       setTimeout(() => {
-        window.location.href = '/thank-you';
+        router.push('/thank-you');
       }, 500);
     } catch (error) {
       console.error('Form submission error:', error);
