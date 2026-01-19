@@ -85,7 +85,7 @@ export default function Header() {
                 <a
                   href="#about"
                   onClick={(e) => handleSmoothScroll(e, 'about')}
-                  className="nav-tab px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  className="nav-tab text-white px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
                   suppressHydrationWarning
                 >
                   עלינו
@@ -95,7 +95,7 @@ export default function Header() {
                 <a
                   href="#solutions"
                   onClick={(e) => handleSmoothScroll(e, 'solutions')}
-                  className="nav-tab px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  className="nav-tab text-white px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
                   suppressHydrationWarning
                 >
                   פתרונות
@@ -105,7 +105,7 @@ export default function Header() {
                 <a
                   href="#faq"
                   onClick={(e) => handleSmoothScroll(e, 'faq')}
-                  className="nav-tab px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
+                  className="nav-tab text-white px-4 py-2 rounded-full hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 hover:scale-105 inline-block"
                   suppressHydrationWarning
                 >
                   שאלות נפוצות

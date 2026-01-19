@@ -77,9 +77,10 @@ export default function Contact() {
       reset();
 
       // Redirect to thank-you page after brief delay (allow tracking to complete)
-      setTimeout(() => {
-        router.push('/thank-you');
-      }, 500);
+      // TEMPORARILY DISABLED
+      // setTimeout(() => {
+      //   router.push('/thank-you');
+      // }, 500);
     } catch (error) {
       console.error('Form submission error:', error);
       setShowError(true);

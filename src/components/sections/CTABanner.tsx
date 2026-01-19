@@ -72,9 +72,10 @@ export default function CTABanner() {
         setPrivacyConsent(false);
 
         // Redirect to thank-you page after brief delay (allow tracking to complete)
-        setTimeout(() => {
-          router.push('/thank-you');
-        }, 500);
+        // TEMPORARILY DISABLED
+        // setTimeout(() => {
+        //   router.push('/thank-you');
+        // }, 500);
       } else {
         throw new Error(data.error || 'Failed to submit form');
       }
