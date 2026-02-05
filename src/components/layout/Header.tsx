@@ -68,12 +68,12 @@ export default function Header() {
         <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 md:px-6 py-2 md:py-3 shadow-lg">
           <div className="flex items-center justify-between">
             {/* Logo (right side for RTL) - Clickable */}
-            <Link href="/" className="relative w-28 h-9 md:w-48 md:h-14 -mr-2 md:-mr-8 cursor-pointer hover:opacity-90 transition-opacity">
+            <Link href="/" className="relative w-20 h-7 md:w-36 md:h-10 -mr-2 md:-mr-6 cursor-pointer hover:opacity-90 transition-opacity">
               <Image
-                src="/images to use/ETHEDLOGO.png"
+                src="/images to use/image-removebg-preview.svg"
                 alt="Ethed Logo"
                 fill
-                sizes="(max-width: 768px) 112px, 192px"
+                sizes="(max-width: 768px) 80px, 144px"
                 className="object-contain drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
                 priority
               />
@@ -143,7 +143,18 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown - Slides from Right Side */}
       <div className={`fixed top-0 right-0 h-full w-[85vw] max-w-[320px] bg-[#0f0f0f]/95 backdrop-blur-xl border-l border-white/10 z-40 transition-transform duration-300 ease-in-out will-change-transform ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col h-full p-6 pt-20">
+        <div className="flex flex-col h-full p-6 pt-6">
+          {/* Mobile Menu Logo */}
+          <Link href="/" className="relative w-32 h-10 mb-8 self-center" onClick={() => setMobileMenuOpen(false)}>
+            <Image
+              src="/images to use/image-removebg-preview.svg"
+              alt="Ethed Logo"
+              fill
+              sizes="128px"
+              className="object-contain drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
+            />
+          </Link>
+
           {/* Mobile Nav Links */}
           <ul className="flex flex-col gap-6 text-right">
             <li suppressHydrationWarning>

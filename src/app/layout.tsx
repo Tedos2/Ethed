@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: "Ethed - פתרונות אוטומציה מבוססי AI לעסקים קטנים",
   description: "העובד המושלם ללא עלויות גיוס. אוטומציות, צ'אטבוטים ומערכות CRM מותאמות אישית לעסקים קטנים.",
   icons: {
-    icon: "/images to use/ETHEDLOGO.png",
-    apple: "/images to use/ETHEDLOGO.png",
+    icon: "/images to use/image-removebg-preview.svg",
+    apple: "/images to use/image-removebg-preview.svg",
   },
 };
 
