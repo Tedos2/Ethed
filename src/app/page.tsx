@@ -14,10 +14,11 @@ import Footer from "@/components/layout/Footer";
 import { FullPageBeamsBackground } from "@/components/ui/FullPageBeamsBackground";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import AccessibilityWidget from "@/components/ui/AccessibilityWidget";
+import MobileMotionReducer from "@/components/ui/MobileMotionReducer";
 
 export default function Home() {
   return (
-    <>
+    <MobileMotionReducer>
       <main className="relative bg-gradient-to-b from-[#0f0f0f] via-[#2a150a] via-40% via-[#1a0f08] via-70% to-[#0a0505]">
         {/* Full-page beams background with scroll-based color transition */}
         <FullPageBeamsBackground />
@@ -47,6 +48,6 @@ export default function Home() {
         <AccessibilityWidget />
       </main>
       <Footer />
-    </>
+    </MobileMotionReducer>
   );
 }
