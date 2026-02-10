@@ -62,13 +62,11 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
 
         const targetScale = 1 - (totalCards - index) * 0.05;
 
-        // Set initial state
         gsap.set(card, {
             scale: 1,
             transformOrigin: "center top",
         });
 
-        // Use GSAP tween with scrub instead of onUpdate callback for better perf
         const tween = gsap.to(card, {
             scale: targetScale,
             ease: "none",
@@ -76,7 +74,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                 trigger: container,
                 start: "top center",
                 end: "bottom center",
-                scrub: 2,
+                scrub: isMobile ? 0.5 : 2,
                 invalidateOnRefresh: false,
             }
         });
@@ -91,7 +89,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
         <div
             ref={containerRef}
             style={{
-                height: '100vh',
+                height: isMobile ? '100dvh' : '100vh',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',

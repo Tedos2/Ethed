@@ -119,7 +119,11 @@
   html {
     max-width: 100vw;
     position: relative;
-    scroll-behavior: smooth;
+  }
+  @media (min-width: 769px) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
   body {
     @apply bg-background text-foreground;

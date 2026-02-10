@@ -26,7 +26,8 @@
       "Bash(npx next dev:*)",
       "Bash(xargs kill:*)",
       "Bash(curl:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

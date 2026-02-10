@@ -104,7 +104,14 @@ export function FullPageBeamsBackground({
         updateCanvasSize();
         window.addEventListener("resize", updateCanvasSize);
 
-        // Scroll handler — writes directly to canvas, no React state updates
+        // On mobile, skip scroll listener entirely — render once and done
+        if (isMobile) {
+            return () => {
+                window.removeEventListener("resize", updateCanvasSize);
+            };
+        }
+
+        // Desktop only: scroll handler for color transition
         const handleScroll = () => {
             if (rafRef.current !== null) return;
 
