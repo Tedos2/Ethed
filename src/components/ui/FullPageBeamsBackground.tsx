@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 interface FullPageBeamsBackgroundProps {
@@ -38,60 +38,27 @@ export function FullPageBeamsBackground({
 }: FullPageBeamsBackgroundProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const beamsRef = useRef<Beam[]>([]);
-    const [scrollProgress, setScrollProgress] = useState(0);
+    const progressRef = useRef(0);
     const rafRef = useRef<number | null>(null);
-    const [isVisible, setIsVisible] = useState(true);
+    const isMobileRef = useRef(false);
 
-    // Initialize canvas and beams
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return;
-
-        const ctx = canvas.getContext("2d", { alpha: true });
-        if (!ctx) return;
-
-        const updateCanvasSize = () => {
-            // Optimize for mobile: use lower DPR
-            const isMobile = window.innerWidth < 768;
-            const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2);
-
-            canvas.width = window.innerWidth * dpr;
-            canvas.height = window.innerHeight * dpr;
-            ctx.scale(dpr, dpr);
-
-            // Generate beams only once
-            const totalBeams = 28;
-            beamsRef.current = Array.from({ length: totalBeams }, (_, i) =>
-                createBeam(window.innerWidth, window.innerHeight, i, totalBeams)
-            );
-
-            renderBeams(ctx, scrollProgress);
-        };
-
-        updateCanvasSize();
-        window.addEventListener("resize", updateCanvasSize);
-
-        return () => {
-            window.removeEventListener("resize", updateCanvasSize);
-        };
-    }, []);
-
-    // Render beams function (extracted for reuse)
+    // Render beams function
     const renderBeams = (ctx: CanvasRenderingContext2D, progress: number) => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-        // Remove canvas blur - only use CSS blur to avoid double blur
+        const w = canvas.width / (isMobileRef.current ? 1 : Math.min(window.devicePixelRatio || 1, 2));
+        const h = canvas.height / (isMobileRef.current ? 1 : Math.min(window.devicePixelRatio || 1, 2));
+
+        ctx.clearRect(0, 0, w, h);
 
         beamsRef.current.forEach((beam) => {
             ctx.save();
             ctx.translate(beam.x, beam.y);
             ctx.rotate((beam.angle * Math.PI) / 180);
 
-            // Dynamic color based on scroll
-            const hue = beam.baseHue + (progress * 19); // 16 → 35
-            const lightness = 70 + (progress * 10); // 70% → 80%
+            const hue = beam.baseHue + (progress * 19);
+            const lightness = 70 + (progress * 10);
 
             const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
             gradient.addColorStop(0, `hsla(${hue}, 85%, ${lightness}%, 0)`);
@@ -106,7 +73,7 @@ export function FullPageBeamsBackground({
         });
     };
 
-    // Scroll handling with requestAnimationFrame throttling
+    // Initialize canvas, beams, and scroll handler — all in one effect, no React state
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -114,72 +81,55 @@ export function FullPageBeamsBackground({
         const ctx = canvas.getContext("2d", { alpha: true });
         if (!ctx) return;
 
-        const handleScroll = () => {
-            // Cancel any pending animation frame
-            if (rafRef.current !== null) {
-                return;
-            }
+        const isMobile = window.innerWidth < 768;
+        isMobileRef.current = isMobile;
 
-            // Schedule update on next animation frame
+        const updateCanvasSize = () => {
+            const mobile = window.innerWidth < 768;
+            isMobileRef.current = mobile;
+            const dpr = mobile ? 1 : Math.min(window.devicePixelRatio || 1, 2);
+
+            canvas.width = window.innerWidth * dpr;
+            canvas.height = window.innerHeight * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            const totalBeams = mobile ? 16 : 28;
+            beamsRef.current = Array.from({ length: totalBeams }, (_, i) =>
+                createBeam(window.innerWidth, window.innerHeight, i, totalBeams)
+            );
+
+            renderBeams(ctx, progressRef.current);
+        };
+
+        updateCanvasSize();
+        window.addEventListener("resize", updateCanvasSize);
+
+        // Scroll handler — writes directly to canvas, no React state updates
+        const handleScroll = () => {
+            if (rafRef.current !== null) return;
+
             rafRef.current = requestAnimationFrame(() => {
                 const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const progress = scrollHeight > 0 ? window.scrollY / scrollHeight : 0;
-                const clampedProgress = Math.min(Math.max(progress, 0), 1);
+                const clamped = Math.min(Math.max(progress, 0), 1);
 
-                // Only update if progress actually changed (avoid unnecessary redraws)
-                setScrollProgress(prev => {
-                    if (Math.abs(prev - clampedProgress) > 0.001) {
-                        return clampedProgress;
-                    }
-                    return prev;
-                });
+                if (Math.abs(progressRef.current - clamped) > 0.005) {
+                    progressRef.current = clamped;
+                    renderBeams(ctx, clamped);
+                }
 
                 rafRef.current = null;
             });
         };
 
-        // Initial scroll position
-        handleScroll();
-
         window.addEventListener("scroll", handleScroll, { passive: true });
 
         return () => {
+            window.removeEventListener("resize", updateCanvasSize);
             window.removeEventListener("scroll", handleScroll);
             if (rafRef.current !== null) {
                 cancelAnimationFrame(rafRef.current);
             }
-        };
-    }, []); // Empty deps - attach listeners once
-
-    // Separate effect to redraw when scroll changes
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas || !isVisible) return;
-
-        const ctx = canvas.getContext("2d", { alpha: true });
-        if (!ctx) return;
-
-        renderBeams(ctx, scrollProgress);
-    }, [scrollProgress, isVisible]);
-
-    // Intersection Observer to pause rendering when not visible
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return;
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    setIsVisible(entry.isIntersecting);
-                });
-            },
-            { threshold: 0 }
-        );
-
-        observer.observe(canvas);
-
-        return () => {
-            observer.disconnect();
         };
     }, []);
 
@@ -194,9 +144,8 @@ export function FullPageBeamsBackground({
                 ref={canvasRef}
                 className="absolute inset-0 w-full h-full"
                 style={{
-                    filter: "blur(15px)", // Single blur via CSS only
+                    filter: "blur(12px)",
                     opacity: 0.8,
-                    willChange: "transform", // GPU optimization hint
                 }}
             />
         </div>

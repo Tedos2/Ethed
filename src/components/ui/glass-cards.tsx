@@ -66,29 +66,24 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
         gsap.set(card, {
             scale: 1,
             transformOrigin: "center top",
-            willChange: "transform"
         });
 
-        // Create scroll trigger for stacking effect
-        const scrollTrigger = ScrollTrigger.create({
-            trigger: container,
-            start: "top center",
-            end: "bottom center",
-            scrub: 2,
-            invalidateOnRefresh: false,
-            onUpdate: (self) => {
-                const progress = self.progress;
-                const scale = gsap.utils.interpolate(1, targetScale, progress);
-
-                gsap.set(card, {
-                    scale: Math.max(scale, targetScale),
-                    transformOrigin: "center top"
-                });
+        // Use GSAP tween with scrub instead of onUpdate callback for better perf
+        const tween = gsap.to(card, {
+            scale: targetScale,
+            ease: "none",
+            scrollTrigger: {
+                trigger: container,
+                start: "top center",
+                end: "bottom center",
+                scrub: 2,
+                invalidateOnRefresh: false,
             }
         });
 
         return () => {
-            scrollTrigger.kill();
+            tween.scrollTrigger?.kill();
+            tween.kill();
         };
     }, [index, totalCards, isMobile]);
 

@@ -39,8 +39,6 @@ export default function Mobile3DScene() {
           style={{
             overflow: 'visible',
             position: 'relative',
-            transform: 'translateZ(0)',
-            willChange: 'transform'
           }}
         >
           <Spline3DScene />

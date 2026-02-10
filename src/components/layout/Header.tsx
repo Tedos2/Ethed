@@ -64,7 +64,7 @@ export default function Header() {
   return (
     <>
       {/* Desktop Navigation - Floating with Glassmorphism - Hidden on Mobile */}
-      <nav className="hidden md:block fixed top-2 md:top-4 right-2 left-2 md:right-6 md:left-6 z-50 transition-all duration-300">
+      <nav className="hidden md:block fixed top-2 md:top-4 right-2 left-2 md:right-6 md:left-6 z-60 transition-all duration-300">
         <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 md:px-6 py-2 md:py-3 shadow-lg">
           <div className="flex items-center justify-between">
             {/* Logo (right side for RTL) - Clickable */}
@@ -129,7 +129,7 @@ export default function Header() {
       {/* Mobile Hamburger Menu Button - Mobile Only */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="md:hidden fixed top-4 right-4 z-50 p-3 bg-black/50 backdrop-blur-md hover:bg-black/70 rounded-full transition-all border border-white/20 shadow-lg"
+        className="md:hidden fixed top-4 right-4 z-60 p-3 bg-black/70 hover:bg-black/80 rounded-full transition-all border border-white/20 shadow-lg"
         style={{ minWidth: '44px', minHeight: '44px' }}
         aria-label="Toggle menu"
       >
@@ -142,7 +142,7 @@ export default function Header() {
       </button>
 
       {/* Mobile Menu Dropdown - Slides from Right Side */}
-      <div className={`fixed top-0 right-0 h-full w-[85vw] max-w-[320px] bg-[#0f0f0f]/95 backdrop-blur-xl border-l border-white/10 z-40 transition-transform duration-300 ease-in-out will-change-transform ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 h-full w-[85vw] max-w-[320px] bg-[#0f0f0f]/95 backdrop-blur-xl border-l border-white/10 z-55 transition-transform duration-300 ease-in-out will-change-transform ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full p-6 pt-6">
           {/* Mobile Menu Logo */}
           <Link href="/" className="relative w-32 h-10 mb-8 self-center" onClick={() => setMobileMenuOpen(false)}>
@@ -161,7 +161,7 @@ export default function Header() {
               <a
                 href="#hero"
                 onClick={(e) => handleSmoothScroll(e, 'hero')}
-                className="nav-tab text-xl hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                className="nav-tab text-xl text-white hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
                 suppressHydrationWarning
               >
                 בית
@@ -171,7 +171,7 @@ export default function Header() {
               <a
                 href="#about"
                 onClick={(e) => handleSmoothScroll(e, 'about')}
-                className="nav-tab text-xl hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                className="nav-tab text-xl text-white hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
                 suppressHydrationWarning
               >
                 עלינו
@@ -181,7 +181,7 @@ export default function Header() {
               <a
                 href="#solutions"
                 onClick={(e) => handleSmoothScroll(e, 'solutions')}
-                className="nav-tab text-xl hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                className="nav-tab text-xl text-white hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
                 suppressHydrationWarning
               >
                 פתרונות
@@ -191,7 +191,7 @@ export default function Header() {
               <a
                 href="#faq"
                 onClick={(e) => handleSmoothScroll(e, 'faq')}
-                className="nav-tab text-xl hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
+                className="nav-tab text-xl text-white hover:text-[#FF7742] hover:bg-white/5 transition-all duration-300 block py-3 px-4 rounded-lg"
                 suppressHydrationWarning
               >
                 שאלות נפוצות
@@ -213,7 +213,7 @@ export default function Header() {
 
       {/* Mobile Menu Backdrop Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[35] md:hidden transition-opacity duration-300 will-change-opacity ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 bg-black/50 z-50 md:hidden transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setMobileMenuOpen(false)}
       />
     </>

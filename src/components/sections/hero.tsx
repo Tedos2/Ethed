@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Header from "@/components/layout/Header";
 import ResponsiveMacBook from "./ResponsiveMacBook";
 import { Aurora } from "@/components/ui/aurora";
 import { LogoCarousel, type Logo } from "@/components/ui/logo-carousel";
@@ -73,9 +72,6 @@ export default function Hero() {
 
       {/* Gradient Fade Overlay - Allows main page gradient to show through */}
       <div className="absolute inset-0 z-[5] bg-gradient-to-b from-[#0f0f0f] via-[#0f0f0f]/70 via-30% to-transparent pointer-events-none" />
-
-      {/* Header Navigation */}
-      <Header />
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-20 md:pt-32 pb-8 md:pb-2 min-h-screen flex items-start md:items-center">
