@@ -31,7 +31,7 @@ export default function Integrations() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ margin: "-100px" }}
+              viewport={{ once: true, margin: "-100px" }}
             >
               <div
                 style={{
@@ -121,7 +121,7 @@ export default function Integrations() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-              viewport={{ margin: "-100px" }}
+              viewport={{ once: true, margin: "-100px" }}
             >
               <div
                 style={{

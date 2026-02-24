@@ -14,7 +14,7 @@ export default function CRMDataOrganization() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             className="flex justify-center md:justify-start order-2 md:order-1"
           >
             <DatabaseWithRestApi
@@ -43,7 +43,7 @@ export default function CRMDataOrganization() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            viewport={{ margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             className="flex flex-col gap-3 text-right order-1 md:order-2"
             dir="rtl"
           >

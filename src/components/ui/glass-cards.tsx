@@ -67,6 +67,27 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
             transformOrigin: "center top",
         });
 
+        if (isMobile) {
+            // Mobile: play scale animation once when entering viewport, no scrub
+            // This prevents bidirectional scroll-linked computation that causes glitching
+            const tween = gsap.to(card, {
+                scale: targetScale,
+                duration: 0.4,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: container,
+                    start: "top 80%",
+                    once: true,
+                }
+            });
+
+            return () => {
+                tween.scrollTrigger?.kill();
+                tween.kill();
+            };
+        }
+
+        // Desktop: original scrub behavior (smooth bidirectional scroll-linked animation)
         const tween = gsap.to(card, {
             scale: targetScale,
             ease: "none",
@@ -74,7 +95,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, index, totalCards
                 trigger: container,
                 start: "top center",
                 end: "bottom center",
-                scrub: isMobile ? 0.5 : 2,
+                scrub: 2,
                 invalidateOnRefresh: false,
             }
         });

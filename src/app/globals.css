@@ -145,8 +145,26 @@
     section#hero,
     section#contact,
     section.emotional-hook {
-      overflow-x: clip; /* Changed from hidden to clip for better scroll performance */
+      overflow-x: clip;
       max-width: 100vw;
+    }
+
+    /* Mobile scroll performance: reduce fixed canvas blur (biggest GPU drain) */
+    .fixed canvas {
+      filter: blur(6px) !important;
+      opacity: 0.6 !important;
+    }
+
+    /* Skip rendering of off-screen sections — browser won't paint them until near viewport */
+    section {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
+    }
+
+    /* Don't apply content-visibility to hero (above fold) or sticky sections */
+    section#hero,
+    section#solutions {
+      content-visibility: visible;
     }
   }
 }
